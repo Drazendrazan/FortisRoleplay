@@ -1,0 +1,51 @@
+window.addEventListener("message", function(event) {
+    if (event.data.type == "open") {
+        $("#beheerComputer").fadeIn("fast");
+    }
+});
+
+document.onkeydown = function(evt) { /* Escape event */
+    evt = evt || window.event;
+    if (evt.key == "Escape") {
+        $("#beheerComputer").fadeOut("fast");
+        $.post("http://fortis-gemeentehuis/sluiten", JSON.stringify({}));
+    }
+};
+
+function afsluiten() {
+    $("#beheerComputer").fadeOut("fast");
+    $.post("http://fortis-gemeentehuis/sluiten", JSON.stringify({}));
+}
+
+function openPolitie() {
+    $("#kiesKnoppen").fadeOut(100);
+    $("#politieForm").delay(150).fadeIn("slow");
+    $("#terugKnop").delay(150).fadeIn("slow");
+}
+
+function openAmbulance() {
+    $("#kiesKnoppen").fadeOut(100);
+    $("#ambulanceForm").fadeIn("slow");
+    $("#terugKnop").delay(150).fadeIn("slow");
+}
+
+function openAnwb() {
+    $("#kiesKnoppen").fadeOut(100);
+    $("#anwbForm").delay(150).fadeIn("slow");
+    $("#terugKnop").delay(150).fadeIn("slow");
+}
+
+function terug() {
+    document.getElementById("politieForm").style.display = "none";
+    document.getElementById("ambulanceForm").style.display = "none";
+    document.getElementById("anwbForm").style.display = "none";
+    $("#kiesKnoppen").fadeIn("slow");
+    document.getElementById("terugKnop").style.display = "none";
+}
+
+function krijgJob(baan) {
+    $.post("http://fortis-gemeentehuis/krijgJob", JSON.stringify({
+        baan: baan
+    }));
+    afsluiten();
+}

@@ -1,0 +1,3 @@
+QB = {}
+
+QB.Spawns = {}

@@ -1,0 +1,229 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.achtergrond {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plukken {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    z-index: 50;
+
+    transition: .25s ease-in-out;
+}
+
+.stage1 {
+    /* Eerste */
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+
+    margin-left: 200px;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stage1 div {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #fff;
+    border-radius: 100%;
+    opacity: .4;
+}
+
+.stage2 {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+
+    margin-left: 250px;
+    margin-top: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stage2 div {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #fff;
+    border-radius: 100%;
+    opacity: .4;
+}
+
+.stage3 {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+
+    margin-left: 50px;
+    margin-top: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stage3 div {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #fff;
+    border-radius: 100%;
+    opacity: .4;
+}
+
+.kech1 {
+    background-image: url('../images/versie1/stage1.png');
+}
+
+.kech2 {
+    background-image: url('../images/versie1/stage2.png');
+}
+
+.kech3 {
+    background-image: url('../images/versie1/stage3.png');
+}
+
+.kech4 {
+    background-image: url('../images/versie1/stage4.png');
+}
+
+.kech11 {
+    background-image: url('../images/versie2/stage1.png');
+}
+
+.kech22 {
+    background-image: url('../images/versie2/stage2.png');
+}
+
+.kech33 {
+    background-image: url('../images/versie2/stage3.png');
+}
+
+.kech44 {
+    background-image: url('../images/versie2/stage4.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Verpakken */
+.verpakken {
+    background-image: url('../images/verpakken/zakje.png');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    z-index: 50;
+
+    z-index: 90;
+
+    transition: .25s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.verpakken img {
+    transition: .45s ease-in-out;
+}
+.verpakken-wietje-before {
+    margin-top: -690px;
+    width: 120px;
+    height: 140px;
+}
+
+.verpakken-wietje-after {
+    margin-top: 130px;
+    width: 120px;
+    height: 140px;
+    opacity: .3;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.verpakken input[type="range"] {
+    outline: none;
+    position: absolute;
+    margin-top: -180px;
+    width: 270px;
+    pointer-events: none;
+}
+
+.verpakken input[type=range]::-webkit-slider-thumb {
+    /*Webkit Browsers like Chrome and Safari*/
+    pointer-events: auto;
+}
+
+.verpakken input[type=range]::-moz-range-thumb {
+    /*Firefox*/
+    pointer-events: auto;
+}
+
+.verpakken input[type=range]::-ms-thumb {
+    /*Internet Explorer*/
+    pointer-events: auto;
+}
+
+
+/* Animaties */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+

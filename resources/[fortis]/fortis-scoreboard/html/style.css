@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+
+.container {
+    height: 100vh;
+    font-family: 'Roboto'!important;
+}
+
+.scoreboard-block {
+    display: none;
+    position: absolute;
+    height: auto; /* aanpassen voor hoogte, hieronder nog 1 */
+    width: 40vh;
+    background: rgba(35, 39, 42, 0.8);
+    right: 5vh;
+    top: 10vh;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.15);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.scoreboard-header {
+    position: relative;
+    width: 100%;
+    height: 5vh;
+    /* background: -webkit-linear-gradient(to right, #15181A, #15181A);
+    background: linear-gradient(to right, #15181A, #15181A); */
+    background-color: #1CCA9B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.scoreboard-header h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.scoreboard-header > p {
+    font-weight: 400;
+    color: white;
+    padding: 1.8vh;
+    font-family: 'Roboto';
+    font-size: 1.8vh;
+}
+
+.scoreboard-info {
+    padding: 10px;
+}
+
+
+.scoreboard-info-header {
+    position: relative;
+    height: 2vh;
+}
+
+#info-tab-label {
+    position: absolute;
+    font-family: 'Roboto';
+    left: 1vh;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:white;
+}
+
+#status-tab-label {
+    position: absolute;
+    font-family: 'Roboto';
+    right: 3vh;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:white;
+}
+
+.info-beam-title {
+    position: absolute;
+    font-family: 'Roboto';
+    font-size: 1.2vh;
+    font-weight: 400;
+    letter-spacing: 0.1vh;
+    left: 1vh;
+    line-height: 4.25vh;
+    color:white;
+}
+
+.info-beam-status {
+    position: absolute;
+    font-family: 'Roboto';
+    font-size: 1.2vh;
+    font-weight: 400;
+    right: 3vh;
+    float: left;
+    text-align: left;
+    line-height: 4.25vh;
+    color:white;
+}
+
+#uptime {
+    font-family: 'Roboto';
+    font-size: 1.2vh;
+    font-weight: 400;
+    letter-spacing: 0.1vh;
+    left: 1vh;
+    line-height: 4.25vh;
+    color:white;
+    text-align: center;
+}
+
+.info-player-status {
+    position: absolute;
+    font-family: 'Roboto';
+    right: 3vh;
+    float: left;
+    text-align: left;
+    line-height: 4.25vh;
+    color:white;
+}
+
+.scoreboard-footer {
+    width: 100%;
+    padding: 10px;
+    color:white;
+}
+
+.scoreboard-info-footer {
+    position: relative;
+    height: 4.25vh;
+    width: 100%;
+    text-align: center;
+}
+
+.scoreboard-info-beam {
+    position: relative;
+    height: 4.25vh;
+    width: 100%;
+}
+
+.fa-times {
+    color: rgb(170, 27, 27);
+}
+
+.fa-check {
+    color: rgb(59, 141, 49);
+}
+
+.fa-clock {
+    color: rgb(255, 190, 50);
+}
+
+.sb-logo {
+    width: 15vh;
+    margin: 0.6vh;
+}

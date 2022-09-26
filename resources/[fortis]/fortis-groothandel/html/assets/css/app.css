@@ -1,0 +1,765 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    box-sizing: border-box;
+    
+    --zwart: #000;
+    --wit: #fff;
+
+    --blauw: #0090e3;
+    --donkerblauw: #0082ce;
+    --rood: #FF5F56;
+
+    --extrabold: 900;
+    --bold: 700;
+    --extramedium: 600;
+    --medium: 500;
+    --regular: 400;
+    --light: 300;
+    --extralight: 200;
+    --thin: 100;
+}
+
+/* Scrollbalk */
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Work Sans", sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+input, button {
+    font-family: "Work Sans", sans-serif;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.laptop-wrapper {
+    width: 80vw;
+    height: 80vh;
+    border-top: 30px solid #1b1b1b;
+    border-right: 30px solid #1b1b1b;
+    border-left: 30px solid #1b1b1b;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-image: url("../images/wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.laptop-bottom {
+    width: 80vw;
+    background-image: url("../images/laptoprand.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 75px;
+}
+
+/* Top menu navigation bar */
+.top-menu {
+    width: 100%;
+    padding: 5px 15px 5px 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 999;
+    position: relative;
+}
+
+.top-menu .left, .right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.top-menu .left p {
+    font-size: 1rem;
+    font-weight: var(--medium);
+    letter-spacing: 0.5px;
+    color: var(--wit);
+}
+
+.top-menu .right p {
+    font-size: 1rem;
+    font-weight: var(--light);
+    letter-spacing: 0.5px;
+    color:var(--wit);
+}
+
+.top-menu .left i.menu-icon {
+    font-size: 1.2rem;
+    color: var(--wit);
+}
+
+.top-menu button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.top-menu button i {
+    font-size: 1rem;
+    color: var(--wit);
+}
+
+.top-menu .apple-menu {
+    width: 200px;
+    padding: 10px 0px;
+    position: absolute;
+}
+.top-menu .apple-menu div {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: -4px;
+    text-align: left;
+    padding: 5px 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.top-menu .apple-menu div span {
+    width: 100%;
+    color: var(--wit);
+    font-size: 1rem;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Bottom menu met apps */
+.bottom-menu-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.bottom-menu-menu {
+    padding: 10px;
+    height: 85px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 30px;
+    margin: 30px;
+}
+
+.bottom-menu-menu img {
+    transition: .35s ease-in-out;
+    margin: 0px 10px;
+}
+.bottom-menu-menu img:hover {
+    transform: scale(1.3);
+}
+
+.bottom-menu-menu .bottom-divider {
+    display: inline-block;
+    height: 100%;
+    width: 2px;
+    background-color: #ccc;
+    opacity: 0.3;
+}
+
+/* Tooltip TOP */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    margin-bottom: 20px;
+}
+
+/* Programma default border etc. */
+.programma {
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: #ECECEC;
+    border-radius: 10px;
+    top: 80px;
+    left: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.programma-acties {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    background-color: #d4d4d4;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.programma-acties div {
+    min-width: 33.33%;
+}
+
+.programma-acties div p {
+    text-align: center;
+    color: var(--zwart);
+    font-size: 1rem;
+    font-weight: var(--regular);
+}
+
+.programma-acties button {
+    outline: none;
+    border: none;
+    background: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin-right: 7px;
+    cursor: pointer;
+}
+.programma-acties button.close {
+    background-color: #FF5F56;
+}
+.programma-acties button.minimize {
+    background-color: #FFBD2E;
+}
+.programma-acties button.fullscreen {
+    background-color: #27C93F;
+}
+.active-app {
+    z-index: 5;
+}
+
+/* Handel app */
+.handel-keuze-menu {
+    width: 100%;
+    height: calc(100% - 35px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../images/handel-achtergrond.jpg');
+    background-position: center;
+    background-size: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.handel-keuze-menu span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.handel-keuze-menu h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--wit);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.handel-keuze-menu p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--wit);
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.handel-keuze-menu button {
+    outline: none;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    color: var(--wit);
+    background-color: var(--blauw);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0px 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+.handel-keuze-menu button:hover {
+    background-color: var(--donkerblauw);;
+}
+
+
+.handel-inkopen-wrapper {
+    width: 100%;
+    height: calc(100% - 35px);
+    overflow-y: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+}
+
+.handel-inkopen-wrapper button.terug-btn {
+    outline: none;
+    border: none;
+    color: var(--blauw);
+    font-size: 2rem;
+    transition: .25s ease-in-out;
+    cursor: pointer;
+}
+
+.handel-inkopen-wrapper button.terug-btn:hover {
+    color: var(--donkerblauw);
+}
+
+.handel-inkopen-wrapper h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--zwart);
+    margin-bottom: 5px;
+}
+
+.handel-inkopen-wrapper p {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--zwart);
+    opacity: 0.6;;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr.top-tr {
+    background-color: rgb(218, 218, 218);
+    border-top: 4px solid var(--blauw);
+}
+
+table th {
+    width: 20%;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--zwart);
+}
+
+table th,td {
+    padding: 10px 5px;
+    border-left: 1px solid rgb(218, 218, 218);
+    border-right: 1px solid rgb(218, 218, 218);
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+table td.transport-type {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--blauw);
+}
+
+table td button {
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: var(--blauw);
+    border-radius: 5px;
+    color: var(--wit);
+    padding: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+
+table td button:hover {
+    background-color: var(--donkerblauw);
+}
+
+table td .verkoop-btn-start-disabled {
+    opacity: 0.5;
+}
+
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    /* width: 120px; */
+    font-size: .8rem;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+} 
+.tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+}
+
+/* Magazijn app */
+.magazijn-app-wrapper {
+    width: 100%;
+    height: calc(100% - 35px);
+    overflow-y: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.magazijn-app-wrapper h2 {
+    font-size: 2rem;
+    color: var(--zwart);
+    font-weight: var(--extramedium);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.magazijn-app-statistieken {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.magazijn-app-statistieken div {
+    width: 250px;
+    background-color: var(--wit);
+    padding: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 4px solid var(--blauw);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: .25s ease-in-out;
+    margin: 10px;
+}
+.magazijn-app-statistieken div:hover {
+    border-top: 4px solid var(--donkerblauw);
+    background-color: rgb(224, 224, 224);
+}
+
+.magazijn-app-statistieken div h4 {
+    font-size: 1.05rem;
+    color: var(--zwart);
+}
+
+.magazijn-app-statistieken div h3 {
+    font-size: 1.6rem;
+    color: var(--zwart);
+}
+
+.magazijn-app-statistieken div .bank-opneem-btn {
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--wit);
+    background-color: var(--blauw);
+    transition: .25s ease-in-out;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.magazijn-app-statistieken div .bank-opneem-btn:hover {
+    background-color: var(--donkerblauw);
+}
+
+.magazijn-app-wrapper .werknemer-form {
+    width: 90%;
+    margin: auto;
+    margin: auto;
+    display: block;
+}
+
+.magazijn-app-wrapper .werknemer-form .werknemer-error {
+    width: 50%;
+    background-color: var(--rood);
+    color: var(--wit);
+    padding: 5px;
+    font-size: 1rem;
+    margin: auto;
+    display: block;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.magazijn-app-wrapper .werknemer-form p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.magazijn-app-wrapper .werknemer-form span {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.magazijn-app-wrapper .werknemer-form span input[type="text"] {
+    outline: none;
+    border: none;
+    width: 250px;
+    background-color: var(--wit);
+    font-size: 1rem;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.magazijn-app-wrapper .werknemer-form span button {
+    outline: none;
+    border: none;
+    width: 100px;
+    font-size: 1rem;
+    color: var(--wit);
+    background-color: var(--blauw);
+    transition: .25s ease-in-out;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.magazijn-app-wrapper .werknemer-form span button:hover {
+    background-color: var(--donkerblauw);
+}
+
+.magazijn-app-wrapper .werknemer-form table {
+    margin-top: 30px;
+}
+
+.magazijn-app-wrapper .werknemer-form .slot-bijkopen-btn {
+    outline: none;
+    border: none;
+    width: 450px;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--wit);
+    background-color: var(--blauw);
+    transition: .25s ease-in-out;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.magazijn-app-wrapper .werknemer-form .slot-bijkopen-btn:hover {
+    background-color: var(--donkerblauw);
+}
+
+.magazijn-app-wrapper .werknemer-form .slot-bijkopen-btn:disabled {
+    opacity: 0.5;
+}
+
+/* Voertuigen */
+.magazijn-app-wrapper .voertuigen-form {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voertuigen-form div {
+    width: 250px;
+    background-color: var(--wit);
+    align-items: center;
+    padding: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 4px solid var(--blauw);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: .25s ease-in-out;
+    margin: 10px;
+    justify-content: center;
+}
+
+.voertuigen-form h3 {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 2px;
+}
+
+.voertuigen-form img {
+    width: 230px
+}
+
+.voertuigen-form div .koop-voertuig-btn {
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--wit);
+    background-color: var(--blauw);
+    transition: .25s ease-in-out;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.voertuigen-form div .koop-voertuig-btn:hover {
+    background-color: var(--donkerblauw);
+}
+
+.voertuigen-form div .koop-voertuig-btn:disabled {
+    opacity: 0.5;
+}
+
+/* Markt soon */
+.markt-soon-dingus {
+    width: 100%;
+    height: calc(100% - 35px);
+    background-image: url('../images/marktsoon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Specialisaties */
+.specialisatie-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.specialisatie-wrapper p.uitleg-txt {
+    text-align: center;
+    width: 400px;
+    font-size: .9rem;
+    line-height: 23px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.specialisatie-wrapper .specialisatie-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.specialisatie-wrapper .specialisatie-boxes div {
+    width: 190px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: var(--wit);
+}
+
+.specialisatie-wrapper .specialisatie-boxes div p {
+    font-size: 1.1rem;
+}
+
+.specialisatie-wrapper .specialisatie-boxes div span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.specialisatie-wrapper button {
+    outline: none;
+    border: none;
+    width: 400px;
+    font-size: 1rem;
+    color: var(--wit);
+    background-color: var(--blauw);
+    transition: .25s ease-in-out;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* VueJS transitions */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+.bouncefast-enter-active {
+    animation: bouncefast-in .2s ease-out both;
+}
+  
+.bouncefast-leave-active {
+    animation: bouncefast-in .1s reverse ease-in both;
+}
+  
+@keyframes bouncefast-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+

@@ -1,0 +1,164 @@
+<!-- Gemaakt door: Finn#0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <title>Fortis Karakterscherm</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    
+<main id="app">
+    <transition name="fade">
+    <div v-if="showMenu" class="wrapper">
+
+        <!-- Begin karakters onderaan -->
+        <div v-if="karakters" class="karakters-wrapper">
+
+            <transition name="fade2">
+            <div class="karakters-wrapper-disabled" v-if="!magSelecteren">
+                <div class="loader"></div>
+            </div>
+            </transition>
+
+            <span v-for="(karakter, index) in karakters" :key="karakter">
+                <div v-if="karakter !== undefined" class="karakter-box" @click="selecteerKarakter(index)" :class="{'karakter-box-hide': !magSelecteren, 'karakter-box-hover': !karakter.selected}">
+                    <p><i class="fas fa-user"></i> <span style="text-transform: capitalize;">{{karakter.charinfo.firstname}} {{karakter.charinfo.lastname}}</span><br><i class="fas fa-mars" v-if="karakter.charinfo.gender == 'man'"></i><i class="fas fa-venus" v-else></i> <span style="text-transform: capitalize;">{{karakter.charinfo.gender}}</span><br><i class="fas fa-passport"></i> <span style="text-transform: capitalize;">{{karakter.charinfo.nationality}}</span></p>
+                    
+                    <transition name="fade2">
+                    <div class="karakter-actie-icoon speel" v-if="karakter.selected" @click="speelKarakter(karakter)">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    </transition>
+                    <transition name="fade2">
+                    <div class="karakter-actie-icoon verwijder" v-if="karakter.selected" @click="verwijderKarakter(karakter)">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                    </transition>
+                    
+                </div>
+                <div v-else class="karakter-box nieuw-karakter karakter-box-hover" :class="{'karakter-box-hide': !magSelecteren}" @click="nieuwKarakter(index)">
+                    <i class="fas fa-plus"></i>
+                </div>
+
+            </span>
+        </div>
+        <div v-else class="begin-laden">
+            <div class="loader-wrapper">
+                <div class="loader"></div>
+            </div>
+            <h1>Karakters inladen...</h1>
+        </div>
+        <!-- Einde karakters onderaan -->
+
+        <!-- Begin karakter aanmaak scherm -->
+        <transition name="fade2">
+        <div class="nieuwkarakter-wrapper" v-if="maaktKarakter">
+
+            <div class="nieuwkarakter-container">
+                <div class="nieuwkarakter-top">
+                    <div class="karakter-actie-icoon sluiten" @click="sluitMaakKarakter()">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <img src="images/logo3dklein.png" />
+                </div>
+
+                <form class="nieuwkarakter-content" @submit.prevent="maakKarakter">
+                    <label>Voornaam</label>
+                    <input type="text" placeholder="Voornaam" v-model="nieuwKarakterInfo['voornaam']" onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="event.target.value = event.target.value.replace(/[^A-z-é-í-á-ó-ö^0-9- ]*/g,'');" required>
+                    <br>
+                    <label>Achternaam</label>
+                    <input type="text" placeholder="Achternaam" v-model="nieuwKarakterInfo['achternaam']" onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="event.target.value = event.target.value.replace(/[^A-z-é-í-á-ó-ö^0-9- ]*/g,'');" required>
+                    <br>
+
+                    <label>Geboortedatum</label>
+                    <div class="nieuwkarakter-naastelkaar">
+                        <input type="number" placeholder="Dag" min="1" max="31" v-model="nieuwKarakterInfo['dag']" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" required>
+                        <input type="number" placeholder="Maand" min="1" max="12" v-model="nieuwKarakterInfo['maand']" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" required>
+                        <input type="number" placeholder="Jaar" min="1930" max="2020" v-model="nieuwKarakterInfo['jaar']" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" required>
+                    </div>
+                    <br>
+
+                    <label>Nationaliteit</label>
+                    <select v-model="nieuwKarakterInfo['nationaliteit']" required>
+                        <option value="Nederlands" selected>Nederlands</option>
+                        <option value="Belgisch">Belgisch</option>
+                        <option value="Duits">Duits</option>
+                        <option value="Frans">Frans</option>
+                        <option value="Spaans">Spaans</option>
+                        <option value="Marrokaans">Marrokaans</option>
+                        <option value="Turks">Turks</option>
+                        <option value="Surinaams">Surinaams</option>
+                        <option value="Russisch">Russisch</option>
+                        <option value="Italiaans">Italiaans</option>
+                        <option value="Portugees">Portugees</option>
+                        <option value="Engels">Engels</option>
+                        <option value="Pools">Pools</option>
+                        <option value="Canadees">Canadees</option>
+                        <option value="Amerikaans">Amerikaans</option>
+                        <option value="Chinees">Chinees</option>
+                        <option value="Japans">Japans</option>
+                        <option value="Afrikaans">Afrikaans</option>
+                    </select>
+                    <br>
+
+                    <label>Geslacht</label>
+                    <div class="nieuwkarakter-geslachtbox">
+                        <button type="button" @click="veranderGeslacht('man')" id="geslacht-man"><i class="fas fa-mars"></i> Man</button>
+                        <button type="button" @click="veranderGeslacht('vrouw')" id="geslacht-vrouw"><i class="fas fa-venus"></i> Vrouw</button>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="karakter-opslaan"><i class="fas fa-save"></i> Karakter aanmaken</button>
+                </form>
+            </div>
+
+        </div>
+        </transition>
+        <!-- Einde karakter aanmaak scherm -->
+
+        <!-- Begin karakter verwijder popup -->
+        <transition name="fade2">
+            <div class="karakter-verwijderen-wrapper" v-if="verwijderen">
+                <div class="karakter-verwijderen-container">
+
+                    <div class="karakter-verwijderen-top">
+                        <div class="karakter-actie-icoon sluiten" @click="sluitVerwijderKarakter()">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <img src="images/logo3dklein.png" />
+                    </div>
+
+
+                    <div class="karakter-verwijderen-content">
+                        <h1><i class="fas fa-exclamation-triangle"></i> WAARSCHUWING <i class="fas fa-exclamation-triangle"></i></h1>
+                        <p>Weet je zeker dat je je karakter wilt <span>verwijderen</span>? Deze actie kan niet ongedaan gemaakt worden!</p>
+
+                        <div class="karakter-verwijderen-naastelkaar">
+                            <button type="button" class="verwijder2" :disabled="verwijderBtnDisabled" @click="verwijderKarakterDefinitief()">{{verwijderText}}</button>
+                            <button type="button" @click="sluitVerwijderKarakter()">Annuleren</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+        <!-- Einde karakter verwijder popup -->
+    </div>
+    <div v-else-if="showLaden" class="begin-laden">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+        </div>
+        <h1>Karakters inladen...</h1>
+    </div>
+    </transition>
+</main>
+
+<script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="app.js"></script>
+<script src="https://kit.fontawesome.com/0724c1067d.js" crossorigin="anonymous"></script>
+</body>
+</html>

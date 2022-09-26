@@ -1,0 +1,48 @@
+Permissions List
+
+chocohax.immune (Immune users cannot be banned,kicked,muted,teleported,etc...)
+
+
+[[Client Sided Permissions]]
+-- Permissions required to execute commands or functions (Also prevent from getting banned)
+
+chocohax.adminmenu - Allow to Load and Open Admin Menu
+chocohax.noclip - Allow to use Noclip
+chocohax.esp - Allow to use ESP
+chocohax.vehicles - Allow to use client sided Vehicles functions
+chocohax.weapons - Allow to use client sided Weapons functions (Also prevent from getting detected by Blacklisted Weapons Clientside)
+chocohax.blips - Allow to use Blips functions (Also prevent from getting detected by using Blips)
+chocohax.debugMenu - Allow to use Debug Menu
+chocohax.teleports - Allow to use Teleport functions
+chocohax.showcoords - Allow to use Show Coords function
+chocohax.reloadbans - Allow to use Reload Bans commands/functions
+chocohax.reloadchat - Allow to use Reload Chat commands/functions
+chocohax.reloadmuted - Allow to use Reload Muted commands/functions
+chocohax.cleararea - Allow to use ClearArea commands/functions
+chocohax.kick - Allow to Kick an user 
+chocohax.mute - Allow to Mute and Unmute an user
+chocohax.ban - Allow to Ban an user 
+chocohax.unban - Allow to Unban an user
+- NEW chocohax.admincmds - Allow the user to use `lynx admin` commands (this feature will be used in the future)
+chocohax.requestidentifiers - Allow to use Request Identifiers
+chocohax.spectate - Allow to use Spectate functions (Also prevent from getting detected by Spectating)
+chocohax.screenshot - Allow to use screenshot features
+- NEW chocohax.resourcechecker - Prevent from being resource checked if using RC.ResourceChecker
+
+[[Server Sided Permissions]]
+-- Permissions required to bypass the anticheat server side detections
+
+chocohax.commands -- Allow the user to use `lynx` command (Required for client side aswell)
+chocohax.login - Joining Checks (BAN,GLOBALBAN,NAME,IDENTIFIERS)
+chocohax.blacklistedevents - Blacklistedevents Checks
+chocohax.protectedevents - ProtectedEvents Checks
+chocohax.chat - Chat Checks (Muted,AntiFakeName)
+chocohax.explosion - Explosions
+chocohax.clearpedtasksimmediately - ClearPedTasksImmediately Checks
+chocohax.antinuke - Anti Nuke Peds/Vehicles/Objects
+chocohax.entities - Blacklisted Entities Checks (Blacklisted Peds,Vehicles,Objects)
+chocohax.chocohaxai - ChocoHax AI Checks
+chocohax.projectiles - Projectile Events
+chocohax.fxparticles - FxParticles Events
+chocohax.trustfactor - Bypass TrustFactor, VPN Check and Server Sided Checks (Godmode,Invisibility,SuperJump)
+chocohax.secly - Bypass Secly Detections

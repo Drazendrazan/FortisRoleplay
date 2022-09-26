@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="js/mousewheel.js"></script>
+</head>
+<body>
+    <div id="mainContainer">
+        
+        <div id="app">
+            <div class="cardealer-home" v-if="navAutos">
+                <button @click="openHome()"><i class="fas fa-angle-double-left"></i> Terug</button>
+            </div>
+
+            <transition name="slide-fade">
+            <div class="loader-wrapper" v-if="laden">
+                <div class="loader"></div>
+                <p>Een moment geduld...</p>
+            </div>
+            </transition>
+
+
+
+            <div class="cardealer-main">
+                <div class="cardealer-main-infobox" id="cardealerinfo">
+                    <h1>{{currentVoertuigNaam}}</h1>
+                    <h2><i class="fas fa-money-bill-wave"></i> €{{currentVoertuigPrijs}}</h2>
+                    <h2><i class="fas fa-car"></i> {{currentVoertuigMerk}}</h2>
+                    <h2><i class="fas fa-weight-hanging"></i> {{currentVoertuigkofferbak}}kg</h2>
+
+                    <div class="cardealer-main-infobox-knoppen">
+                        <button @click="proefrit"><i class="fas fa-road"></i> Proefrit</button>
+                        <button @click="kopen">Kopen <i class="fas fa-shopping-cart"></i> </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardealer-navigator" id="scroller">
+                <div class="home" v-if="navAutos">
+
+                </div>
+
+                <transition name="slide-fade">
+                <div class="cardealer-navigator-wrapper" v-if="navCategorie" id="scroll1"> <!-- Categorieen -->
+                    <!-- <p>{{autoData}}</p> -->
+                    <div class="cardealer-navigator-box-cat" v-for="(categorie, index) in autoData.categorieen" :key="categorie.key" @click="openCategorie(categorie.key)">
+                        <h1>{{categorie.naam}}</h1>
+                        <h2>{{categorie.beschrijving}}</h2>
+                    </div>
+                </div>
+                </transition>
+
+                <transition name="slide-fade">
+                <div class="cardealer-navigator-wrapper" v-if="navAutos" id="scroll2"> <!-- Voertuigen -->
+                    <div class="cardealer-navigator-box-cat" v-for="(voertuig, index) in autoData.voertuigen[currentCategorie]" :key="voertuig.id" @click="previewVoertuig(voertuig.spawnNaam, index)">
+                        <h1>{{voertuig.naam}}</h1>
+                        <h2>€{{voertuig.prijs}}</h2>
+                    </div>
+                </div>
+                </transition>
+
+            </div>
+        </div>
+
+    </div>
+
+<script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+<script src="js/app.js"></script>
+<script src="https://kit.fontawesome.com/0724c1067d.js" crossorigin="anonymous"></script>
+</body>
+</html>

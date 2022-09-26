@@ -1,0 +1,348 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+
+* {
+    box-sizing: border-box;
+
+    --zwart: #1f1f1f;
+    --wit: #ffffff;
+}
+
+body {
+    font-family: "Open Sans";
+    font-size: 16px;
+    overflow: hidden;
+}
+
+#beheerComputer {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.beheerComputer-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.nav-container {
+    background-color: #f8f8f8;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.nav-items-right {
+    text-align: right;
+}
+
+.nav-items-left {
+    display: none;
+    font-size: 25px;
+    position: absolute;
+    text-align: left;
+}
+
+.nav-items-left button {
+    border: none;
+    background: none;
+}
+
+.beheerComputer-container {
+    width: 80vw;
+    height: 80vh;
+    border-top: 15px solid var(--zwart);
+    border-left: 15px solid var(--zwart);
+    border-right: 15px solid var(--zwart);
+    border-bottom: 45px solid var(--zwart);
+    border-radius: 10px;
+    background-image: url("img/background.jpg");
+    background-size: 100%;
+}
+
+/* .beheerComputer-container::after {
+    content: '';
+    position: absolute;
+    top: 87vh;
+    left: 50%;
+    width: 45px;
+    height: 45px;
+    transform: translate(-50%, -50%);
+    border-top: inherit;
+    border-top-color: transparent;
+} */
+
+
+/* Beginscherm */
+.beginscherm-wrapper {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.begin-knoppen button {
+    background: none;
+    border: none;
+    background-color: #fffdf6;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 300px;
+    height: 350px;
+    padding: 10px;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.begin-knoppen button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    width: 310px;
+    height: 365px;
+    cursor: pointer;
+}
+
+.begin-knoppen img {
+    width: 90%;
+    height: 80%;
+    padding: 10px;
+}
+
+.begin-knoppen h1 {
+    font-size: 30px;
+    font-family: Trebuchet MS;
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.22);
+}
+
+/* Mijn servers */
+.scherm-wrapper {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .serverdata { 
+    width: 80%;
+} */
+
+.servers-lijst {
+    position: relative;
+    display: none;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.servers-lijst table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.servers-lijst td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#no-result {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#no-result img {
+    margin: 10px;
+}
+
+.servers-buttons {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+}
+
+table button {
+    display: block;
+    border: 1px solid rgba(0,0,0,0.22);
+    background-color: #e67b7b;
+    padding: 10px;
+    color: var(--wit);
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.22);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.5s;
+    margin: auto;
+}
+
+table button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 5px -18px inset;
+}
+
+.servers-buttons button {
+    border: 1px solid rgba(0,0,0,0.22);
+    background-color: #e67b7b;
+    padding: 10px;
+    color: var(--wit);
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.22);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.3s;
+    margin-bottom: 5px;
+}
+
+.servers-buttons button:hover {
+    padding: 11px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.servers-buttons input {
+    padding: 9px;
+}
+
+/* Onderdelen */
+.onderdelen-lijst {
+    display: none;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.onderdelen-nav {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    background-color: rgb(59, 59, 59);
+    height: 9vh;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.small-info {
+    margin-left: 2.5em
+}
+
+.searchbar {
+    float: right;
+}
+
+.searchbar input {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.searchbar button {
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.onderdelen-shop {
+    padding: 20px;
+}
+
+.onderdelen-banner {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.22);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+} 
+
+.onderdelen-titel {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    color: #1CCA9B;
+    border-bottom: 1px solid var(--zwart);
+    width: 100%;
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.22);
+}
+
+.onderdelen-wrapper {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+}
+
+.onderdeel {
+    border: 1px solid var(--zwart);
+    background-color: #ececec;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align: center;
+    width: 200px;
+    height: 280px;
+    padding: 10px;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.onderdeel button {
+    color: var(--wit);
+    border: 1px solid rgba(0,0,0,0.22);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #64cfb3;
+    padding: 5px;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+
+.onderdeel button:hover {
+    padding: 6px;
+}
+
+.onderdeel h2 {
+    font-size: 20px;
+}
+
+.onderdeel img {
+    width: 100%;
+}
+
+.onderdeel p {
+    font-size: 25px;
+}
+
+/* .onderdeel button {
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    border: none;
+    background-color: rgb(226, 253, 185);
+} */
+
+.onderdeel:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 210px;
+    height: 290px;
+    cursor: pointer;
+}
+
+.onderdeel input {
+    margin-top: 10px;
+    width: 70px;
+    height: 25px;
+    border: 1px solid rgba(0,0,0,0.22);
+    border-radius: 2px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

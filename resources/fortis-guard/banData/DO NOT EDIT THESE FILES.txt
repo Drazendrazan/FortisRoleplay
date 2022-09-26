@@ -1,0 +1,2 @@
+Do not edit banData files, You may break the ban system.
+use `lynx unban` or `lynx ban` commands instead.

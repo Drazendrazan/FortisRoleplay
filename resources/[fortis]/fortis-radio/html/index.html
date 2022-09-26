@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Fortis Radio</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+	<audio id="audio_on" src="on.ogg"></audio>
+	<audio id="audio_off" src="off.ogg"></audio>
+
+
+	<div class="radio-wrapper">
+		<div class="radio-main" id="radio">
+
+			<input type="number" placeholder="Frequentie" id="frequentie" min="1" max="1000" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+			<input type="text" placeholder="Naam" id="naam" onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="event.target.value = event.target.value.replace(/[^A-z-é-í-á-ó-ö^0-9- ]*/g,'');">
+			<button onclick="verbind()" class="verbind"></button>
+			<button onclick="verbreek()" class="verbreek"></button>
+
+		</div>
+	</div>
+
+	<div id="app">
+		<div class="portofoon-lijst" v-if="verbonden">
+			<h1>Verbonden:</h1>
+			<div v-for="current in verbondenGebruikers">
+				<p>{{current.naam}}</p>
+			</div>
+		</div>
+	</div>
+
+<script src="https://unpkg.com/vue@3.0.11"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortis Lifeinvader</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+    <main id="app" v-if="show">
+        <transition name="fade"><div class="achtergrond">
+
+            <!-- Knoppen -->
+            <div class="knoppen" :class="{ knop1: stage1, knop2: stage2, knop3: stage3, knop4: stage4, knop5: stage5, knop6: stage6 }">
+                <transition name="fade"><div v-if="timer" class="timer"></div></transition>
+
+                <transition name="fade"><button class="stage1" v-if="stage1" id="stage1"><div @click="stage(1)"></div></button></transition>
+                <transition name="fade"><button class="stage2" v-if="stage2" id="stage2"><div @click="stage(2)"></div></button></transition>
+                <transition name="fade"><button class="stage3" v-if="stage3" id="stage3"><div @click="stage(3)"></div></button></transition>
+                <transition name="fade"><button class="stage4" v-if="stage4" id="stage4"><div @click="stage(4)"></div></button></transition>
+                <transition name="fade"><button class="stage5" v-if="stage5" id="stage5"><div @click="stage(5)"></div></button></transition>
+                <transition name="fade"><button class="stage6" v-if="stage6" id="stage6"><div @click="stage(6)"></div></button></transition>
+            </div>
+
+        </div></transition>
+
+        <!-- Geluidseffect -->
+        <iframe id="alarm" style="display:none;" allow="autoplay">
+            <source src="alarm.mp3" type="audio/mp3">
+        </iframe>
+    </main>
+
+<script src="https://unpkg.com/vue@3.0.11"></script>
+<script src="js/app.js"></script>
+<script src="https://kit.fontawesome.com/0724c1067d.js" crossorigin="anonymous"></script>
+</body>
+</html>

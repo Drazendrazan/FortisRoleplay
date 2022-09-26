@@ -1,0 +1,78 @@
+.hulpdiensten-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+
+.hulpdiensten-header {
+    width: 100%;
+    padding: 20px;
+    background-color: #004682;
+}
+
+.hulpdiensten-header h1 {
+    padding-top: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hulpdiensten-selectie {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+.hulpdiensten-selectie p {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hulpdiensten-selectie button {
+    outline: none;
+    border: none;
+    width: 85%;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #b4b4b4;
+}
+
+.hulpdiensten-bericht-container {
+    display: none;
+}
+
+.hulpdiensten-bericht-container textarea {
+    outline: none;
+    border: none;
+    width: 85%;
+    resize: none;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.hulpdiensten-bericht-container button {
+    border: none;
+    outline: none;
+    width: 85%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
+    margin: auto;
+    display: block;
+    background-color: #b4b4b4;
+}

@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortis Bitcoin Laptop</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<div id="beheerComputer">
+    <div class="beheerComputer-wrapper">
+        <div class="beheerComputer-container">
+            <!-- Navigatie bar -->
+            <nav>
+                <div class="nav-container">
+                    <div class="nav-items-left">
+                        <button onclick="Beginscherm()"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                    <div class="nav-items-right">
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Beginscherm -->
+            <div class="beginscherm-wrapper">
+                <!-- <div><img src="img/logo.png" style="width: 200px;"></div> -->
+                <div class="begin-knoppen">
+                    <button onclick="OpenServers()">
+                        <img src="img/rack2.png">
+                        <h1>MIJN SERVERS</h1>
+                    </button>
+                    <button onclick="OpenShop()">
+                        <img src="img/parts.png">
+                        <h1>ONDERDELEN</h1>
+                    </button>
+                </div>
+            </div>
+
+            <div class="scherm-wrapper">
+                <!-- Mijn servers -->
+                <div class="servers-lijst">
+                    <table id="serverdata">
+                        <tr class="servers-nav" style="font-weight: bolder;">
+                          <th>Rack ID</th>
+                          <th>Warmte</th>
+                          <th>Processor</th>
+                          <th>GPU</th>
+                          <th>Bitcoins</th>
+                          <th style="width: 50px;">Actie</th>
+                        </tr>
+                    </table>
+                    <div id="no-result">
+                        <img src="img/noresults.png" width="40px">
+                        <h1>Je hebt op dit moment geen serverkasten in je huis staan...</h1>
+                    </div>
+                    <div class="servers-buttons">
+                        <!-- <input type="number" placeholder="RackID" id="probleemverhelpen" name="probleemverhelpen"> -->
+                        <!-- <button style="background-color: #e67b7b;" onclick="serverVerwijderen()"><i class="fas fa-trash"></i></button> -->
+                        <!-- <button style="background-color: #e6b47b;" onclick="verhelpProbleem()">Problemen verhelpen</button> -->
+                        <button id="total-bitcoins" style="background-color: #64cfb3;" onclick="uitbetalen()">Laden...</button>
+
+                        <!-- <div class="server-verwijderen">
+                            <button style="background-color: #e67b7b;" onclick="serverVerwijderen()"><i class="fas fa-trash"></i></button>
+                        </div> -->
+                    </div>
+
+                </div>
+ 
+                <!-- Onderdelen -->
+                <div class="onderdelen-lijst">
+                    <div class="onderdelen-nav">
+                        <div class="small-info"> <i class="fas fa-money-check"></i> Betaal veilig & zonder extra kosten! &nbsp; &nbsp; <i class="fas fa-clock"></i> Vandaag besteld, vandaag nog in huis! &nbsp; &nbsp; <i class="fas fa-star"></i> 4,5 ster reviews!</div>
+                        <div class="shop-logo" style="font-size: 40px; font-family: Open Sans; float: left;">FORTECH.NL</div> 
+
+                        <div class="searchbar">
+                            <input type="text" placeholder="Zoeken.." name="search">
+                        </div>
+                    </div>
+                    <div class="onderdelen-shop">
+                        <img src="img/banner.png" class="onderdelen-banner">
+                        <h1 class="onderdelen-titel">ALLE PRODUCTEN</h1>
+                        <div class="onderdelen-wrapper">
+                            <div class="onderdeel">
+                                <h2>MSI Videokaart</h2>
+                                <img src="img/videokaart.png">
+                                <p>€1.300</p>
+                                <input type="number" placeholder="Aantal" min="1" max="11" id="amountbutton1" name="amountbutton1" required>
+                                <button id="koop-button1" onclick="BestelOnderdeelGPU()"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+
+                            <div class="onderdeel">
+                                <h2>Aorus Videokaart</h2>
+                                <img src="img/videokaart2.png">
+                                <p>€1.300</p>
+                                <input type="number" placeholder="Aantal" min="1" max="11" id="amountbutton2" name="amountbutton2" required>
+                                <button id="koop-button2" onclick="BestelOnderdeelGPU2()"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+
+                            <div class="onderdeel">
+                                <h2>AMD Processor</h2>
+                                <img src="img/processor2.png">
+                                <p>€880</p>
+                                <input type="number" placeholder="Aantal" min="1" max="11" id="amountbutton3" name="amountbutton3" required>
+                                <button id="koop-button3" onclick="BestelOnderdeelProcessor()"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+
+                            <div class="onderdeel">
+                                <h2>Intel Processor</h2>
+                                <img src="img/processor.png">
+                                <p>€880</p>
+                                <input type="number" placeholder="Aantal" min="1" max="11" id="amountbutton4" name="amountbutton4" required>
+                                <button id="koop-button4" onclick="BestelOnderdeelProcessor2()"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+    
+                            <div class="onderdeel">
+                                <h2>Koelpasta</h2>
+                                <img src="img/koelpasta.png">
+                                <p>€250</p>
+                                <input type="number" placeholder="Aantal" min="1" max="11" id="amountbutton5" name="amountbutton5" required>
+                                <button id="koop-button5" onclick="BestelOnderdeelKoelpasta()"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="shitgekocht" src="gekocht.ogg"></audio>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.5/dist/sweetalert2.all.min.js"></script>
+<!-- <script src="https://unpkg.com/vue@3.0.11"></script> -->
+<script type="text/javascript" src="app.js" async></script>
+<script type="text/javascript" src="all.min.js" async></script>
+</body>
+</html>

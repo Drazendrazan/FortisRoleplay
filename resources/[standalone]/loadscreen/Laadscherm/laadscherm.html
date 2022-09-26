@@ -1,0 +1,60 @@
+<html lang="en" onclick="jump()">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortis Roleplay Laadscherm</title>
+  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<audio controls loop autoplay hidden id="muziek">
+  <source src="muziek.mp3" type="audio/mp3">
+</audio>
+
+<main>
+  <div class="cursor"></div>
+  <div class="laadscherm-main-achtergrond" id="achtergrond"></div>
+  <div class="laadscherm-main">
+    <button onclick="openGame()"><img src="assets/images/letter.png"  class="animate__animated animate__pulse animate__infinite animate__slow" id="laadschermLogo" /></button>
+    <h1 id="laadschermText"><span id="word" class="typewrite" data-period="2000" data-woorden='["Fortis Roleplay", "Waar de spelers op #1 staan!", "Alles wordt ingeladen...", "Veel plezier op het eiland!"]'></span><span class="typeStreep">|</span></h1>
+    <div id="laadbalk"></div>
+    
+    <div id="game">
+      <p>Score: <span id="scoreSpan"></span></p>
+      <div id="character"></div>
+      <div id="block"></div>
+    </div>
+  </div>
+  <p id="muziek-uitleg-txt">Druk op de spatiebalk om de muziek op pauze te zetten</p>
+</main>
+
+<script>
+  var muziek = document.getElementById("muziek");
+  muziek.volume = 0.2;
+
+
+  var muziekStatus = true;
+
+  document.body.onkeyup = function(e){
+    if (e.keyCode == 32) {
+      if (muziekStatus == true) {
+        muziek.pause();
+        muziekStatus = false;
+        document.getElementById("muziek-uitleg-txt").innerHTML = "Druk op spatiebalk om de muziek te hervatten";
+      } else {
+        muziek.play();
+        muziekStatus = true;
+        document.getElementById("muziek-uitleg-txt").innerHTML = "Druk op de spatiebalk om de muziek op pauze te zetten";
+      }
+    }
+  }
+</script>
+
+<script src="assets/scripts/type.js"></script>
+<script src="assets/scripts/achtergrond.js"></script>
+</body>
+</html>

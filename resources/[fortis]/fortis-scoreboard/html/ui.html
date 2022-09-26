@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./reset.css">
+    <title>Fortis Scoreboard</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="scoreboard-block">
+                <div class="scoreboard-header">
+                    <h1>Fortis Roleplay</h1>
+                </div>
+                
+                <div class="scoreboard-info">
+                    <div class="scoreboard-info-header">
+                        <div id="info-tab-label"><p><u>Type</u></p></div>
+                        <div id="status-tab-label"><p><u>Status</u></p></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="burger">
+                        <div class="info-beam-title"><p>Burger overval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="storerobbery">
+                        <div class="info-beam-title"><p>Winkeloverval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="houserobbery">
+                        <div class="info-beam-title"><p>Huisinbraken</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="lifeinvader">
+                        <div class="info-beam-title"><p>Lifeinvader overval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="gevangenisuitbraak">
+                        <div class="info-beam-title"><p>Gevangenisuitbraak</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="bankrobbery">
+                        <div class="info-beam-title"><p>Bankoverval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="jewellery">
+                        <div class="info-beam-title"><p>Juwelieroverval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="trainheist">
+                        <div class="info-beam-title"><p>Trein Overval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div> 
+                    <div class="scoreboard-info-beam" data-type="humaneheist">
+                        <div class="info-beam-title"><p>Humanelabs Overval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>  
+                    <div class="scoreboard-info-beam" data-type="pacific">
+                        <div class="info-beam-title"><p>Pacific Bank</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="agent">
+                        <div class="info-beam-title"><p>Agenten overval</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="ambulance">
+                        <div class="info-beam-title"><p>Ambulance</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="anwb">
+                        <div class="info-beam-title"><p>ANWB</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    <div class="scoreboard-info-beam" data-type="makelaar">
+                        <div class="info-beam-title"><p>Makelaars</p></div>
+                        <div class="info-beam-status"></div>
+                    </div>
+                    
+                    <div class="scoreboard-info-footer">
+                        <div class="info-beam-title"><p>Spelers:</p></div>
+                        <div class="info-beam-status" id="total-players"></div>
+                    </div>
+                    <p id="uptime">Uptime: KAN_NIET_GELADEN_WORDEN</p>
+                </div>
+            </div>
+        </div> 
+        <script src="./app.js"></script>
+    </body>
+</html>

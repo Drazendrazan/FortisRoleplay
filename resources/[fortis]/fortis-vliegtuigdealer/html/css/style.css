@@ -1,0 +1,287 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    box-sizing: border-box;
+
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1CCA9B;
+    transition: .25s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #138D6C;
+}
+
+
+body {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    z-index: 102;
+}
+
+#mainContainer {
+    display: none;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardealer-main {
+    width: 100vw;
+    height: 90vh;
+}
+
+.cardealer-main-infobox {
+    display: none;
+    margin: 20px;
+    width: 400px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 8px solid var(--white);
+    color: var(--white);
+}
+
+.cardealer-main-infobox h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cardealer-main-infobox h2 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.cardealer-main-infobox-knoppen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cardealer-main-infobox-knoppen button {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 50px;
+    border-top: 8px solid var(--white);
+    background-color: #1CCA9B;
+    color: var(--white);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 3px;
+    transition: .25s ease-in-out;
+}
+
+.cardealer-main-infobox-knoppen button:hover {
+    border-top: 8px solid #1CCA9B;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.cardealer-navigator {
+    width: 100vw;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+}
+
+.cardealer-navigator-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardealer-home {
+    position: fixed;
+    top: 20;
+    right: 20;
+}
+
+.cardealer-home button {
+    outline: none;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 150px;
+    padding: 10px;
+    background-color: var(--white);
+    transition: .25s ease-in-out;
+    border-top: 8px solid var(--black);
+}
+
+.cardealer-home button:hover {
+    border-top: 8px solid var(--white);
+    color: var(--white);
+    background-color: var(--black);
+}
+
+
+/* Categorien */
+.cardealer-navigator-box-cat {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 8px solid var(--white);
+    padding: 20px;
+    transition: .25s ease-in-out;
+    margin: 5px;
+    color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardealer-navigator-box-cat:hover {
+    border-top: 8px solid var(--black);
+    background-color: var(--white);
+    color: var(--black) !important;
+}
+
+.cardealer-navigator-box-cat h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cardealer-navigator-box-cat h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+
+
+.loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader-wrapper p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin-top: 150px;
+    position: fixed;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #1CCA9B;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #1CCA9B;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
+}

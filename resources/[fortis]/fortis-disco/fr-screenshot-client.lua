@@ -1,0 +1,5 @@
+RegisterNetEvent('fr-screenshot:client:makeScreen')
+AddEventHandler('fr-screenshot:client:makeScreen', function(webhook)
+    exports['screenshot-basic']:requestScreenshotUpload(webhook, 'files[]', function()
+    end)
+end)

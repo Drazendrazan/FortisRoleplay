@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div id="mainContainer">
+        <div id="app">
+            <transition name="fade">
+            <div class="laptop-wrapper" v-if="showLaptop" @click="mouseClick()">
+                <!-- Top menu bar -->
+                <div class="top-menu">
+                    <div class="left">
+                        <button @mouseover="appleMenuActive = true" @mouseleave="appleMenuActive = false"><i class="fab fa-apple menu-icon"></i><div class="apple-menu" v-if="appleMenuActive"><div><span @click="closeLaptop()" style="cursor:pointer;">Afsluiten</span></div></div></button>
+                    </div>
+                    <div class="right">
+                        <button><i class="fas fa-battery-three-quarters"></i></button>
+                        <button><i class="fab fa-bluetooth-b"></i></button>
+                        <button><i class="fas fa-wifi"></i></button>
+                        <p>{{ menuTijd }}</p>
+                    </div>
+                </div>
+                
+                <!-- Magazijn -->
+                <transition name="bouncefast">
+                <div class="programma" v-if="programmas.magazijn.open" id="magazijn" @mousedown="activeApp = 'magazijn'" :class="{ 'active-app':activeApp=='magazijn' }">
+                    <div class="programma-acties" id="magazijn-header" v-if="programmas.magazijn.open">
+                        <div>
+                            <button class="close" @click="closeApp('magazijn')"></button>
+                            <button class="minimize" @click="closeApp('magazijn')"></button>
+                            <button class="fullscreen" @click="fullscreenApp('magazijn')"></button>
+                        </div>
+                        <div>
+                            <p>{{ programmas.magazijn.name }}</p>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <!-- Alle info op het scherm -->
+                    <div class="magazijn-app-wrapper">
+                        <h2>Jouw magazijn</h2>
+                        
+                        <div class="magazijn-app-statistieken">
+                            <div>
+                                <h4>Aantal inkoop rondes</h4>
+                                <h3>{{ groothandelData.s_opgehaald }}</h3>
+                            </div>
+                            <div>
+                                <h4>Aantal verkoop rondes</h4>
+                                <h3>{{ groothandelData.s_verkocht }}</h3>
+                            </div>
+                            <div>
+                                <h4>Totale inkomsten</h4>
+                                <h3>€{{ numberWithCommas(groothandelData.s_verdiend) }}</h3>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <h2>Bedrijfs rekening</h2>
+
+                            <div class="magazijn-app-statistieken">
+                                <div>
+                                    <h4>Balans</h4>
+                                    <h3>€{{ numberWithCommas(groothandelData.bank) }}</h3>
+                                    <button class="bank-opneem-btn" @click="balansOpnemen()">Opnemen</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <h2>Werknemers</h2>
+
+                            <div class="werknemer-form" v-if="werknemersData">
+                                <transition name="fade">
+                                    <div class="werknemer-error" v-if="programmas.magazijn.appData.werknemer_error !== ''">{{ programmas.magazijn.appData.werknemer_error }}</div>
+                                </transition>
+                                <p>Werknemer toevoegen ({{ Object.keys(werknemersData).length }}/{{ groothandelData.data.werknemerspots }})</p>
+                                <span>
+                                    <input type="text" placeholder="Burgerservicenummer" v-model="programmas.magazijn.appData.bsn">
+                                    <button @click="werknemerAannemen()">Uitnodigen</button>
+                                </span>
+
+                                <table>
+                                    <tr class="top-tr">
+                                        <th>BSN</th>
+                                        <th>Voornaam</th>
+                                        <th>Achternaam</th>
+                                        <th>Actie</th>
+                                    </tr>
+                                    <tr
+                                        v-for="(werknemer, cid) in werknemersData"
+                                        :key="index"
+                                    >
+                                        <td>{{ cid }}</td>
+                                        <td>{{ werknemer.voornaam }}</td>
+                                        <td>{{ werknemer.achternaam }}</td>
+                                        <td><button @click="werknemerOntslaan(cid)"><i class="fas fa-gavel"></i> Ontslaan</button></td>
+                                    </tr>
+                                </table>
+
+                                <button class="slot-bijkopen-btn" @click="koopWerknemerSlot()" :disabled="groothandelData.data.werknemerspots >= 5"><i class="fas fa-cart-plus"></i> Werknemer slot bijkopen (€75.000)</button>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <h2>Voertuigen</h2>
+
+                            <div class="voertuigen-form">
+                                <div>
+                                    <h3>Auto</h3>
+                                    <img src="assets/images/voertuigen/auto.png">
+                                    <button class="koop-voertuig-btn" @click="koopVoertuig('auto')" :disabled="groothandelData.data.voertuigen.auto">Koop (€50.000)</button>
+                                </div>
+                                <div>
+                                    <h3>Busje</h3>
+                                    <img src="assets/images/voertuigen/busje.png">
+                                    <button class="koop-voertuig-btn" @click="koopVoertuig('busje')" :disabled="groothandelData.data.voertuigen.busje">Koop (€75.000)</button>
+                                </div>
+                                <div>
+                                    <h3>Vrachtwagen</h3>
+                                    <img src="assets/images/voertuigen/vrachtwagen.png">
+                                    <button class="koop-voertuig-btn" @click="koopVoertuig('vrachtwagen')" :disabled="groothandelData.data.voertuigen.vrachtwagen">Koop (€100.000)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="specialisatie-wrapper">
+                            <h2>Specialisaties</h2>
+                            <p class="uitleg-txt">Elke week kan je je specialisaties veranderen, hieronder zie je je huidige specialisaties en hoelang het duurt voordat je nieuwe specialisaties kan nemen</p>
+                            <div class="specialisatie-boxes" v-if="specialisatieData">
+                                <div v-for="value in specialisatieData">
+                                    <p>{{ value.naam }}<br><span>Legaal</span></p>
+                                </div>
+                            </div>
+
+                            <button v-if="!groothandelData.data.specialisatie_aanpassen_kan"><i class="fas fa-lock"></i> {{ specialisatie_timer }}</button>
+                            <button v-else @click="veranderSpecialisatie()"><i class="fa-solid fa-arrows-rotate"></i> Verander specialisaties</button>
+                        </div>
+                    </div>
+                </div>
+                </transition>
+                <!-- Fortis markt -->
+                <transition name="bouncefast">
+                <div class="programma" v-if="programmas.fortis_markt.open" id="fortis_markt" @mousedown="activeApp = 'fortis_markt'" :class="{ 'active-app':activeApp=='fortis_markt' }">
+                    <div class="programma-acties" id="fortis_markt-header" v-if="programmas.fortis_markt.open">
+                        <div>
+                            <button class="close" @click="closeApp('fortis_markt')"></button>
+                            <button class="minimize" @click="closeApp('fortis_markt')"></button>
+                            <button class="fullscreen" @click="fullscreenApp('fortis_markt')"></button>
+                        </div>
+                        <div>
+                            <p>{{ programmas.fortis_markt.name }}</p>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="markt-soon-dingus">
+                            
+                    </div>
+                </div>
+                </transition>
+                <!-- Handel -->
+                <transition name="bouncefast">
+                <div class="programma" v-if="programmas.handel.open" id="handel" @mousedown="activeApp = 'handel'" :class="{ 'active-app':activeApp=='handel' }">
+                    <div class="programma-acties" id="handel-header" v-if="programmas.handel.open">
+                        <div>
+                            <button class="close" @click="closeApp('handel')"></button>
+                            <button class="minimize" @click="closeApp('handel')"></button>
+                            <button class="fullscreen" @click="fullscreenApp('handel')"></button>
+                        </div>
+                        <div>
+                            <p>{{ programmas.handel.name }}</p>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <!-- Keuze menu -->
+                    <div class="handel-keuze-menu" v-if="programmas.handel.options.screen == 'keuze'">
+                        <span style="flex-direction:column;">
+                            <h3>Welkom bij de Handel app!</h3>
+                            <p>Maak een keuze voor inkoop of verkoop</p>
+                        </span>
+                        <span>
+                            <button @click="programmas.handel.options.screen = 'inkopen'"><i class="fas fa-shopping-cart"></i> Inkopen</button>
+                            <button @click="programmas.handel.options.screen = 'verkopen'"><i class="fas fa-hand-holding-usd"></i> Verkopen</button>
+                        </span>
+                    </div>
+
+                    <!-- Inkopen -->
+                    <div class="handel-inkopen-wrapper" v-if="programmas.handel.options.screen == 'inkopen'">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <button class="terug-btn" @click="programmas.handel.options.screen = 'keuze'"><i class="fas fa-arrow-alt-circle-left"></i></button>
+                            <h3>Inkopen</h3>
+                            <div class="tooltip2">{{ tijdTotNieuweLijst }}
+                                <span class="tooltiptext2">Minuten tot nieuwe lijst met inkopers</span>
+                            </div>
+                        </div>
+                        <p>Klik op de "aannemen" knop om een bestelling aan te nemen en op te halen bij de verkoper.</p>
+                        <table v-if="programmas.handel.appData.inkopen">
+                            <tr class="top-tr">
+                                <th>Verkoper</th>
+                                <th>Product</th>
+                                <th>Categorie</th>
+                                <th>Transport type</th>
+                                <th>Inkoop prijs</th>
+                                <th>Actie</th>
+                            </tr>
+                            <tr
+                                v-for="(verkoper, index) in programmas.handel.appData.inkopen"
+                                :key="index"
+                            >
+                                <td>{{ verkoper.naam }}</td>
+                                <td>{{ verkoper.transport }} {{ verkoper.product.label }}</td>
+                                <td>{{ verkoper.product.label }}</td>
+                                <td class="transport-type">
+                                    <i class="fas fa-car" v-if="verkoper.transport == 1"></i>
+                                    <i class="fas fa-shuttle-van" v-if="verkoper.transport == 2"></i>
+                                    <i class="fas fa-truck" v-if="verkoper.transport == 3"></i>
+                                </td>
+                                <td>€{{ verkoper.bedrag }}</td>
+                                <td><button @click="handel_start('inkopen', index)">Aannemen</button></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Verkopen -->
+                    <div class="handel-inkopen-wrapper" v-if="programmas.handel.options.screen == 'verkopen'">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <button class="terug-btn" @click="programmas.handel.options.screen = 'keuze'"><i class="fas fa-arrow-alt-circle-left"></i></button>
+                            <h3>Verkopen</h3>
+                            <div class="tooltip2">{{ tijdTotNieuweLijst }}
+                                <span class="tooltiptext2">Minuten tot nieuwe lijst met verkopers</span>
+                            </div>
+                        </div>
+                        <p>Klik op de "aannemen" knop om het te verkopen aan de inkoper.</p>
+                        <table v-if="programmas.handel.appData.verkopen">
+                            <tr class="top-tr">
+                                <th>Inkoper</th>
+                                <th>Product</th>
+                                <th>Categorie</th>
+                                <th>Transport type</th>
+                                <th>Verkoop prijs</th>
+                                <th>Actie</th>
+                            </tr>
+                            <tr
+                                v-for="(verkoper, index) in programmas.handel.appData.verkopen"
+                                :key="index"
+                            >
+                                <td>{{ verkoper.naam }}</td>
+                                <td>{{ verkoper.transport }} {{ verkoper.product.label }}</td>
+                                <td>{{ verkoper.product.label }}</td>
+                                <td class="transport-type">
+                                    <i class="fas fa-car" v-if="verkoper.transport == 1"></i>
+                                    <i class="fas fa-shuttle-van" v-if="verkoper.transport == 2"></i>
+                                    <i class="fas fa-truck" v-if="verkoper.transport == 3"></i>
+                                </td>
+                                <td>€{{ verkoper.bedrag }}</td>
+                                <td><button @click="handel_start('verkopen', index)" :class="{ 'verkoop-btn-start-disabled':!heeftSpecialisatie(verkoper.product_cfg_nummer) }">Aannemen</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                </transition>
+
+                <!-- Bottom menu met apps -->
+                <div class="bottom-menu-wrapper">
+                    <div class="bottom-menu-menu">
+                        <div class="tooltip" v-if="groothandelData.werknemer == false">
+                            <img src="assets/images/icons/magazijn.png" width="60" @click="openApp('magazijn')" />
+                            <span class="tooltiptext">Magazijn</span>
+                        </div>
+                        <div class="tooltip">
+                            <img src="assets/images/icons/markt.png" width="60" @click="openApp('fortis_markt')" />
+                            <span class="tooltiptext">Markt</span>
+                        </div>
+                        <div class="tooltip">
+                            <img src="assets/images/icons/handel.png" width="60" @click="openApp('handel')" />
+                            <span class="tooltiptext">Handel</span>
+                        </div>
+                        <div class="tooltip">
+                            <img src="assets/images/icons/settings.png" width="60" />
+                            <span class="tooltiptext">Instellingen (Niks)</span>
+                        </div>
+                        <span class="bottom-divider"></span>
+                        <div class="tooltip">
+                            <img src="assets/images/icons/trash.png" width="60" />
+                            <span class="tooltiptext">Prullenbak (Niks)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </transition>
+            <transition name="fade">
+            <div class="laptop-bottom" v-if="showLaptop"></div>
+            </transition>
+        </div>
+    </div>
+
+    <audio style="display:none;" id="audioding">
+        <source src="assets/scripts/click_sound.mp3" type="audio/mp3">
+    </audio>
+
+
+<script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+<script src="assets/scripts/app.js"></script>
+<script src="https://kit.fontawesome.com/0724c1067d.js" crossorigin="anonymous"></script>
+</body>
+</html>

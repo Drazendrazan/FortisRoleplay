@@ -1,0 +1,133 @@
+@import 'reset.css'; 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto", monospace; 
+    font-size: 1rem; 
+    color: white; 
+}
+
+.achtergrond {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.knoppen {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 475px;
+    height: 666px;
+    z-index: 50;
+
+    transition: .25s linear;
+}
+
+.knoppen button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: fixed;
+    width: 475px;
+    height: 666px;
+    border-radius: 100%;
+    display: flex;
+}
+
+.knoppen div {
+    width: 45px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.timer {
+    width: 50px;
+    height: 50px;
+    display: none; 
+    position: fixed; 
+    display: flex; 
+    margin-left: 215px; 
+    /* margin-top: 50px;  */
+    /* background-color: black;  */
+    color: white; 
+    padding: 10px; 
+    text-align: center;
+    font-size: 2rem; 
+}
+
+.close {
+    margin: 0 auto; 
+    font-size: 5rem; 
+}
+
+.stage1 {
+    margin-left: 0px;
+    margin-top: 210px;
+}
+
+.stage2 {
+    margin-left: 35px;
+    margin-top: 210px;
+}
+
+.stage3 {
+    margin-left: 75px;
+    margin-top: 210px;
+}
+
+.stage4 {
+    margin-left: 115px;
+    margin-top: 210px;
+}
+
+.stage5 {
+    margin-left: 155px;
+    margin-top: 210px;
+}
+
+.stage6 {
+    margin-left: 190px;
+    margin-top: 210px;
+}
+
+.knop0 {
+    background-image: url('../img/stage0.png');   
+}
+
+.knop1 {
+    background-image: url('../img/stage1.png');
+}
+
+.knop2 {
+    background-image: url('../img/stage2.png');
+}
+
+.knop3 {
+    background-image: url('../img/stage3.png');
+}
+
+.knop4 {
+    background-image: url('../img/stage4.png');
+}
+
+.knop5 {
+    background-image: url('../img/stage5.png');
+}
+
+.knop6 {
+    background-image: url('../img/stage6.png');
+}

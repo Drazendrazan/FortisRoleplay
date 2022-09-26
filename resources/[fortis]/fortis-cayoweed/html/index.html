@@ -1,0 +1,58 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortis Cayoweed</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    
+    <main id="app" v-if="show">
+
+        <transition name="fade"><div class="achtergrond" v-if="plukken1 || plukken2 || verpakken" @click.self="hahaGefaaldFaggot()">
+
+            <!-- Plukken -->
+            <div class="plukken" v-if="plukken1" :class="{ kech1: stage1, kech2: stage2, kech3: stage3, kech4: stage4 }">
+                <transition name="fade"><button class="stage1" v-if="stage1" id="stage1"><div @click="stage(1)" ></div></button></transition>
+                <transition name="fade"><button class="stage2" v-if="stage2" id="stage2"><div @click="stage(2)"></div></button></transition>
+                <transition name="fade"><button class="stage3" v-if="stage3" id="stage3"><div @click="stage(3)"></div></button></transition>
+            </div>
+
+            <div class="plukken" v-if="plukken2" :class="{ kech11: stage1, kech22: stage2, kech33: stage3, kech44: stage4 }">
+                <transition name="fade"><button class="stage1" v-if="stage3" id="stage1"><div @click="stage(3)" ></div></button></transition>
+                <transition name="fade"><button class="stage2" v-if="stage1" id="stage2"><div @click="stage(1)"></div></button></transition>
+                <transition name="fade"><button class="stage3" v-if="stage2" id="stage3"><div @click="stage(2)"></div></button></transition>
+            </div>
+
+            <!-- Verpakken -->
+            <div class="verpakken" v-if="verpakken">
+                <transition name="fade">
+                    <input type="range" v-if="verpakWietje" v-model="zipValue" @change="kaas()" @mousedown="zipStartie()">
+                </transition>
+                <img
+                    :class="{ 'verpakken-wietje-after': verpakWietje, 'verpakken-wietje-before': !verpakWietje, animate__animated: !verpakWietje, animate__pulse: !verpakWietje, 'animate__delay-2s': !verpakWietje, 'animate__repeat-3': !verpakWietje }"
+                    :style="`margin-left:${wietPlekjeVerpak};`"
+                    src="images/verpakken/wiet.png"
+                    @click="verpakHetWietje()"
+                />
+            </div>
+
+        </div></transition>
+
+
+
+        <!-- Geluidseffect -->
+        <audio id="popgeluidje" style="display:none;">
+            <source src="pop.mp3" type="audio/mpeg">
+        </audio>
+    </main>
+
+<script src="https://unpkg.com/vue@3.0.11"></script>
+<script src="js/app.js"></script>
+<script src="https://kit.fontawesome.com/0724c1067d.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+/* Homepage */
+.anwb-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #101820FF;
+    overflow: hidden;
+}
+
+.anwb-homescreen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.anwb-icon {
+    margin-top: .9vh;
+    width: 2.7vh;
+}
+
+.anwb-tabs {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    left: -30vh;
+}
+
+.anwb-app-header {
+    position: absolute;
+    width: 100%;
+    height: 9vh;
+    background-color: #F2AA4CFF;
+    top: 0vh;
+}
+
+#anwb-app-title {
+    position: absolute;
+    color: #ffffff;
+    top: 5.2vh;
+    left: 2vh;
+    font-family: 'Samsung Sans Medium';
+    font-weight: bold;
+    font-size: 1.6vh;
+    letter-spacing: .1vh;
+}
+
+#anwb-app-name {
+    position: absolute;
+    color: #ffffff;
+    top: 5.6vh;
+    right: 2vh;
+    font-family: 'Samsung Sans Medium';
+    font-size: 1.2vh;
+    letter-spacing: .1vh;
+    float: right;
+}
+
+.anwb-blocks {
+    position: absolute;
+    width: 90%;
+    height: 55%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 10.6vh;
+}
+
+.anwb-block {
+    position: relative;
+    background-color: #F2AA4CFF;
+    width: 45%;
+    height: 30%;
+    margin: .5vh;
+    margin-left: .7vh;
+    margin-top: .7vh;
+    border-radius: .5vh;
+    float: left;
+    transition: .1s linear;
+    text-align: center;
+}
+
+.anwb-block:hover {
+    background-color: #dd9e4c;
+}
+
+.anwb-block > i {
+    line-height: 5.4vh;
+    color: #ffffff;
+    font-size: 2.5vh;
+}
+
+.anwb-block > p {
+    line-height: 2vh;
+    color: #ffffff;
+    font-size: 1.5vh;
+    font-family: 'Samsung Sans Regular';
+    pointer-events: none;
+}
+
+.anwb-tabs-footer {
+    position: absolute;
+    bottom: -5vh;
+    width: 100%;
+    height: 5vh;
+    background-color: #F2AA4CFF;
+    color: #ffffff;
+    text-align: center;
+    transition: .1s linear;
+}
+
+.anwb-tabs-footer:hover {
+    background-color: #dd9e4c;
+}
+
+.anwb-tabs-footer:hover #back-anwb {
+    animation: Shake 1s infinite;
+}
+
+.anwb-tabs-footer i {
+    line-height: 5vh;
+    font-size: 1.9vh;
+}
+
+.anwb-alerts-page, .anwb-factuur-page, .anwb-person-page {
+    display: none; 
+}
+
+
+@keyframes Shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Person page */
+.anwb-person-search-input {
+    position: absolute;
+    top: 11vh;
+    left: 2vh;
+    outline: none;
+    border: none;
+    height: 4.2vh;
+    width: 18vh;
+    border-bottom: .15vh solid rgb(78, 78, 78);
+    padding: 1vh;
+    background-color: rgb(235, 235, 235);
+    border-radius: .5vh .5vh 0 0;
+    transition: .1s linear;
+    font-family: 'Samsung Sans Medium';
+}
+
+.anwb-person-search-input:focus {
+    border-bottom: .15vh solid rgb(248, 160, 28);
+    transition: .1s linear;
+}
+
+.anwb-person-search-input:valid {
+    border-bottom: .15vh solid rgb(76, 207, 24);
+    transition: .1s linear;
+}
+
+.anwb-confirm-search-person-test {
+    position: absolute;
+    width: 5vh;
+    height: 4.2vh;
+    background-color: #F2AA4CFF;
+    top: 11vh;
+    right: 2vh;
+    border-radius: .4vh;
+    transition: .1s linear;
+    text-align: center;
+    color: #ffffff;
+    pointer-events: all;
+}
+
+.anwb-confirm-search-person-test > i {
+    font-size: 1.6vh;
+    line-height: 4.2vh;
+}
+
+.anwb-confirm-search-person-test:hover {
+    background-color: #dd9e4c;
+}
+
+.anwb-person-search-results {
+    position: absolute;
+    width: 87%;
+    height: 57.5%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 17vh;
+    border-radius: .5vh;
+    overflow: hidden;
+    overflow-y: scroll !important;
+}
+
+.anwb-person-search-results::-webkit-scrollbar {
+    width: .5vh;
+}
+
+.anwb-person-search-results::-webkit-scrollbar-thumb {
+    background-color: #F2AA4CFF;
+}
+
+.anwb-person-search-result {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #F2AA4CFF;
+    margin-bottom: 1vh;
+    font-family: 'Samsung Sans Regular';
+    color: #ffffff;
+    transition: .05s linear;
+}
+
+.anwb-person-search-result:hover {
+    background-color: #dd9e4c;
+}
+
+.anwb-person-search-result-name {
+    padding: 1vh;
+    font-size: 1.4vh;
+}
+
+.anwb-person-search-result-bsn {
+    font-size: 1vh;
+    padding: 1vh;
+    margin-top: -1.8vh;
+}
+
+.anwb-person-search-result-number {
+    font-size: 1.1vh;
+    padding: 1vh;
+    margin-top: -1.8vh;
+}
+
+.anwb-person-send-factuur {
+    font-size: 1.2vh;
+    padding: 1vh;
+    margin-top: -1.8vh;
+    cursor: pointer; 
+    font-weight: 700;
+}
+
+.anwb-person-opensplit {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: .07vh;
+    background-color: #ffffff;
+    top: 5.6vh;
+}
+
+/* Facturen page */
+.anwb-factuur-header {
+    position: absolute;
+    left: 5vh;
+    top: 10vh;
+    font-family: 'Samsung Sans Regular';
+    color: #F2AA4CFF;
+    font-size: 2vh;
+}
+
+.anwb-factuur-input {
+    position: absolute;
+    top: 14vh;
+    left: 2vh;
+    outline: none;
+    border: none;
+    height: 4.2vh;
+    width: 25vh;
+    border-bottom: .15vh solid rgb(78, 78, 78);
+    padding: 1vh;
+    background-color: rgb(235, 235, 235);
+    border-radius: .5vh;
+    transition: .1s linear;
+    font-family: 'Samsung Sans Medium';
+}
+
+.anwb-factuur-input:focus {
+    border-bottom: .15vh solid rgb(248, 160, 28);
+    transition: .1s linear;
+}
+
+.anwb-factuur-title-input {
+    top: 14vh;
+}
+
+.anwb-factuur-amount-input {
+    top: 19vh;
+}
+
+.anwb-factuur-note-input {
+    top: 24vh;
+}
+
+.anwb-factuur-submit-button {
+    position: absolute; 
+    top: 30vh; 
+    background-color: #004682;
+    left: 11.5vh;
+    font-family: 'Samsung Sans Regular';
+    font-size: 1.6vh;
+    color: #ffffff;
+    padding: .5vh;
+    text-align: center;
+    border-radius: 1vh;
+    cursor: pointer; 
+}
+
+/* Alerts */
+.anwb-clear-alerts {
+    position: absolute;
+    height: 3.5vh;
+    width: 6.5vh;
+    top: 11vh;
+    left: 2vh;
+    background-color: #F2AA4CFF;
+    border-radius: .4vh;
+    text-align: center;
+    line-height: 3.5vh;
+    color: #ffffff;
+    font-family: 'Samsung Sans Regular';
+    transition: .05s linear;
+}
+
+.anwb-clear-alerts:hover {
+    background-color: #dd9e4c;
+}
+
+.anwb-alerts {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 87%;
+    height: 33.5vh;
+    background-color: rgb(39, 46, 54);
+    top: 16vh;
+    border-radius: .5vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.anwb-alerts::-webkit-scrollbar {
+    display: none;
+}
+
+.anwb-alert {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #F2AA4CFF;
+    padding: 1.5vh;
+    margin-bottom: .5vh;
+}
+
+.anwb-alert-new {
+    background-color: #004682;
+    color: #ffffff;
+    font-family: 'Samsung Sans Regular';
+    padding: .5vh;
+    border-radius: 1vh;
+    font-size: 1.2vh;
+}
+
+.anwb-alert-type {
+    margin-left: .2vh;
+    margin-top: 1vh;
+    font-family: 'Samsung Sans Regular';
+    color: #ffffff;
+    font-size: 1.4vh;
+}
+
+.anwb-alert-description {
+    margin-left: .2vh;
+    margin-top: -.8vh;
+    font-family: 'Samsung Sans Regular';
+    color: #ffffff;
+    font-size: 1.1vh;
+}
+
+.anwb-location-button {
+    display: inline-block; 
+    background-color: #004682;
+    font-family: 'Samsung Sans Regular';
+    color: #ffffff;
+    padding: .5vh;
+    text-align: center;
+    border-radius: 1vh;
+    margin-top: -1vh;
+    cursor: pointer; 
+}
+
+.anwb-recent-header {
+    position: absolute;
+    left: 2vh;
+    top: 22.5vh;
+    font-family: 'Samsung Sans Regular';
+    color: #F2AA4CFF;
+    font-size: 1.4vh;
+}
+
+.anwb-recent-alerts {
+    position: absolute;
+    width: 85.5%;
+    height: 25.5vh;
+    top: 25vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border-radius: .2vh;
+    overflow-y: scroll;
+}
+
+.anwb-recent-alerts::-webkit-scrollbar {
+    display: none;
+}
+
+.anwb-recent-alert, .anwb-recent-noalert {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1vh;
+    background-color: #F2AA4CFF;
+    border-radius: .3vh;
+    margin: .5vh 0 .5vh 0;
+    transition: .05s linear;
+}
+
+.anwb-recent-alert:hover, .anwb-recent-noalert:hover {
+    background-color: #dd9e4c;
+}
+
+.anwb-recent-alert-title, .anwb-recent-alert-notitle {
+    margin-left: .2vh;
+    margin-top: 1vh;
+    font-family: 'Samsung Sans Regular';
+    color: #ffffff;
+    font-size: 1.3vh;
+}
+
+.anwb-recent-alert-description {
+    margin-left: .2vh;
+    margin-top: .5vh;
+    font-family: 'Samsung Sans Regular';
+    color: #ffffff;
+    font-size: 1.1vh;
+}
+
+.anwb-remove-melding {
+    display: inline-block; 
+    width: auto;
+    cursor: pointer; 
+    margin-left: 12.5vh;
+}
+
+.anwb-remove-melding > i {
+    font-size: 1.6vh;
+    color: white; 
+}

@@ -1,0 +1,22 @@
+.voiceInfo {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    position: fixed;
+    text-align: right;
+    bottom: 5px;
+    padding: 0;
+    right: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #10795D;
+    text-shadow: 1.25px 0 0 #000, 0 -1.25px 0 #000, 0 1.25px 0 #000, -1.25px 0 0 #000;
+}
+
+.talking {
+    color: #1CCA9B;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0
+}

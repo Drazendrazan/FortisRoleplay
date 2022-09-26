@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://meyerweb.com/eric/tools/css/reset/reset.css");
+
+body {
+    /* display: none; */
+    display: none;
+}
+
+.doodsverklaring-wrapper {
+    /* display: flex; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.doodsverklaring-container {
+    width: 505px;
+    height: 788px;
+    left: 300px;
+    background-image: url(img/clipboard.png);
+    background-repeat: no-repeat;
+}
+
+.fortislogo {
+    height: 50px;
+    margin-top: 120px;
+    margin-left: 60px;
+}
+
+.ambuster { 
+    height: 50px;
+    margin-top: 120px;
+    margin-left: 320px; 
+}
+
+.CBS {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 300px;
+}
+
+.header {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.namenVoor {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.namenAchter {
+    margin-top: 30px;
+    text-align: center; 
+}
+
+.aangedaanLedemaat {
+    margin-top: 45px;
+    text-align: center; 
+}
+.overlijdensDatum {
+    margin-top: 45px;
+    text-align: center;  
+}
+
+.bevestigbutton button {
+    margin-top: 25px;
+    /* margin-left: 185px; */
+    margin-left: 87px;
+    color: var(--wit);
+    border: 1px solid rgba(0,0,0,0.22);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #64cfb3;
+    padding: 15px;
+    width: 120px;
+    border-radius: 25px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+
+.annuleerbutton button {
+    margin-top: 25px;
+    /* margin-left: 185px; */
+    margin-left: 260px;
+    color: var(--wit);
+    border: 1px solid rgba(0,0,0,0.22);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #64cfb3;
+    padding: 15px;
+    width: 120px;
+    border-radius: 25px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+/* .annuleerbutton button:hover {
+    padding: 21px;
+}
+
+.bevestigbutton button:hover {
+    padding: 21px;
+} */

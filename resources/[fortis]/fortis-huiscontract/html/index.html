@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voertuig contract - Finn#0007</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+    <div class="contract-wrapper" id="contract">
+        <div class="contract-container">
+            <div class="contract-content">
+                <div class="contract-sorryvoornesten">
+                    <h1>Huizen contract</h1>
+                        <div class="kentekenplaat">
+                            <p id="kentekenText">{error}</p>
+                        </div>
+                    <input type="number" placeholder="Bedrag" min="1" max="1000000" id="bedragVeld" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+                    <button onclick="overhandig()">Contract overhandigen</button>
+                    <button onclick="annuleer()" style="background-color:rgba(239, 68, 68)!important; margin-top:5px!important;">Annuleren</button>
+
+                    <div class="error" id="error">
+                        <p>Het bedrag moet minimaal €1 en maximaal €1.000.000 zijn!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
