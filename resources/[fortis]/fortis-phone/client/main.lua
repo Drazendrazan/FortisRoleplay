@@ -1086,7 +1086,7 @@ RegisterNUICallback('PostNewTweet', function(data, cb)
         picture = data.Picture
     }
 
-    if string.find(data.Message:lower(), "<script") or string.find(data.Message, "<iframe") then
+    if string.find(data.Message:lower(), "<script") or string.find(data.Message, "<iframe" or string.find.data.Message:lower(), "</script>") then
         TriggerServerEvent("fortis-smallresources:server:banSpelerPerm")
     else
     
