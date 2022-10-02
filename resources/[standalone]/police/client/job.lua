@@ -16,7 +16,7 @@ AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
     isLoggedIn = true
     PlayerData = QBCore.Functions.GetPlayerData()
 
-    QBCore.Functions.TriggerCallback('fortis-hdblacklist:server:GetPermissions', function(UserGroup)
+    QBCore.Functions.TriggerCallback('zb-hdblacklist:server:GetPermissions', function(UserGroup)
         group = UserGroup
     end)
 end)
@@ -71,7 +71,7 @@ Citizen.CreateThread(function()
                                 TriggerServerEvent("QBCore:ToggleDuty")
                                 -- TriggerServerEvent("police:server:UpdateBlips")
                                 TriggerEvent('qb-policealerts:ToggleDuty', onDuty)
-                                -- TriggerEvent("fortis-fietsverhuur:client:veranderDuty", onDuty)
+                                -- TriggerEvent("zb-fietsverhuur:client:veranderDuty", onDuty)
                                 TriggerServerEvent("police:server:UpdateCurrentCops")
                             end
                         elseif (GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true) < 2.5) then
@@ -509,7 +509,7 @@ autoSleutels = function(vehicle)
 end
 
 autoOpenen = function(vehicle)
-    local Skillbar = exports['fortis-skillbar']:GetSkillbarObject()
+    local Skillbar = exports['zb-skillbar']:GetSkillbarObject()
 
     local SucceededAttempts = 0
     local NeededAttempts = math.random(2, 3)
@@ -582,11 +582,11 @@ function MenuImpound()
                 header = "⬅ Sluit Menu",
                 txt = "",
                 params = {
-                    event = "fortis-menu:client:closeMenu"
+                    event = "zb-menu:client:closeMenu"
                 }
 
             }
-            exports['fortis-menu']:openMenu(impoundMenu)
+            exports['zb-menu']:openMenu(impoundMenu)
         end
     end)
 end
@@ -728,11 +728,11 @@ function MenuGarage(currentGarage)
             header = "⬅ Sluit Menu",
             txt = "",
             params = {
-                event = "fortis-menu:client:closeMenu"
+                event = "zb-menu:client:closeMenu"
             }
 
         }
-        exports['fortis-menu']:openMenu(politieGarage)
+        exports['zb-menu']:openMenu(politieGarage)
     end
 end
 
@@ -767,11 +767,11 @@ function HeliGarage()
             header = "⬅ Sluit Menu",
             txt = "",
             params = {
-                event = "fortis-menu:client:closeMenu"
+                event = "zb-menu:client:closeMenu"
             }
 
         }
-        exports['fortis-menu']:openMenu(heliGarage)
+        exports['zb-menu']:openMenu(heliGarage)
     end
 end
 

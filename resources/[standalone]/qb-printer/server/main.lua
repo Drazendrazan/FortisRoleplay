@@ -22,7 +22,7 @@ RegisterNetEvent('qb-printer:server:SaveDocument', function(url)
         ["steamid"] = GetPlayerIdentifiers(src)[1],
         ["link"] = url,
     }
-    exports["fortislogs"]:addLog("printer", fortisLogsTable) 
+    exports["zblogs"]:addLog("printer", fortisLogsTable) 
 
     if url ~= nil then
         if validexts[extension] then

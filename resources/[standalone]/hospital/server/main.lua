@@ -425,7 +425,7 @@ AddEventHandler('ambulance:server:SendEmergencyMessage', function(coords, messag
 end)
 
 -- Check voor aantal ambulance
-QBCore.Functions.CreateCallback("fortis-hospital:checkAmbulanceAantal", function(source, cb)
+QBCore.Functions.CreateCallback("zb-hospital:checkAmbulanceAantal", function(source, cb)
     local Player = QBCore.Functions.GetPlayer(source)
 
     local aantalAmbulance = GetCurrentAmbulance()

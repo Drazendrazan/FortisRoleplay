@@ -5,4 +5,4 @@ server_script "connectqueue.lua"
 
 server_script "shared/sh_queue.lua"
 client_script "shared/sh_queue.lua"
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

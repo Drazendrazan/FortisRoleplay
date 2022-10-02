@@ -1,2 +1,11 @@
-
+txData/
 cache/
+\[assets\]/
+\[ambulance2\]/
+\[normaal\]/
+hulpdiensten/
+wegenwacht/
+server/
+*.bat
+
+*.json

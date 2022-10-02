@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#spawn-object").unbind("click").click(function() {
         var gtaobj = $(".select-object").children("option:selected").val();
-        $.post("http://houses/SpawnObject", JSON.stringify({
+        $.post("https://houses/SpawnObject", JSON.stringify({
             objname: gtaobj,
         }));
         Decorate.Close();
@@ -28,7 +28,7 @@ $(document).on('keydown', function() {
 
     Decorate.Close = function() {
         $(".decorate-main").css("display", "none");
-        $.post("http://houses/CloseUI", JSON.stringify({}));
+        $.post("https://houses/CloseUI", JSON.stringify({}));
     };
 
     window.onload = function(e) {

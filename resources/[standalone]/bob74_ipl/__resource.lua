@@ -102,4 +102,4 @@ client_script "dlc_doomsday/facility.lua"
 -- DLC After Hours
 client_script "dlc_afterhours/nightclubs.lua"
 
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

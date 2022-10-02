@@ -13,7 +13,7 @@
     GNU Lesser General Public License for more details.
 
     You should have received a copy of the GNU Lesser General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 resource_manifest_version '05cfa83c-a124-4cfa-a768-c24a5811d8f9'
 local NUIEnabled = true
@@ -91,4 +91,4 @@ files({
 
 
 dependencies {"baseevents"}
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

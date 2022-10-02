@@ -263,8 +263,8 @@ end)
 
 
 
-RegisterNetEvent('fortis-fireworks:start')
-AddEventHandler('fortis-fireworks:start', function(schoten, type)
+RegisterNetEvent('zb-fireworks:start')
+AddEventHandler('zb-fireworks:start', function(schoten, type)
 	if type == 1 then
 		vuurwerk = "scr_indep_firework_starburst"
 	elseif type == 2 then

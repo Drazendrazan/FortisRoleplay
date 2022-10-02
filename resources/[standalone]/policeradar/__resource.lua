@@ -21,4 +21,4 @@ server_scripts {
 	'server/main.lua',
 }
 
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

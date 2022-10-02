@@ -8,7 +8,7 @@ $('document').ready(function() {
         $("#progress-label").text(data.label);
 
         $(".progress-container").fadeIn('fast', function() {
-            $("#progress-bar").stop().css({"width": 0, "background-color": "rgba(28, 202, 155)"}).animate({
+            $("#progress-bar").stop().css({"width": 0, "background-color": "rgba(125, 195, 37)"}).animate({
               width: '100%'
             }, {
               duration: parseInt(data.duration),
@@ -16,7 +16,7 @@ $('document').ready(function() {
                 $(".progress-container").fadeOut('fast', function() {
                     $('#progress-bar').removeClass('cancellable');
                     $("#progress-bar").css("width", 0);
-                    $.post('http://progressbar/FinishAction', JSON.stringify({
+                    $.post('https://progressbar/FinishAction', JSON.stringify({
                         })
                     );
                 })
@@ -33,7 +33,7 @@ $('document').ready(function() {
         cancelledTimer = setTimeout(function () {
             $(".progress-container").fadeOut('fast', function() {
                 $("#progress-bar").css("width", 0);
-                $.post('http://progressbar/CancelAction', JSON.stringify({
+                $.post('https://progressbar/CancelAction', JSON.stringify({
                     })
                 );
             });

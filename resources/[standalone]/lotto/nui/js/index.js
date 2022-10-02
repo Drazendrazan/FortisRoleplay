@@ -74,10 +74,10 @@ window.addEventListener("DOMContentLoaded", () => {
           if (winner) {
             // winSound.play();
             // setTimeout(() => rainMoney(), 1200);
-            $.post('http://lotto/win', JSON.stringify({}));2
+            $.post('https://lotto/win', JSON.stringify({}));2
           } else {
             // loseSound.play();
-            $.post('http://lotto/lose', JSON.stringify({}));2
+            $.post('https://lotto/lose', JSON.stringify({}));2
           }
         }, 100);
 

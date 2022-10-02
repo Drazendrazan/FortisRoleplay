@@ -30,11 +30,11 @@ function OpenDocument(voornaam, achternaam, ledemaat, reden) {
  
 function annuleerbutton () {
     $("body").fadeOut("slow");
-    $.post("http://hospital/annuleer", JSON.stringify({}));
+    $.post("https://hospital/annuleer", JSON.stringify({}));
 }
 
 function bevestigbutton () {
     $("body").fadeOut("slow");
 
-    $.post("http://hospital/bevestig", JSON.stringify({}));
+    $.post("https://hospital/bevestig", JSON.stringify({}));
 } 

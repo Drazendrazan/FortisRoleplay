@@ -183,6 +183,6 @@ RegisterNetEvent('pma-voice:clSetPlayerRadio', syncRadio)
 
 
 
-AddEventHandler("fortis-radio:inHandboeien", function(status)
+AddEventHandler("zb-radio:inHandboeien", function(status)
 	isHandcuffed = status
 end)

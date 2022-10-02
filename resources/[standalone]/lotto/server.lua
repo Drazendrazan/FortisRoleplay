@@ -14,8 +14,8 @@ end)
 
 
 
-RegisterServerEvent('fortis-kraskaart:winamattie')
-AddEventHandler('fortis-kraskaart:winamattie', function()
+RegisterServerEvent('zb-kraskaart:winamattie')
+AddEventHandler('zb-kraskaart:winamattie', function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 
@@ -26,6 +26,6 @@ AddEventHandler('fortis-kraskaart:winamattie', function()
 	else
 		TriggerClientEvent("QBCore:Notify", source, "Nou nee.", "error")
 		Citizen.Wait(2000)
-		-- TriggerEvent("fortis-smallresources:server:banSpelerPerm", source)
+		-- TriggerEvent("zb-smallresources:server:banSpelerPerm", source)
 	end
 end)

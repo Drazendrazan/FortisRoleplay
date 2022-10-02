@@ -421,7 +421,7 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        TriggerEvent("fortis-radio:inHandboeien", isHandcuffed)
+        TriggerEvent("zb-radio:inHandboeien", isHandcuffed)
         Citizen.Wait(2000)
     end
 end)

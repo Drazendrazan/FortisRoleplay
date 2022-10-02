@@ -9,4 +9,4 @@ export 'setAutoSpawn'
 export 'setAutoSpawnCallback'
 export 'forceRespawn'
 
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

@@ -102,21 +102,21 @@ $(document).ready(function(){
   // On 'Esc' call close method
   document.onkeyup = function (data) {
     if (data.which == 27 ) {
-      $.post('http://banking/close', JSON.stringify({}));
+      $.post('https://banking/close', JSON.stringify({}));
     }
   };
   // Handle Button Presses
   $(".btnWithdraw").click(function(){
-      $.post('http://banking/withdraw', JSON.stringify({}));
+      $.post('https://banking/withdraw', JSON.stringify({}));
   });
   $(".btnDeposit").click(function(){
-      $.post('http://banking/deposit', JSON.stringify({}));
+      $.post('https://banking/deposit', JSON.stringify({}));
   });
   $(".btnBalance").click(function(){
-      $.post('http://banking/balance', JSON.stringify({}));
+      $.post('https://banking/balance', JSON.stringify({}));
   });
   $(".btnClose").click(function(){
-      $.post('http://banking/close', JSON.stringify({}));
+      $.post('https://banking/close', JSON.stringify({}));
   });
 
   $(".btnHome").click(function(){
@@ -129,7 +129,7 @@ $(document).ready(function(){
       var amount = parseInt($("#withdraw-form #amount").val());
 
       if (amount >= 0 ) {
-        $.post('http://banking/withdrawSubmit', JSON.stringify({
+        $.post('https://banking/withdrawSubmit', JSON.stringify({
             amount: $("#withdraw-form #amount").val()
         }));
       }
@@ -144,7 +144,7 @@ $(document).ready(function(){
       var amount = parseInt($("#deposit-form #amount").val());
 
       if (amount >= 0 ) {
-        $.post('http://banking/depositSubmit', JSON.stringify({
+        $.post('https://banking/depositSubmit', JSON.stringify({
             amount: $("#deposit-form #amount").val()
         }));
       }

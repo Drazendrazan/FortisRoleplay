@@ -1,6 +1,9 @@
 voiceData = {}
 radioData = {}
 callData = {}
+  
+QBCore = nil
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 function defaultTable(source)
 	return {
@@ -75,14 +78,16 @@ AddEventHandler('onResourceStart', function(resource)
 	end
 end)
 
-RegisterCommand('mute', function(source, args)
+
+QBCore.Commands.Add('voicemute', 'Mute spelers ingame', {}, false, function(source, args)
 	local mutePly = tonumber(args[1])
 	if mutePly then
 		if voiceData[mutePly] then
 			TriggerClientEvent('pma-voice:mutePlayer', mutePly)
 		end
 	end
-end, true)
+end, "admin")
+
 
 if GetConvarInt('voice_externalDisallowJoin', 0) == 1 then
 	AddEventHandler('playerConnecting', function(playerName, kickReason, deferral)

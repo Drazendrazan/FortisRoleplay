@@ -3,7 +3,7 @@ TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 local timesync = {}
 
-QBCore.Functions.CreateCallback('fortis-playtime:server:getPlaytime', function(source, cb)
+QBCore.Functions.CreateCallback('zb-playtime:server:getPlaytime', function(source, cb)
     local src = source
     local steam = GetSteam(source)
 
@@ -73,8 +73,8 @@ SaveTime = function(steamid)
     end
 end
 
-RegisterNetEvent('fortis-playtime:server:saveTime')
-AddEventHandler('fortis-playtime:server:saveTime', function(seconds, minutes, hours, days)
+RegisterNetEvent('zb-playtime:server:saveTime')
+AddEventHandler('zb-playtime:server:saveTime', function(seconds, minutes, hours, days)
     local src = source
     local steam = GetSteam(src)
 

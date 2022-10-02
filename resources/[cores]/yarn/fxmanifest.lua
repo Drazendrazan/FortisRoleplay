@@ -11,4 +11,4 @@ game 'common'
 
 server_script 'yarn_builder.js'
 
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

@@ -107,7 +107,7 @@ $(function () {
 
     document.onkeyup = function (data) {
         if (data.which == 27) {
-            $.post(`http://${resourceName}/escape`, JSON.stringify({}));
+            $.post(`https://${resourceName}/escape`, JSON.stringify({}));
         }
     };
 

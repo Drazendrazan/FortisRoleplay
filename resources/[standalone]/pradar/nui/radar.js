@@ -170,7 +170,7 @@ function updateArrowDir( fwdEle, bwdEle, state ) {
 }
 
 function sendData( name, data ) {
-    $.post( "http://" + resourceName + "/" + name, JSON.stringify( data ), function( datab ) {
+    $.post( "https://" + resourceName + "/" + name, JSON.stringify( data ), function( datab ) {
         if ( datab != "ok" ) {
             console.log( datab );
         }            

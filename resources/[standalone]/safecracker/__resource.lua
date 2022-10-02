@@ -14,4 +14,4 @@ files {
   'LockPart1.png',
   'LockPart2.png',
 }
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

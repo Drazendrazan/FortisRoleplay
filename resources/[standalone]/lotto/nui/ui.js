@@ -21,7 +21,7 @@ $(document).ready(function(){
         $(document).keyup(function(e) {
             if ( e.keyCode == 27 ) { 
                 $('#divp').fadeOut("fast");
-                $.post('http://lotto/closeButton', JSON.stringify({}));
+                $.post('https://lotto/closeButton', JSON.stringify({}));
            }
         });
 

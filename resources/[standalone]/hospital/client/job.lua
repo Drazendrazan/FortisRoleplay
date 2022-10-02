@@ -409,7 +409,7 @@ AddEventHandler('hospital:client:RevivePlayer', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
         if PlayerJob.name == "ambulance" or PlayerJob.name == "police" then
             
-            QBCore.Functions.TriggerCallback("fortis-hospital:checkAmbulanceAantal", function(aantal)
+            QBCore.Functions.TriggerCallback("zb-hospital:checkAmbulanceAantal", function(aantal)
                 if aantal >= 1 then
                     QBCore.Functions.Notify("Er is teveel ambulance in dienst!", "error")
                 else
@@ -727,11 +727,11 @@ function MenuGarage(isDown)
             header = "⬅ Sluit Menu",
             txt = "",
             params = {
-                event = "fortis-menu:client:closeMenu"
+                event = "zb-menu:client:closeMenu"
             }
 
         }
-        exports['fortis-menu']:openMenu(ambulanceGarage)
+        exports['zb-menu']:openMenu(ambulanceGarage)
     end
 end
 

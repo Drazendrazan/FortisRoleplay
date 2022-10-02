@@ -11,7 +11,7 @@ files {
     'Laadscherm/assets/styles/styles.css',
     'Laadscherm/assets/images/letter.png',
     'Laadscherm/assets/styles/styles.css',
-    'Laadscherm/muziek.mp3',
+    'Laadscherm/city.mp3',
     'Laadscherm/assets/images/achtergronden/*.jpg',
 }
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

@@ -4,11 +4,13 @@
 
 -- Documentation: https://docs.faxes.zone/docs/discord-whitelist-setup
 --- Config ---
-notWhitelistedMessage = "Join de Discord om de server te joinen! - fortisroleplay.nl/discord" -- Message displayed when they are not whitelist with the role
+notWhitelistedMessage = "Join de Discord om de server te joinen! - https://discord.gg/QGnSFmcWc4" -- Message displayed when they are not whitelist with the role
 
 whitelistRoles = { -- Role nickname(s) needed to pass the whitelist
-    "765224860082372618", --Staff
-    "765223751167508481", -- Inwoner
+    "1007677177111789700", --Staff
+    "1007677177111789701",
+    "1007677177208262840", -- whitelisted
+    "1007677177111789706", -- Inwoner
 }
 
 
@@ -52,6 +54,6 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
             end
         end
     else
-        deferrals.done("Discord is niet gevonden. Zorg dat Discord open staat om te joinen (Desktop variant). fortisroleplay.nl/discord")
+        deferrals.done("Discord is niet gevonden. Zorg dat Discord open staat om te joinen (Desktop variant). https://discord.gg/QGnSFmcWc4")
     end
 end)

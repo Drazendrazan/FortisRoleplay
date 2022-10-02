@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(200)
         TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)    
     end
-    QBCore.Functions.TriggerCallback('fortis-playtime:server:getPlaytime', function(result)
+    QBCore.Functions.TriggerCallback('zb-playtime:server:getPlaytime', function(result)
         if result ~= nil then
             local table = json.decode(result)
             seconds = table['seconds']
@@ -28,7 +28,7 @@ Citizen.CreateThread(function()
         if seconds > 59 then
             seconds = 0
             minutes = minutes + 1
-            TriggerServerEvent('fortis-playtime:server:saveTime', seconds, minutes, hours, days)
+            TriggerServerEvent('zb-playtime:server:saveTime', seconds, minutes, hours, days)
         end
         if minutes > 59 then
             minutes = 0

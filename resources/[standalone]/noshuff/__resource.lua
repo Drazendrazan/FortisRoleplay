@@ -6,4 +6,4 @@
 client_script 'client.lua'
 
 server_script 'server.lua'
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

@@ -8,4 +8,4 @@ server_scripts {
 server_export "IsRolePresent"
 server_export "GetRoles"
 
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

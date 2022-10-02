@@ -39,7 +39,7 @@ RegisterNUICallback('closeButton', function(data, cb)
 end)
 
 RegisterNUICallback('win', function(data, cb)
-	TriggerServerEvent("fortis-kraskaart:winamattie")
+	TriggerServerEvent("zb-kraskaart:winamattie")
   	cb('ok')
 	Citizen.Wait(1500)
 	killTutorialMenu()

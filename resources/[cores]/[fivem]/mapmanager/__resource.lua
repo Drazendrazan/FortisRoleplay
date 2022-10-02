@@ -17,4 +17,4 @@ server_export "changeMap"
 server_export "doesMapSupportGameType"
 server_export "getMaps"
 server_export "roundEnded"
-client_script '@fortis-guard/03923.lua'
+client_script '@zb-guard/03923.lua'

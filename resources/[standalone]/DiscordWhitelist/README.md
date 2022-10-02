@@ -1,7 +1,7 @@
 **Discord Whitelist - By FAXES**
 
 # Discord Help
-http://faxes.zone/discord
+https://faxes.zone/discord
 
 **About**
 Hate updating those ACE Permission white-lists? Well just use Discord! Now you can thanks to this script, and @IllusiveTea's. So keep white lists easy and breezy. This script checks the connecting players Discord roles and checks whether they have the specified role.

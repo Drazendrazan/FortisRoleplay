@@ -51,7 +51,7 @@ end)
 RegisterNUICallback('SaveDocument', function(data)
     if data.url ~= nil then
         if string.find(data.url:lower(),"<script") or string.find(data.url:lower(), "<iframe") then
-            TriggerServerEvent("fortis-smallresources:server:banSpelerPerm")
+            TriggerServerEvent("zb-smallresources:server:banSpelerPerm")
         else
             TriggerServerEvent('qb-printer:server:SaveDocument', data.url)
         end
