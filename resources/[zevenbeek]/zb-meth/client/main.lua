@@ -32,7 +32,7 @@ Citizen.CreateThread(function()
         local vehicleCoords = GetOffsetFromEntityInWorldCoords(voertuig, -1.5,-0.1, 0.3)
         if #vector3(vector3(vehicleCoords) - vector3(pedCoords)) < 0.4 and not IsPedInAnyVehicle(PlayerPedId(), false) and GetVehicleDoorLockStatus(voertuig) ~= 2 then
             if hash == methbus then
-                DrawMarker(2, vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 28, 202, 155, 155, 0, 0, 0, 1, 0, 0, 0)
+                DrawMarker(2, vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 125, 195, 37, 155, 0, 0, 0, 1, 0, 0, 0)
                 QBCore.Functions.DrawText3D(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.20, "~g~[E]~w~ Betreed meth bus")
                 if IsControlJustPressed(0, 38) and IsVehicleSeatFree(voertuig, 1) then
                     QBCore.Functions.TriggerCallback("zb-meth:server:checkeigendom", function(result)
@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
         local pedCoords = GetEntityCoords(PlayerPedId())
         if #vector3(vector3(Config.Locations["npc"]["x"], Config.Locations["npc"]["y"], Config.Locations["npc"]["z"]) - vector3(pedCoords)) < 2 then
             npcdichtbij = true
-            DrawMarker(2, Config.Locations["npc"]["x"] - 0.1, Config.Locations["npc"]["y"] + 0.4, Config.Locations["npc"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 28, 202, 155, 155, 0, 0, 0, 1, 0, 0, 0)
+            DrawMarker(2, Config.Locations["npc"]["x"] - 0.1, Config.Locations["npc"]["y"] + 0.4, Config.Locations["npc"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 125, 195, 37, 155, 0, 0, 0, 1, 0, 0, 0)
             if #vector3(vector3(Config.Locations["npc"]["x"], Config.Locations["npc"]["y"], Config.Locations["npc"]["z"]) - vector3(pedCoords)) < 1 then
                 if begingesprek then
                     QBCore.Functions.DrawText3D(Config.Locations["npc"]["x"] - 0.1, Config.Locations["npc"]["y"] + 0.4, Config.Locations["npc"]["z"] + 0.20, "~g~[E]~w~ Praat met persoon")
@@ -154,7 +154,7 @@ Citizen.CreateThread(function()
         end 
         if #vector3(vector3(Config.Locations["npc2"]["x"], Config.Locations["npc2"]["y"], Config.Locations["npc2"]["z"]) - vector3(pedCoords)) < 2 then
             npc2dichtbij = true
-            DrawMarker(2, Config.Locations["npc2"]["x"] - 0.2, Config.Locations["npc2"]["y"] + 0.20, Config.Locations["npc2"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 28, 202, 155, 155, 0, 0, 0, 1, 0, 0, 0)
+            DrawMarker(2, Config.Locations["npc2"]["x"] - 0.2, Config.Locations["npc2"]["y"] + 0.20, Config.Locations["npc2"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 125, 195, 37, 155, 0, 0, 0, 1, 0, 0, 0)
             if begingesprek2 then
                 QBCore.Functions.DrawText3D(Config.Locations["npc2"]["x"] - 0.2, Config.Locations["npc2"]["y"] + 0.20, Config.Locations["npc2"]["z"] + 0.20, "~g~[E]~w~ Praat met persoon")
                 if IsControlJustPressed(0,38) then
@@ -300,7 +300,7 @@ AddEventHandler("zb-meth:client:startVerkoopRonde", function()
         if #vector3(vector3(pedPos) - vector3(handelLocatie.x, handelLocatie.y, handelLocatie.z)) < 1 then
             local verkoopPedCoords = GetOffsetFromEntityInWorldCoords(handelNPC, 0.0, 0.2, 0.0)
             local amount = math.random(3, 10)
-            DrawMarker(2, verkoopPedCoords.x, verkoopPedCoords.y, verkoopPedCoords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 28, 202, 155, 155, 0, 0, 0, 1, 0, 0, 0)
+            DrawMarker(2, verkoopPedCoords.x, verkoopPedCoords.y, verkoopPedCoords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 125, 195, 37, 155, 0, 0, 0, 1, 0, 0, 0)
             QBCore.Functions.DrawText3D(verkoopPedCoords.x, verkoopPedCoords.y, verkoopPedCoords.z + 0.2, "~g~[E]~w~ Verkoop zakjes")
             if IsControlJustPressed(0, 38) then
                 RemoveBlip(handelLeverBlip)

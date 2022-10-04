@@ -218,6 +218,7 @@ Citizen.CreateThread(function()
         local coords = GetEntityCoords(ped, true)
         
         if flags >= Config.FlagsForBan then
+            SetPlayerWeaponDamageModifier(GetPlayerPed(), 0)
             -- TriggerServerEvent("qb-anticheat:server:banPlayer", "Cheating")
             -- AddExplosion(coords, EXPLOSION_GRENADE, 1000.0, true, false, false, true)
             TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Player banned! (Test)", "red", "** @everyone " ..GetPlayerName(player).. "** has been flagged to much and has been banned!")  

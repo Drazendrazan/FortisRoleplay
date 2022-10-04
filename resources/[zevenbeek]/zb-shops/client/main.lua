@@ -39,7 +39,7 @@ Citizen.CreateThread(function()
                 local dist = GetDistanceBetweenCoords(PlayerPos, loc["x"], loc["y"], loc["z"])
                 if dist < 10 then
                     InRange = true
-                    DrawMarker(2, loc["x"], loc["y"], loc["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 28, 202, 155, 155, 0, 0, 0, 1, 0, 0, 0)
+                    DrawMarker(2, loc["x"], loc["y"], loc["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 125, 195, 37, 155, 0, 0, 0, 1, 0, 0, 0)
                     if dist < 0.8 then
                         DrawText3Ds(loc["x"], loc["y"], loc["z"] + 0.15, '~g~E~w~ - Winkel')
                         if IsControlJustPressed(0, Config.Keys["E"]) then

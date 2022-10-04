@@ -287,9 +287,9 @@ CreateThread(function()
                 if vehDist < 30 then
                     inRange = true
 
-                    DrawMarker(2, Config.Location.x, Config.Location.y, Config.Location.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, Config.Location.x, Config.Location.y, Config.Location.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if whitelistedVehicle() then
-                        DrawMarker(2, Config.busLocation.x, Config.busLocation.y, Config.busLocation.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                        DrawMarker(2, Config.busLocation.x, Config.busLocation.y, Config.busLocation.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     end
 
                     if vehDist < 1.5 or busdist <2.5 then

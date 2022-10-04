@@ -147,7 +147,7 @@ AddEventHandler("zb-bitcoin:client:verwijderServerKast", function(verwijderRackI
             Citizen.Wait(1)
             local pedPos = GetEntityCoords(PlayerPedId())
             if GetDistanceBetweenCoords(pedPos, coords.x, coords.y, coords.z, true) < 7 then
-                DrawMarker(2, coords.x, coords.y, coords.z + 1.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, coords.x, coords.y, coords.z + 1.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, coords.x, coords.y, coords.z, true) < 2 then
                     QBCore.Functions.DrawText3D(coords.x, coords.y, coords.z + 1.0, "~g~[E]~w~ Serverkast afsluiten")
                     if IsControlJustPressed(0, 38) then
@@ -397,7 +397,7 @@ Citizen.CreateThread(function()
             elseif leverBlipGeplaatst then
                 -- Blip geplaatst, tijd is dus al geweests, hij mag ophalen, wacht op marker
                 if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), -661.80, -861.62, 24.49, true) < 10 then
-                    DrawMarker(2, -661.80, -861.62, 24.49, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, -661.80, -861.62, 24.49, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), -661.80, -861.62, 24.49, true) < 1.3 then
                         QBCore.Functions.DrawText3D(-661.80, -861.62, 24.49 + 0.3, "~g~[E]~w~ Order afhalen")
                         if IsControlJustPressed(0, 38) then

@@ -32,7 +32,7 @@ Citizen.CreateThread(function()
             sleep = 1
             -- ShowHelpNotification(Strings['start_heist'])
             QBCore.Functions.DrawText3D(467.40, -2193.48, 5.92 + 0.2, "~g~[E]~w~ Start train heist")
-            DrawMarker(2, 467.40, -2193.48, 5.92, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, 467.40, -2193.48, 5.92, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if IsControlJustPressed(0, 38) then
                 StartTrainHeist()
             end

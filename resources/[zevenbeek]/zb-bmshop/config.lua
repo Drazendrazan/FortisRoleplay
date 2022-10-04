@@ -111,16 +111,16 @@ Config.Locaties = {
     ["bmdeur"] = {
         [1] = {
             ["coords"] = {
-                ["x"] = 2942.81, 
-                ["y"] = 4626.68, 
-                ["z"] = 48.72
+                ["x"] = 0.0, 
+                ["y"] = 0.0, 
+                ["z"] = 0.0
             },
         },
     },
     -- Producten
     ["producten"] = {
         [1] = {
-            name = "blueprint_switchblade",
+            name = "125, 195, 37",
             price = 93750,
             amount = 1,
             info = {},

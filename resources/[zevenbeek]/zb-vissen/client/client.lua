@@ -81,7 +81,7 @@ Citizen.CreateThread(function()
 
             if distance <= 8 then
                 letsleep = false
-                DrawMarker(2, locaties["coords"]["x"], locaties["coords"]["y"], locaties["coords"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, locaties["coords"]["x"], locaties["coords"]["y"], locaties["coords"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if distance <= 3 and not gestart then
                     QBCore.Functions.DrawText3D(locaties["coords"]["x"], locaties["coords"]["y"], locaties["coords"]["z"] - 0.10, "~g~[E]~w~ Start met vissen")
 

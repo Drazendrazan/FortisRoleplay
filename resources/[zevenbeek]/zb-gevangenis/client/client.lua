@@ -2,7 +2,7 @@ QBCore = nil
 
 -- Communicatie middelen
 local telefoon = false
-local fortel = false
+local reboot = false
 local portofoon = false
 local maanden = 0
 local klaar = false
@@ -446,9 +446,9 @@ AddEventHandler("zb-gevangenis:client:jobs", function()
                     local distance = #vector3(vector3(pCoords) - vector3(onkruidTaken[k].x, onkruidTaken[k].y, onkruidTaken[k].z))
                     if distance < 5 then
                         letsleep = false
-                        DrawMarker(2, onkruidTaken[k].x, onkruidTaken[k].y, onkruidTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                        DrawMarker(2, onkruidTaken[k].x, onkruidTaken[k].y, onkruidTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                         if distance < 1 then
-                            DrawMarker(2, onkruidTaken[k].x, onkruidTaken[k].y, onkruidTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                            DrawMarker(2, onkruidTaken[k].x, onkruidTaken[k].y, onkruidTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                             QBCore.Functions.DrawText3D(onkruidTaken[k].x, onkruidTaken[k].y, onkruidTaken[k].z, "~g~E~w~ - Begin met onkruid weg scheppen")
                             if (IsControlJustReleased(1, 38)) then
                                 key = k
@@ -492,9 +492,9 @@ AddEventHandler("zb-gevangenis:client:jobs", function()
                     local distance = #vector3(vector3(pCoords) - vector3(bezemTaken[k].x, bezemTaken[k].y, bezemTaken[k].z))
                     if distance < 5 then
                         letsleep = false
-                        DrawMarker(2, bezemTaken[k].x, bezemTaken[k].y, bezemTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                        DrawMarker(2, bezemTaken[k].x, bezemTaken[k].y, bezemTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                         if distance < 1 then
-                            DrawMarker(2, bezemTaken[k].x, bezemTaken[k].y, bezemTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                            DrawMarker(2, bezemTaken[k].x, bezemTaken[k].y, bezemTaken[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                             QBCore.Functions.DrawText3D(bezemTaken[k].x, bezemTaken[k].y, bezemTaken[k].z, "~g~E~w~ - Begin de grond te vegen")
                             if (IsControlJustReleased(1, 38)) then
                                 local bezemModel = "prop_tool_broom"

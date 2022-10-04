@@ -97,7 +97,7 @@ Citizen.CreateThread(function()
             -- Stash
             if GetDistanceBetweenCoords(pedPos, Config.gangs[gang].stash.x, Config.gangs[gang].stash.y, Config.gangs[gang].stash.z, true) < 5 then
                 letsleep = false
-                DrawMarker(2, Config.gangs[gang].stash.x, Config.gangs[gang].stash.y, Config.gangs[gang].stash.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, Config.gangs[gang].stash.x, Config.gangs[gang].stash.y, Config.gangs[gang].stash.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, Config.gangs[gang].stash.x, Config.gangs[gang].stash.y, Config.gangs[gang].stash.z, true) < 1 then
                     QBCore.Functions.DrawText3D(Config.gangs[gang].stash.x, Config.gangs[gang].stash.y, Config.gangs[gang].stash.z - 0.10, "~g~[E]~w~ Stash openen")
                     if IsControlJustPressed(0, 38) then
@@ -110,7 +110,7 @@ Citizen.CreateThread(function()
             -- Outfits
             if GetDistanceBetweenCoords(pedPos, Config.gangs[gang].kleding.x, Config.gangs[gang].kleding.y, Config.gangs[gang].kleding.z, true) < 5 then
                 letsleep = false
-                DrawMarker(2, Config.gangs[gang].kleding.x, Config.gangs[gang].kleding.y, Config.gangs[gang].kleding.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, Config.gangs[gang].kleding.x, Config.gangs[gang].kleding.y, Config.gangs[gang].kleding.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, Config.gangs[gang].kleding.x, Config.gangs[gang].kleding.y, Config.gangs[gang].kleding.z, true) < 1 then
                     QBCore.Functions.DrawText3D(Config.gangs[gang].kleding.x, Config.gangs[gang].kleding.y, Config.gangs[gang].kleding.z - 0.10, "~g~[E]~w~ Kledingkast openen")
                     if IsControlJustPressed(0, 38) then
@@ -164,7 +164,7 @@ Citizen.CreateThread(function()
 
             --     if GetDistanceBetweenCoords(pedPos, Config.gangs[gang].kleding2.x, Config.gangs[gang].kleding2.y, Config.gangs[gang].kleding2.z, true) < 5 then
             --         letsleep = false
-            --         DrawMarker(2, Config.gangs[gang].kleding2.x, Config.gangs[gang].kleding2.y, Config.gangs[gang].kleding2.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            --         DrawMarker(2, Config.gangs[gang].kleding2.x, Config.gangs[gang].kleding2.y, Config.gangs[gang].kleding2.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             --         if GetDistanceBetweenCoords(pedPos, Config.gangs[gang].kleding2.x, Config.gangs[gang].kleding2.y, Config.gangs[gang].kleding2.z, true) < 1 then
             --             QBCore.Functions.DrawText3D(Config.gangs[gang].kleding2.x, Config.gangs[gang].kleding2.y, Config.gangs[gang].kleding2.z - 0.10, "~g~[E]~w~ Kledingkast openen")
             --             if IsControlJustPressed(0, 38) then

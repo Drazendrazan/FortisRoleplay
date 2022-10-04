@@ -96,7 +96,7 @@ Citizen.CreateThread(function()
         letsleep = true
         if GetDistanceBetweenCoords(pedPos, -1910.78, -570.30, 19.09) < 20 then
             letsleep = false
-            DrawMarker(2, -1910.78, -570.30, 19.09, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, -1910.78, -570.30, 19.09, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pedPos, -1910.78, -570.30, 19.09, true) < 2 then
                 QBCore.Functions.DrawText3D(-1910.78, -570.30, 19.09 - 0.10, "~g~[G]~w~ Huis overschrijf contract kopen [€5000]")
                 if IsControlJustPressed(0, 47) then

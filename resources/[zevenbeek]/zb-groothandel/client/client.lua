@@ -248,7 +248,7 @@ Citizen.CreateThread(function()
             local pedCoords = GetEntityCoords(PlayerPedId())
             if GetDistanceBetweenCoords(pedCoords, groothandel.data.coords["deur"].x, groothandel.data.coords["deur"].y, groothandel.data.coords["deur"].z, true) < 15 then
                 letsleep = false
-                DrawMarker(2, groothandel.data.coords["deur"].x, groothandel.data.coords["deur"].y, groothandel.data.coords["deur"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, groothandel.data.coords["deur"].x, groothandel.data.coords["deur"].y, groothandel.data.coords["deur"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedCoords, groothandel.data.coords["deur"].x, groothandel.data.coords["deur"].y, groothandel.data.coords["deur"].z, true) < 1.5 then
                     QBCore.Functions.DrawText3D(groothandel.data.coords["deur"].x, groothandel.data.coords["deur"].y, groothandel.data.coords["deur"].z + 0.2, "~g~[E]~w~ Magazijn betreden")
                     if IsControlJustPressed(0, 38) and not enteringMagazijn then
@@ -407,7 +407,7 @@ Citizen.CreateThread(function()
             -- Magazijn verlaten
             if GetDistanceBetweenCoords(pedCoords, exitCoords.x, exitCoords.y, exitCoords.z, true) < 10 then
                 letsleep = false
-                DrawMarker(2, exitCoords.x, exitCoords.y, exitCoords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, exitCoords.x, exitCoords.y, exitCoords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedCoords, exitCoords.x, exitCoords.y, exitCoords.z, true) < 1.5 then
                     QBCore.Functions.DrawText3D(exitCoords.x, exitCoords.y, exitCoords.z + 0.2, "~g~[E]~w~ Magazijn verlaten")
                     if IsControlJustPressed(0, 38) and not enteringMagazijn then
@@ -565,7 +565,7 @@ AddEventHandler("zb-groothandel:client:startRonde", function(rondeData, rondeTyp
     while true do
         Wait(1)
         local pos = GetEntityCoords(GetPlayerPed(-1))
-        DrawMarker(0, voertuigCoords.x, voertuigCoords.y, voertuigCoords.z + 4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.6, 0.2, 28, 202, 155, 155, true, false, false, true, false, false, false)
+        DrawMarker(0, voertuigCoords.x, voertuigCoords.y, voertuigCoords.z + 4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.6, 0.2, 125, 195, 37, 155, true, false, false, true, false, false, false)
         if GetDistanceBetweenCoords(pos, voertuigCoords.x, voertuigCoords.y, voertuigCoords.z) < 4 then
             if IsControlJustPressed(0, 49) then
                 DoScreenFadeOut(500)
@@ -681,7 +681,7 @@ AddEventHandler("zb-groothandel:client:bezigMetRonde", function(rondeData, ronde
                 if locatieDozen == true then -- Doos moet naar het voertuig.
                     if GetDistanceBetweenCoords(pos, trunkpos.x, trunkpos.y, trunkpos.z, true) < 30 and not IsPedInAnyVehicle(PlayerPedId()) then
                         letsleep = false
-                        DrawMarker(20, trunkpos.x, trunkpos.y, trunkpos.z + 2, 0.0, 0.0, 0.0, 180.0, 0.0, 0.0, 0.3, 0.5, 0.3, 28, 202, 155, 155, true, false, false, true, false, false, false)
+                        DrawMarker(20, trunkpos.x, trunkpos.y, trunkpos.z + 2, 0.0, 0.0, 0.0, 180.0, 0.0, 0.0, 0.3, 0.5, 0.3, 125, 195, 37, 155, true, false, false, true, false, false, false)
                         if GetDistanceBetweenCoords(pos, trunkpos.x, trunkpos.y, trunkpos.z, true) < 2 then
                             if rondeType == "inkopen" then
                                 QBCore.Functions.DrawText3D(trunkpos.x, trunkpos.y, trunkpos.z + 1, "~g~[E]~w~ Doos plaatsen")
@@ -721,7 +721,7 @@ AddEventHandler("zb-groothandel:client:bezigMetRonde", function(rondeData, ronde
                 else -- Doos moet naar de NPC.
                     if GetDistanceBetweenCoords(pos, eindLocatie.x, eindLocatie.y, eindLocatie.z, true) < 30 and not IsPedInAnyVehicle(PlayerPedId()) then
                         letsleep = false
-                        DrawMarker(20, eindLocatie.x, eindLocatie.y, eindLocatie.z + 2, 0.0, 0.0, 0.0, 180.0, 0.0, 0.0, 0.3, 0.5, 0.3, 28, 202, 155, 155, true, false, false, true, false, false, false)
+                        DrawMarker(20, eindLocatie.x, eindLocatie.y, eindLocatie.z + 2, 0.0, 0.0, 0.0, 180.0, 0.0, 0.0, 0.3, 0.5, 0.3, 125, 195, 37, 155, true, false, false, true, false, false, false)
                         if GetDistanceBetweenCoords(pos, eindLocatie.x, eindLocatie.y, eindLocatie.z, true) < 2.5 then
                             if rondeType == "inkopen" then
                                 QBCore.Functions.DrawText3D(eindLocatie.x, eindLocatie.y, eindLocatie.z + 1, "~g~[E]~w~ Doos pakken")
@@ -785,7 +785,7 @@ AddEventHandler("zb-groothandel:client:bezigMetRonde", function(rondeData, ronde
 
             if GetDistanceBetweenCoords(pos, groothandel.data.coords["voertuig"].x, groothandel.data.coords["voertuig"].y, groothandel.data.coords["voertuig"].z, true) < 15 then
                 letsleep = false
-                DrawMarker(25, groothandel.data.coords["voertuig"].x, groothandel.data.coords["voertuig"].y, groothandel.data.coords["voertuig"].z - 1.2, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 100, 0, 0, 0, 0)
+                DrawMarker(25, groothandel.data.coords["voertuig"].x, groothandel.data.coords["voertuig"].y, groothandel.data.coords["voertuig"].z - 1.2, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 100, 0, 0, 0, 0)
                 if GetDistanceBetweenCoords(pos, groothandel.data.coords["voertuig"].x, groothandel.data.coords["voertuig"].y, groothandel.data.coords["voertuig"].z, true) < 3 then
                     QBCore.Functions.DrawText3D(groothandel.data.coords["voertuig"].x, groothandel.data.coords["voertuig"].y, groothandel.data.coords["voertuig"].z, "~g~[E]~w~ Ronde stoppen")
                     if IsControlJustPressed(0, 38) then

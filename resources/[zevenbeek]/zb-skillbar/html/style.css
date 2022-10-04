@@ -54,8 +54,8 @@ body {
     height: 100%;
     width: 0%;
     margin-left: -10px;
-    background: #1CCA9B;
-    background: linear-gradient(-90deg, #178a6b 0%, #1CCA9B 100%);
+    background: #7dc325;
+    background: linear-gradient(-90deg, #178a6b 0%, #7dc325 100%);
     z-index: 100;
 }
 

@@ -89,13 +89,13 @@ Citizen.CreateThread(function()
                 z = QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["buy"]["z"]
             }
 
-            DrawMarker(2, BuyLocation.x, BuyLocation.y, BuyLocation.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.5, 0.15, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, BuyLocation.x, BuyLocation.y, BuyLocation.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.5, 0.15, 125, 195, 37, 155, false, false, false, true, false, false, false)
             local BuyDistance = GetDistanceBetweenCoords(pos, BuyLocation.x, BuyLocation.y, BuyLocation.z, true)
 
             if BuyDistance < 2 then                
                 local currentBoat = QBBoatshop.Locations["berths"][ClosestBerth]["boatModel"]
 
-                DrawMarker(2, QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["boat"]["x"], QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["boat"]["y"], QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["boat"]["z"] + 2.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.5, -0.30, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["boat"]["x"], QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["boat"]["y"], QBBoatshop.Locations["berths"][ClosestBerth]["coords"]["boat"]["z"] + 2.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.5, -0.30, 125, 195, 37, 155, false, false, false, true, false, false, false)
 
                 if not Buying then
                     DrawText3D(BuyLocation.x, BuyLocation.y, BuyLocation.z + 0.3, '~g~E~w~ - '..QBBoatshop.ShopBoats[currentBoat]["label"]..' kopen voor ~b~€'..QBBoatshop.ShopBoats[currentBoat]["price"])

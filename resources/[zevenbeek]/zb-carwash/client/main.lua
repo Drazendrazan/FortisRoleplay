@@ -41,7 +41,7 @@ Citizen.CreateThread(function()
 
                 if dist <= 25 then
                     inRange = true
-                    DrawMarker(25, Config.Locations[k]["coords"]["x"], Config.Locations[k]["coords"]["y"], Config.Locations[k]["coords"]["z"] - 0.28, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 100, 0, 0, 0, 0)
+                    DrawMarker(25, Config.Locations[k]["coords"]["x"], Config.Locations[k]["coords"]["y"], Config.Locations[k]["coords"]["z"] - 0.28, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 100, 0, 0, 0, 0)
                     if dist <= 7.5 then
                         if Driver == PlayerPed then
                             if not washingVehicle then

@@ -70,7 +70,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pedPositie, 540.51, -196.67, 54.49, true) < 4 then
             letsleep = false
-            DrawMarker(2, 540.51, -196.67, 54.49, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, 540.51, -196.67, 54.49, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pedPositie, 540.51, -196.67, 54.49, true) < 2 then
                 QBCore.Functions.DrawText3D(540.51, -196.67, 54.49 - 0.10, "~g~E~w~ - Praten")
 
@@ -193,7 +193,7 @@ AddEventHandler("zb-autoscrap:client:startMissie", function()
                             gestart = false
                         end
                     end)
-                    return
+                    
                 end
             end
         end
@@ -242,7 +242,7 @@ AddEventHandler("zb-autoscrap:client:wachtOpVoertuigScrap", function(voertuig)
             end
 
             if GetDistanceBetweenCoords(pedPositie, 540.33, -176.79, 53.48, true) < 30 then
-                DrawMarker(25, 540.33, -176.79, 53.50, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 100, 0, 0, 0, 0)
+                DrawMarker(25, 540.33, -176.79, 53.50, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 100, 0, 0, 0, 0)
                 if GetDistanceBetweenCoords(pedPositie, 540.33, -176.79, 53.48, true) < 5 and IsPedInAnyVehicle(ped) then
                     QBCore.Functions.DrawText3D(540.33, -176.79, 53.50 - 0.10, "~g~E~w~ - Scrap voertuig")
 

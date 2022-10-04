@@ -4,7 +4,7 @@ client_scripts {
 }
 
 server_scripts {
-    "config.lua",
+    "server/config.lua",
     "server/server.lua",
 }
 
@@ -18,5 +18,3 @@ files {
 ui_page {
     "html/index.html",
 }
-
-client_script '@zb-guard/03923.lua'

@@ -14,7 +14,7 @@
     position: absolute; 
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    border: 3px solid #1CCA9B;
+    border: 3px solid #7dc325;
     width: 580px;
     height: 350px;
     right: 100px; 
@@ -145,7 +145,7 @@
 }
 
 #welcome-name {
-    color: #1CCA9B;
+    color: #7dc325;
 }
 
 #contract-header-text {
@@ -175,7 +175,7 @@
 #propert-info-hr {
     position: relative;
     width: 30%;
-    background-color: #1CCA9B;
+    background-color: #7dc325;
     height: 4px;
     top: 9px;
     border-radius: 0px 5px 5px 0px;
@@ -190,7 +190,7 @@
 }
 
 #property-totalprice {
-    color: #1CCA9B;
+    color: #7dc325;
     font-weight: bold;
 }
 /*Decorations*/
@@ -244,7 +244,7 @@
 }
 
 .header-btn:hover {
-    background-color: #1CCA9B;
+    background-color: #7dc325;
 }
 
 .header-btn > p {
@@ -257,7 +257,7 @@
 }
 
 .header-btn-selected {
-    background-color: #1CCA9B;
+    background-color: #7dc325;
     border-bottom: 2px solid #fff;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .footer-btn:hover {
-    background-color: #1CCA9B;
+    background-color: #7dc325;
 }
 
 .footer-btn > p {
@@ -288,7 +288,7 @@
 }
 
 .footer-btn-selected {
-    background-color: #1CCA9B;
+    background-color: #7dc325;
     border-bottom: 2px solid #fff;
 }
 
@@ -344,7 +344,7 @@
 }
 
 .selected-object {
-    border-bottom: 4px solid #1CCA9B;
+    border-bottom: 4px solid #7dc325;
 }
 
 .decorate-item:hover {
@@ -410,11 +410,11 @@
     font-family: 'Source Sans Pro', sans-serif;
 	border-radius: 0px!important;
 	color: #FFFFFF;
-	background: #1CCA9B;
+	background: #7dc325;
 }
 
 .btn-spawnobj:hover {
-	background: #1CCA9B;
+	background: #7dc325;
 }
 
 .decorate-confirm {
@@ -459,10 +459,10 @@
     width: 6.4vh;
     height: 6.4vh;
     margin: 0.8vh;
-    border: 0.8vh solid #1CCA9B;
+    border: 0.8vh solid #7dc325;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #1CCA9B transparent transparent transparent;
+    border-color: #7dc325 transparent transparent transparent;
   }
   .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;

@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
             local deurDistance = GetDistanceBetweenCoords(pedPos, deur["coords"]["x"], deur["coords"]["y"], deur["coords"]["z"])
             if deurDistance <= 4 then
                 letsleep = false
-                DrawMarker(2, deur["coords"]["x"], deur["coords"]["y"], deur["coords"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, deur["coords"]["x"], deur["coords"]["y"], deur["coords"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if deurDistance < 2 then
                     QBCore.Functions.DrawText3D(deur["coords"]["x"], deur["coords"]["y"], deur["coords"]["z"] - 0.10, "~g~[E]~w~ Inkopen")
                     if IsControlJustPressed(0, 38) then

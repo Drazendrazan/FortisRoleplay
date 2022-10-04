@@ -10,7 +10,7 @@ Gemaakt door: Finn#0007
     --white: #fff;
     --black: #000;
 
-    --groen: #1CCA9B;
+    --groen: #7dc325;
     --rood: #FF0000;
 }
 
@@ -114,8 +114,8 @@ body {
 
 .karakter-actie-icoon.speel {
     top: -15px;
-    background: rgb(28,202,155);
-    background: linear-gradient(80deg, rgba(28,202,155,1) 0%, rgba(29,185,84,1) 100%);
+    background: rgb(125, 195, 37);
+    background: linear-gradient(80deg, rgba(125, 195, 37,1) 0%, rgba(29,185,84,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
     transition: .25s ease-in-out;
 }
@@ -297,8 +297,8 @@ body {
 .nieuwkarakter-content .karakter-opslaan {
     outline: none;
     border: none;
-    background: rgb(28,202,155);
-    background: linear-gradient(80deg, rgba(28,202,155,1) 0%, rgba(29,185,84,1) 100%);
+    background: rgb(125, 195, 37);
+    background: linear-gradient(80deg, rgba(125, 195, 37,1) 0%, rgba(29,185,84,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
     transition: .25s ease-in-out;
     padding: 10px;
@@ -453,14 +453,14 @@ body {
 .loader,
 .loader:before,
 .loader:after {
-  background: #1CCA9B;
+  background: #7dc325;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
   height: 4em;
 }
 .loader {
-  color: #1CCA9B;
+  color: #7dc325;
   text-indent: -9999em;
   margin: 88px auto;
   position: relative;

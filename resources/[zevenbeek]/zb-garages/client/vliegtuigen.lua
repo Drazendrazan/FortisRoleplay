@@ -9,7 +9,7 @@ Citizen.CreateThread(function()
             -- Take plane
             if GetDistanceBetweenCoords(pedCoords, VliegtuigHangars[k].takePlane.x, VliegtuigHangars[k].takePlane.y, VliegtuigHangars[k].takePlane.z, true) < 25 then
                 letsleep = false
-                DrawMarker(2, VliegtuigHangars[k].takePlane.x, VliegtuigHangars[k].takePlane.y, VliegtuigHangars[k].takePlane.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                DrawMarker(2, VliegtuigHangars[k].takePlane.x, VliegtuigHangars[k].takePlane.y, VliegtuigHangars[k].takePlane.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
 
                 if GetDistanceBetweenCoords(pedCoords, VliegtuigHangars[k].takePlane.x, VliegtuigHangars[k].takePlane.y, VliegtuigHangars[k].takePlane.z, true) < 2 then
                     DrawText3Ds(VliegtuigHangars[k].takePlane.x, VliegtuigHangars[k].takePlane.y, VliegtuigHangars[k].takePlane.z + 0.5, "~g~E~w~ - Hangar")
@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
             if GetDistanceBetweenCoords(pedCoords, VliegtuigHangars[k].putPlane.x, VliegtuigHangars[k].putPlane.y, VliegtuigHangars[k].putPlane.z, true) < 25 and IsPedInAnyVehicle(GetPlayerPed(-1)) then
                 if GetVehicleClass(GetVehiclePedIsIn(GetPlayerPed(-1))) == 15 or GetVehicleClass(GetVehiclePedIsIn(GetPlayerPed(-1))) == 16 then
                     letsleep = false
-                    DrawMarker(25, VliegtuigHangars[k].putPlane.x, VliegtuigHangars[k].putPlane.y, VliegtuigHangars[k].putPlane.z - 0.98, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 255, 0, 0, 0, 0)
+                    DrawMarker(25, VliegtuigHangars[k].putPlane.x, VliegtuigHangars[k].putPlane.y, VliegtuigHangars[k].putPlane.z - 0.98, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 255, 0, 0, 0, 0)
 
                     if GetDistanceBetweenCoords(pedCoords, VliegtuigHangars[k].putPlane.x, VliegtuigHangars[k].putPlane.y, VliegtuigHangars[k].putPlane.z, true) < 5 then
                         DrawText3Ds(VliegtuigHangars[k].putPlane.x, VliegtuigHangars[k].putPlane.y, VliegtuigHangars[k].putPlane.z + 0.5, "~g~E~w~ - Parkeren")
@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
         -- Depot
         if GetDistanceBetweenCoords(pedCoords, VliegtuigDepot["stad"].takePlane.x, VliegtuigDepot["stad"].takePlane.y, VliegtuigDepot["stad"].takePlane.z, true) < 25 then
             letsleep = false
-            DrawMarker(2, VliegtuigDepot["stad"].takePlane.x, VliegtuigDepot["stad"].takePlane.y, VliegtuigDepot["stad"].takePlane.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+            DrawMarker(2, VliegtuigDepot["stad"].takePlane.x, VliegtuigDepot["stad"].takePlane.y, VliegtuigDepot["stad"].takePlane.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pedCoords, VliegtuigDepot["stad"].takePlane.x, VliegtuigDepot["stad"].takePlane.y, VliegtuigDepot["stad"].takePlane.z, true) < 2 then
                 DrawText3Ds(VliegtuigDepot["stad"].takePlane.x, VliegtuigDepot["stad"].takePlane.y, VliegtuigDepot["stad"].takePlane.z + 0.5, "~g~E~w~ - Depot")
                 if IsControlJustPressed(0, 38) then
@@ -70,7 +70,7 @@ Citizen.CreateThread(function()
             if GetDistanceBetweenCoords(pedCoords, VliegtuigTanken[k].coords.x, VliegtuigTanken[k].coords.y, VliegtuigTanken[k].coords.z, true) < 50 and IsPedInAnyVehicle(GetPlayerPed(-1)) then
                 if GetVehicleClass(GetVehiclePedIsIn(GetPlayerPed(-1))) == 15 or GetVehicleClass(GetVehiclePedIsIn(GetPlayerPed(-1))) == 16 then
                     letsleep = false
-                    DrawMarker(25, VliegtuigTanken[k].coords.x, VliegtuigTanken[k].coords.y, VliegtuigTanken[k].coords.z - 0.98, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 255, 0, 0, 0, 0)
+                    DrawMarker(25, VliegtuigTanken[k].coords.x, VliegtuigTanken[k].coords.y, VliegtuigTanken[k].coords.z - 0.98, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 255, 0, 0, 0, 0)
                     if GetDistanceBetweenCoords(pedCoords, VliegtuigTanken[k].coords.x, VliegtuigTanken[k].coords.y, VliegtuigTanken[k].coords.z, true) < 5 then
                         DrawText3Ds(VliegtuigTanken[k].coords.x, VliegtuigTanken[k].coords.y, VliegtuigTanken[k].coords.z + 0.5, "~g~E~w~ - Kerosine bijvullen")
                         if IsControlJustPressed(0, 38) then
@@ -317,7 +317,7 @@ Citizen.CreateThread(function()
                 
                 if liftBeneden < 1 then
                     letsleep = false
-                    DrawMarker(2, HelipadLift[k].coordsBeneden.x, HelipadLift[k].coordsBeneden.y, HelipadLift[k].coordsBeneden.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                    DrawMarker(2, HelipadLift[k].coordsBeneden.x, HelipadLift[k].coordsBeneden.y, HelipadLift[k].coordsBeneden.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                     QBCore.Functions.DrawText3D(HelipadLift[k].coordsBeneden.x, HelipadLift[k].coordsBeneden.y, HelipadLift[k].coordsBeneden.z + 0.20, '~g~E~w~ - Lift')
                     if IsControlJustPressed(0, 38) then
                         DoScreenFadeOut(500)
@@ -328,7 +328,7 @@ Citizen.CreateThread(function()
                 
                 elseif liftBoven < 1 then
                     letsleep = false
-                    DrawMarker(2, HelipadLift[k].coordsBoven.x, HelipadLift[k].coordsBoven.y, HelipadLift[k].coordsBoven.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                    DrawMarker(2, HelipadLift[k].coordsBoven.x, HelipadLift[k].coordsBoven.y, HelipadLift[k].coordsBoven.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                     QBCore.Functions.DrawText3D(HelipadLift[k].coordsBoven.x, HelipadLift[k].coordsBoven.y, HelipadLift[k].coordsBoven.z + 0.20, '~g~E~w~ - Lift')
                     if IsControlJustPressed(0, 38) then
                         DoScreenFadeOut(500)

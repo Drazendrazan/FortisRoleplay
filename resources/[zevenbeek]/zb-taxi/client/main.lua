@@ -195,7 +195,7 @@ AddEventHandler("qb-taxi:client:klantAfleveren", function(npcKlantPed)
 
         if GetDistanceBetweenCoords(PlayerCoords, locatie.x, locatie.y, locatie.z, true) < 25 then
             letsleep = false
-            DrawMarker(2, locatie.x, locatie.y, locatie.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, locatie.x, locatie.y, locatie.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(PlayerCoords, locatie.x, locatie.y, locatie.z, true) < 5 then
                 QBCore.Functions.DrawText3D(locatie.x, locatie.y, locatie.z, "~g~[E]~w~ Afleveren")
                 if IsControlJustPressed(0, 38) then
@@ -319,7 +319,7 @@ Citizen.CreateThread(function()
                     if vehDist < 30 then
                         inRange = true
 
-                        DrawMarker(2, Config.Locations["vehicle"]["x"], Config.Locations["vehicle"]["y"], Config.Locations["vehicle"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                        DrawMarker(2, Config.Locations["vehicle"]["x"], Config.Locations["vehicle"]["y"], Config.Locations["vehicle"]["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
 
                         if vehDist < 1.5 then
                             if whitelistedVehicle() then
@@ -359,7 +359,7 @@ Citizen.CreateThread(function()
             if PlayerData.job.name == "taxi" then
                 if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), 903.17, -172.78, 74.07, true) < 10 then
                     letsleep = false
-                    DrawMarker(2, 903.17, -172.78, 74.07 + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, 903.17, -172.78, 74.07 + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), 903.17, -172.78, 74.07, true) < 2.5 then
                         if onduty then
                             QBCore.Functions.DrawText3D(903.17, -172.78, 74.07, "~r~[E]~w~ Uitklokken")

@@ -32,7 +32,7 @@
     background: #4b5466;
 }
 .bank-app-header-button-selected {
-    border-bottom: .3vh solid #1cca9b;
+    border-bottom: .3vh solid #7dc325;
 }
 .bank-app-header-button > i {
     position: absolute;
@@ -282,7 +282,7 @@
     display: none;
 }
 #bank-transfer-iban:focus {
-    border-bottom: 2px solid #1cca9b;
+    border-bottom: 2px solid #7dc325;
 }
 #bank-transfer-iban:valid {
     border-bottom: 2px solid #6ab04c;
@@ -310,7 +310,7 @@
 }
 
 #bank-transfer-amount:focus {
-    border-bottom: 2px solid #1cca9b;
+    border-bottom: 2px solid #7dc325;
 }
 
 #bank-transfer-amount:valid {
@@ -338,7 +338,7 @@
     color: white
 }
 .bank-transfer-mycontacts-icon:hover {
-    color: #1cca9b;
+    color: #7dc325;
 }
 .bank-app-transfer-buttons {
     position: absolute;
@@ -360,7 +360,7 @@
     transition: .1s;
 }
 .bank-app-transfer-button:hover {
-    border-top: .2vh solid #1cca9b;
+    border-top: .2vh solid #7dc325;
 }
 .bank-app-my-contacts {
     display: none;

@@ -48,7 +48,7 @@ AddEventHandler("zb-daily:client:KrijgTaartLocatie", function()
         local pos = GetEntityCoords(GetPlayerPed(-1))
         if GetDistanceBetweenCoords(pos, -550.84, -191.75, 38.22, true) < 10 then
             letsleep = false
-            DrawMarker(2, -550.84, -191.75, 38.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, -550.84, -191.75, 38.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pos, -550.84, -191.75, 38.22, true) < 2 then
                 QBCore.Functions.DrawText3D(-550.84, -191.75, 38.22, "~g~E~w~ - Cadeautje ophalen")
                 if IsControlJustPressed(0, 38) then

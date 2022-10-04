@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pedPositie, 1136.08, -988.23, 46.11, true) < 4 then
             letsleep = false
-            DrawMarker(2, 1136.08, -988.23, 46.11, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, 1136.08, -988.23, 46.11, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if not gestart then
                 if GetDistanceBetweenCoords(pedPositie, 1136.08, -988.23, 46.11, true) < 1 then
                     QBCore.Functions.DrawText3D(1136.08, -988.23, 46.11 - 0.10, "~g~E~w~ - Witwassen")

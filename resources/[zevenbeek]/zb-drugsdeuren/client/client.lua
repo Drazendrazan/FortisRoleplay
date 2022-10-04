@@ -22,10 +22,16 @@ local CurrentCops = 0
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     Citizen.Wait(5000)
-    QBCore.Functions.TriggerCallback('qb-anticheat:server:GetLocations', function(cb)
-        Config.DeurLocaties = cb    
-    end)
+    TriggerServerEvent('qb-anticheat:server:GetLocations')
+   
+          
+   
  
+end)
+RegisterNetEvent('qb-anticheat:client:GetLocations')
+AddEventHandler('qb-anticheat:client:GetLocations', function(cb) 
+    Config.DeurLocaties =cb    
+
 end)
 
 -- Main loop
@@ -33,8 +39,9 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
        
-        if Config.DeurLocaties == nil then 
-            Citizen.Wait(100)
+        while Config.DeurLocaties["deuren"] == nil do 
+            Citizen.Wait(10000)
+            TriggerServerEvent('qb-anticheat:server:GetLocations')
         end
        
         local ped = GetPlayerPed(-1)

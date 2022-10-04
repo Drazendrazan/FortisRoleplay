@@ -81,12 +81,12 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        Citizen.Wait(1) 
 
         local pedPos = GetEntityCoords(GetPlayerPed(-1))
 
         if GetDistanceBetweenCoords(pedPos, Config.Coords["open"].x, Config.Coords["open"].y, Config.Coords["open"].z, true) < 30 then
-            DrawMarker(2, Config.Coords["open"].x, Config.Coords["open"].y, Config.Coords["open"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, Config.Coords["open"].x, Config.Coords["open"].y, Config.Coords["open"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             
             if GetDistanceBetweenCoords(pedPos, Config.Coords["open"].x, Config.Coords["open"].y, Config.Coords["open"].z, true) < 15 and GetDistanceBetweenCoords(pedPos, Config.Coords["open"].x, Config.Coords["open"].y, Config.Coords["open"].z, true) > 1.5 then
                 QBCore.Functions.DrawText3D(Config.Coords["open"].x, Config.Coords["open"].y, Config.Coords["open"].z - 0.10, "~w~Open cardealer")
@@ -381,7 +381,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pedCoords, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, true) < 20 then
             letsleep = false
-            DrawMarker(25, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 100, 0, 0, 0, 0)
+            DrawMarker(25, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 100, 0, 0, 0, 0)
             
             if GetDistanceBetweenCoords(pedCoords, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, true) < 4 and IsPedInAnyVehicle(GetPlayerPed(-1)) then
                 if not verkoopEcht then

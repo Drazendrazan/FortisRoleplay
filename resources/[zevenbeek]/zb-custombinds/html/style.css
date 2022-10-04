@@ -23,7 +23,7 @@ body {
     position: absolute;
     width: 100%;
     height: 5%;
-    background: #1cca9b;
+    background: #7dc325;
     text-align: center;
     top: 0;
     line-height: 0.5vh;
@@ -127,7 +127,7 @@ input[type="text"] {
     width: 100%;
     height: 5vh;
     top: 5vh;
-    border-bottom: 2px solid #1cca9b;
+    border-bottom: 2px solid #7dc325;
     margin-bottom: 1.2vh;
 }
 
@@ -152,7 +152,7 @@ input[type="text"] {
     height: 3vh;
     bottom: 0;
     text-align: center;
-    background: #1cca9b;
+    background: #7dc325;
     line-height: 0.8vh;
     transition: all 0.1s linear;
 }
@@ -167,5 +167,5 @@ input[type="text"] {
 }
 
 .save-bindings:hover {
-    background: #1cca9b;
+    background: #7dc325;
 }

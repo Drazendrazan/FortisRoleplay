@@ -158,7 +158,7 @@ Citizen.CreateThread(function()
         -- Verpakken
         if GetDistanceBetweenCoords(pos, Config.Locaties["verpak"].x, Config.Locaties["verpak"].y, Config.Locaties["verpak"].z) < 8.0 then
             letsleep = false
-            DrawMarker(2, Config.Locaties["verpak"].x, Config.Locaties["verpak"].y, Config.Locaties["verpak"].z - 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, Config.Locaties["verpak"].x, Config.Locaties["verpak"].y, Config.Locaties["verpak"].z - 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pos, Config.Locaties["verpak"].x, Config.Locaties["verpak"].y, Config.Locaties["verpak"].z, true) < 2.5 then
                 QBCore.Functions.DrawText3D(Config.Locaties["verpak"].x, Config.Locaties["verpak"].y, Config.Locaties["verpak"].z, "~g~[E]~w~ Wiet verpakken")
                 if IsControlJustPressed(0, 38) then
@@ -190,7 +190,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pos, Config.Locaties["verpak2"].x, Config.Locaties["verpak2"].y, Config.Locaties["verpak2"].z) < 8.0 then
             letsleep = false
-            DrawMarker(2, Config.Locaties["verpak2"].x, Config.Locaties["verpak2"].y, Config.Locaties["verpak2"].z - 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, Config.Locaties["verpak2"].x, Config.Locaties["verpak2"].y, Config.Locaties["verpak2"].z - 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pos, Config.Locaties["verpak2"].x, Config.Locaties["verpak2"].y, Config.Locaties["verpak2"].z, true) < 2.5 then
                 QBCore.Functions.DrawText3D(Config.Locaties["verpak2"].x, Config.Locaties["verpak2"].y, Config.Locaties["verpak2"].z, "~g~[E]~w~ Wiet verpakken")
                 if IsControlJustPressed(0, 38) then

@@ -196,7 +196,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pedCoords, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, true) < 35 then
             letsleep = false
-            DrawMarker(25, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 28, 202, 155, 100, 0, 0, 0, 0)
+            DrawMarker(25, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0.5001, 125, 195, 37, 100, 0, 0, 0, 0)
             
             if GetDistanceBetweenCoords(pedCoords, Config.Coords["verkoopCirkel"].x, Config.Coords["verkoopCirkel"].y, Config.Coords["verkoopCirkel"].z, true) < 4 then
                 if IsPedInAnyHeli(GetPlayerPed(-1)) or IsPedInAnyPlane(GetPlayerPed(-1)) then

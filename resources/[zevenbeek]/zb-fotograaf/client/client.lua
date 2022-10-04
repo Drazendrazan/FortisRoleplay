@@ -56,7 +56,7 @@ Citizen.CreateThread(function()
         
         if GetDistanceBetweenCoords(pos, -1082.1395, -247.5019, 37.7633, true) < 15 then
             letsleep = false
-            DrawMarker(2, -1082.1395, -247.5019, 37.7633, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, -1082.1395, -247.5019, 37.7633, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pos, -1082.1395, -247.5019, 37.7633, true) < 3 then
                 QBCore.Functions.DrawText3D(-1082.1395, -247.5019, 37.7633 - 0.10, "~g~E~w~ - Camera ophalen")
                 if IsControlJustPressed(0, 38) then
@@ -116,7 +116,7 @@ Citizen.CreateThread(function()
         if ophalenMogelijk == true then
             if GetDistanceBetweenCoords(pos, -1055.5723, -242.8580, 44.0210, true) < 10 then
                 letsleep = false
-                DrawMarker(2, -1055.5723, -242.8580, 44.0210, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, -1055.5723, -242.8580, 44.0210, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pos, -1055.5723, -242.8580, 44.0210, true) < 2 then
                     QBCore.Functions.DrawText3D(-1055.5723, -242.8580, 44.0210 - 0.10, "~g~E~w~ - Upload je foto's")
                     if IsControlJustPressed(0, 38) then
@@ -188,7 +188,7 @@ AddEventHandler("zb-fotograaf:client:krijgLocaties", function(aantal)
             if ophalenMogelijk == true then
                 if GetDistanceBetweenCoords(pos, missieLocatie.x, missieLocatie.y, missieLocatie.z, true) < 10 then
                     letsleep = false
-                    DrawMarker(2, missieLocatie.x, missieLocatie.y, missieLocatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, missieLocatie.x, missieLocatie.y, missieLocatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if GetDistanceBetweenCoords(pos, missieLocatie.x, missieLocatie.y, missieLocatie.z, true) < 2 then
                         QBCore.Functions.DrawText3D(missieLocatie.x, missieLocatie.y, missieLocatie.z - 0.10, "~g~E~w~ - Maak een foto")
                         if IsControlJustPressed(0, 38) then

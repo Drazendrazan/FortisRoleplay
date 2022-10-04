@@ -49,7 +49,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pedCoords, -553.71, -191.24, 37.27, false) < 10 then
             letsleep = false
-            DrawMarker(2, -553.51, -191.64, 37.67, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, -553.51, -191.64, 37.67, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
 			if GetDistanceBetweenCoords(pedCoords, -553.71, -191.24, 37.27, true) < 2.0 then
                 QBCore.Functions.DrawText3D(-553.71, -191.24, 38.47, " ~g~E~w~ - Koop ID-kaart")
                 QBCore.Functions.DrawText3D(-553.71, -191.24, 38.37, " ~g~G~w~ - Koop Rijbewijs")
@@ -82,7 +82,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pedCoords, -549.07, -190.90, 38.22, false) < 10 then
             letsleep = false
-            DrawMarker(2, -549.00, -190.90, 38.22, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, -549.00, -190.90, 38.22, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
 			if GetDistanceBetweenCoords(pedCoords, -549.07, -190.90, 38.22, true) < 1.5 then
                 QBCore.Functions.DrawText3D(-549.00, -190.90, 38.32, "~g~E~w~ - Gebruik laptop")
                 if IsControlJustPressed(0, 38) then

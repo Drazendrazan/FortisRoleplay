@@ -59,7 +59,7 @@ Citizen.CreateThread(function()
             local kassa = GetDistanceBetweenCoords(pos, -1194.8326, -893.4853, 15.0999)
             if kassa < 15 then
                 letsleep = false
-                DrawMarker(2, locatie.x, locatie.y, locatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, locatie.x, locatie.y, locatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if kassa < 3 then
                     QBCore.Functions.DrawText3D(locatie.x, locatie.y, locatie.z - 0.10, locatie.text)
 
@@ -116,7 +116,7 @@ AddEventHandler("zb-ubereats:client:krijgLocatie", function()
             local missieDistance = GetDistanceBetweenCoords(missiePedPositie, missieLocatie.x, missieLocatie.y, missieLocatie.z)
             if ophalenMogelijk == true then
                 if missieDistance < 10 then
-                    DrawMarker(2, missieLocatie.x, missieLocatie.y, missieLocatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, missieLocatie.x, missieLocatie.y, missieLocatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if missieDistance < 2 then
                         QBCore.Functions.DrawText3D(missieLocatie.x, missieLocatie.y, missieLocatie.z - 0.10, "~g~E~w~ - Bezorgen")
                         if IsControlJustPressed(0, 38) then

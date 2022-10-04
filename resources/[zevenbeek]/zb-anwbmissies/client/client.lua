@@ -248,7 +248,7 @@ Citizen.CreateThread(function()
                 if distance < 100 then
                     if distance <20 then
                         if distance <15.0 then
-                            DrawMarker(2, Config.Vooraad[k].x, Config.Vooraad[k].y, Config.Vooraad[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                            DrawMarker(2, Config.Vooraad[k].x, Config.Vooraad[k].y, Config.Vooraad[k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                         end
                         if distance <1.5 then
                             QBCore.Functions.DrawText3D(Config.Vooraad[k].x, Config.Vooraad[k].y, Config.Vooraad[k].z + 0.10, "~g~E~w~ - Pak onderdelen")

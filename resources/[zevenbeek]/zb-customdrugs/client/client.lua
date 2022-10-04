@@ -248,7 +248,7 @@ AddEventHandler("zb-customdrugs:client:addEncroChat", function(chat, bericht, sr
         bericht = bericht
     })
 
-    QBCore.Functions.TriggerCallback("zb-customdrugs:server:checkEncroFortel", function(resultaat)
+    QBCore.Functions.TriggerCallback("zb-customdrugs:server:checkEncroreboot", function(resultaat)
         if resultaat then
             local chatkanaaltje = ""
             if chat == 1 then
@@ -469,7 +469,7 @@ AddEventHandler("zb-customdrugs:client:labOpgerold", function()
     TriggerServerEvent("qb-phone:server:sendNewMail", {
         sender = "Anoniem",
         subject = "Lab opgerold",
-        message = "Broer, je lab is opgerold door de popo man. Als je een nieuwe wilt, connect me op die Fortel toch.<br>De buurt is heet.",
+        message = "Broer, je lab is opgerold door de popo man. Als je een nieuwe wilt, connect me op die reboot toch.<br>De buurt is heet.",
     })
 end)
 
@@ -516,7 +516,7 @@ Citizen.CreateThread(function() -- Laat marker & tekst zien bij de ingang
 
             if GetDistanceBetweenCoords(pedPos, labinfo["coords"].x, labinfo["coords"].y, labinfo["coords"].z) < 5 then
                 letsleep = false
-                DrawMarker(2, labinfo["coords"].x, labinfo["coords"].y, labinfo["coords"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, labinfo["coords"].x, labinfo["coords"].y, labinfo["coords"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, labinfo["coords"].x, labinfo["coords"].y, labinfo["coords"].z) < 2.5 then
                     QBCore.Functions.DrawText3D(labinfo["coords"].x, labinfo["coords"].y, labinfo["coords"].z - 0.10, "~g~[E]~w~ Lab betreden")
                     if IsControlJustPressed(0, 38) then
@@ -626,7 +626,7 @@ Citizen.CreateThread(function()
 
             if GetDistanceBetweenCoords(pedPos, exitcoords.x, exitcoords.y, exitcoords.z) < 5 then
                 letsleep = false
-                DrawMarker(2, exitcoords.x, exitcoords.y, exitcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, exitcoords.x, exitcoords.y, exitcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, exitcoords.x, exitcoords.y, exitcoords.z) < 1.5 then
                     QBCore.Functions.DrawText3D(exitcoords.x, exitcoords.y, exitcoords.z + 1, "~g~[E]~w~ Lab verlaten")
                     if IsControlJustPressed(0, 38) then
@@ -647,7 +647,7 @@ Citizen.CreateThread(function()
 
             if GetDistanceBetweenCoords(pedPos, laptopcoords.x, laptopcoords.y, laptopcoords.z) < 5 then
                 letsleep = false
-                DrawMarker(2, laptopcoords.x, laptopcoords.y, laptopcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, laptopcoords.x, laptopcoords.y, laptopcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, laptopcoords.x, laptopcoords.y, laptopcoords.z) < 1.5 then
                     QBCore.Functions.DrawText3D(laptopcoords.x, laptopcoords.y, laptopcoords.z + 1, "~g~[E]~w~ Laptop openen")
                     if IsControlJustPressed(0, 38) then
@@ -662,7 +662,7 @@ Citizen.CreateThread(function()
             if labinfo["informatie"].type == "pro" then
                 if GetDistanceBetweenCoords(pedPos, stashcoords.x, stashcoords.y, stashcoords.z) < 5 then
                     letsleep = false
-                    DrawMarker(2, stashcoords.x, stashcoords.y, stashcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, stashcoords.x, stashcoords.y, stashcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if GetDistanceBetweenCoords(pedPos, stashcoords.x, stashcoords.y, stashcoords.z) < 1.5 then
                         QBCore.Functions.DrawText3D(stashcoords.x, stashcoords.y, stashcoords.z + 1, "~g~[E]~w~ Stash openen")
                         if IsControlJustPressed(0, 38) then
@@ -675,7 +675,7 @@ Citizen.CreateThread(function()
 
             if GetDistanceBetweenCoords(pedPos, vermengcoords.x, vermengcoords.y, vermengcoords.z) < 5 then
                 letsleep = false
-                DrawMarker(2, vermengcoords.x, vermengcoords.y, vermengcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, vermengcoords.x, vermengcoords.y, vermengcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, vermengcoords.x, vermengcoords.y, vermengcoords.z) < 1.5 and not bezigMetProces then
                     QBCore.Functions.DrawText3D(vermengcoords.x, vermengcoords.y, vermengcoords.z + 1, "~g~[E]~w~ Vermengen")
                     if IsControlJustPressed(0, 38) then
@@ -745,7 +745,7 @@ Citizen.CreateThread(function()
 
             if GetDistanceBetweenCoords(pedPos, versnijdcoords.x, versnijdcoords.y, versnijdcoords.z) < 5 then
                 letsleep = false
-                DrawMarker(2, versnijdcoords.x, versnijdcoords.y, versnijdcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, versnijdcoords.x, versnijdcoords.y, versnijdcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, versnijdcoords.x, versnijdcoords.y, versnijdcoords.z) < 1.5 and not bezigMetProces then
                     QBCore.Functions.DrawText3D(versnijdcoords.x, versnijdcoords.y, versnijdcoords.z + 1, "~g~[E]~w~ Versnijden")
                     if IsControlJustPressed(0, 38) then
@@ -815,7 +815,7 @@ Citizen.CreateThread(function()
 
             if GetDistanceBetweenCoords(pedPos, verpakcoords.x, verpakcoords.y, verpakcoords.z) < 5 then
                 letsleep = false
-                DrawMarker(2, verpakcoords.x, verpakcoords.y, verpakcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, verpakcoords.x, verpakcoords.y, verpakcoords.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, verpakcoords.x, verpakcoords.y, verpakcoords.z) < 1.5 and not bezigMetProces then
                     QBCore.Functions.DrawText3D(verpakcoords.x, verpakcoords.y, verpakcoords.z + 1, "~g~[E]~w~ Verpakken")
                     if IsControlJustPressed(0, 38) then
@@ -940,7 +940,7 @@ RegisterNUICallback("nieuweGrondstofbestelling", function(data, cb)
                     autoGespawned = true
                 end
                 if GetDistanceBetweenCoords(pedPos, randomGrondstofLocatie.x, randomGrondstofLocatie.y, randomGrondstofLocatie.z) < 10 and not busjeLeeg then
-                    DrawMarker(2, randomGrondstofLocatie.x, randomGrondstofLocatie.y, randomGrondstofLocatie.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, randomGrondstofLocatie.x, randomGrondstofLocatie.y, randomGrondstofLocatie.z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if GetDistanceBetweenCoords(pedPos, randomGrondstofLocatie.x, randomGrondstofLocatie.y, randomGrondstofLocatie.z) < 3 and not busjeLeeg then
                         QBCore.Functions.DrawText3D(randomGrondstofLocatie.x, randomGrondstofLocatie.y, randomGrondstofLocatie.z + 0.90, "~g~[E]~w~ Busje leeghalen")
                         if IsControlJustPressed(0, 38) then
@@ -1251,7 +1251,7 @@ AddEventHandler("zb-customdrugs:client:missie:autoStelen", function()
         local pedPos = GetEntityCoords(ped)
 
         if GetDistanceBetweenCoords(pedPos, Config.autoStelen["dealerLocatie"][1].x, Config.autoStelen["dealerLocatie"][1].y, Config.autoStelen["dealerLocatie"][1].z) < 5 then
-            DrawMarker(2, Config.autoStelen["dealerLocatie"][1].x, Config.autoStelen["dealerLocatie"][1].y + 0.5, Config.autoStelen["dealerLocatie"][1].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, Config.autoStelen["dealerLocatie"][1].x, Config.autoStelen["dealerLocatie"][1].y + 0.5, Config.autoStelen["dealerLocatie"][1].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pedPos, Config.autoStelen["dealerLocatie"][1].x, Config.autoStelen["dealerLocatie"][1].y, Config.autoStelen["dealerLocatie"][1].z) < 2 then
                 QBCore.Functions.DrawText3D(Config.autoStelen["dealerLocatie"][1].x, Config.autoStelen["dealerLocatie"][1].y, Config.autoStelen["dealerLocatie"][1].z - 0.10, "~g~[E]~w~ Spullen ophalen")
                 if IsControlJustPressed(0, 38) then
@@ -1358,7 +1358,7 @@ AddEventHandler("zb-customdrugs:client:missie:autoStelenStap2", function(locatie
                 -- Begin
                 if GetDistanceBetweenCoords(pedPos, value.x, value.y, value.z) < 20 then
                     letsleep = false
-                    DrawMarker(2, value.x, value.y, value.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, value.x, value.y, value.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if GetDistanceBetweenCoords(pedPos, value.x, value.y, value.z) < 2 then
                         QBCore.Functions.DrawText3D(value.x, value.y, value.z - 0.10, "~g~[E]~w~ Signaal opvangen")
                         if IsControlJustPressed(0, 38) then
@@ -1793,7 +1793,7 @@ AddEventHandler("zb-customdrugs:client:missie:containerOpenbreken2", function(lo
         if proberen then
             if GetDistanceBetweenCoords(pedPos, locatie.container.x, locatie.container.y, locatie.container.z) < 15 then
                 letsleep = false
-                DrawMarker(2, locatie.container.x, locatie.container.y, locatie.container.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, locatie.container.x, locatie.container.y, locatie.container.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, locatie.container.x, locatie.container.y, locatie.container.z) < 1.5 then
                     QBCore.Functions.DrawText3D(locatie.container.x, locatie.container.y, locatie.container.z + 0.30, "~g~[E]~w~ Container openbreken")
                     if IsControlJustPressed(0, 38) then
@@ -2008,7 +2008,7 @@ AddEventHandler("zb-customdrugs:client:missie:computerHack2", function(locatie)
         if proberen then
             if GetDistanceBetweenCoords(pedPos, locatie.computer.x, locatie.computer.y, locatie.computer.z) < 6 then
                 letsleep = false
-                DrawMarker(2, locatie.computer.x, locatie.computer.y, locatie.computer.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, locatie.computer.x, locatie.computer.y, locatie.computer.z + 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, locatie.computer.x, locatie.computer.y, locatie.computer.z) < 1.5 then
                     QBCore.Functions.DrawText3D(locatie.computer.x, locatie.computer.y, locatie.computer.z + 0.30, "~g~[E]~w~ Computer hacken")
                     if IsControlJustPressed(0, 38) then
@@ -2142,7 +2142,7 @@ AddEventHandler("zb-customdrugs:client:missie:pinautomaatHack", function()
 
         if GetDistanceBetweenCoords(pedPos, locatie.x, locatie.y, locatie.z) < 2 then
             letsleep = false
-            QBCore.Functions.DrawText3D(locatie.x, locatie.y, locatie.z, "~g~[G]~w~ Connect Fortel")
+            QBCore.Functions.DrawText3D(locatie.x, locatie.y, locatie.z, "~g~[G]~w~ Connect Reboot")
             if IsControlJustPressed(0, 47) then
                 if not IsPedInAnyVehicle(ped) then
                     if math.random(1, 3) == 3 then
@@ -2150,7 +2150,7 @@ AddEventHandler("zb-customdrugs:client:missie:pinautomaatHack", function()
                     end
                     RemoveBlip(locatieBlip) 
                     ExecuteCommand("e texting")
-                    QBCore.Functions.Progressbar("pinautomaatHack", "Fortel aan het connecten...", 10000, false, false, {
+                    QBCore.Functions.Progressbar("pinautomaatHack", "reboot aan het connecten...", 10000, false, false, {
                         disableMovement = true,
                         disableCarMovement = true,
                         disableMouse = false,
@@ -2442,7 +2442,7 @@ AddEventHandler("zb-customdrugs:client:missie:schilderijStelen2", function()
         if proberen then
             if GetDistanceBetweenCoords(pedPos, locatie.schilderij.x, locatie.schilderij.y, locatie.schilderij.z) < 15 then
                 letsleep = false
-                DrawMarker(2, locatie.schilderij.x, locatie.schilderij.y, locatie.schilderij.z + 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, locatie.schilderij.x, locatie.schilderij.y, locatie.schilderij.z + 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, locatie.schilderij.x, locatie.schilderij.y, locatie.schilderij.z) < 1.5 then
                     QBCore.Functions.DrawText3D(locatie.schilderij.x, locatie.schilderij.y, locatie.schilderij.z + 1.0, "~g~[E]~w~ Schilderij stelen")
                     if IsControlJustPressed(0, 38) then
@@ -2779,6 +2779,7 @@ AddEventHandler("zb-customdrugs:client:missie:ontvoering2", function()
 end)
 
 
+
 AddEventHandler("zb-customdrugs:client:missie:ontvoering3", function()
     while true do
         Citizen.Wait(1)
@@ -2845,6 +2846,8 @@ AddEventHandler("zb-customdrugs:client:missie:ontvoering4", function()
         end
     end
 end)
+
+
 
 AddEventHandler("zb-customdrugs:client:missie:ontvoering5", function()
     afleverlocatie  = math.random(1, #Config.ontvoering["afleverLocaties"])

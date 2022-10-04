@@ -8,7 +8,7 @@ Citizen.CreateThread(function()
 
         SetDiscordRichPresenceAssetSmallText('Zevenbeek Rebooted')
 
-		SetDiscordRichPresenceAction(0, "Discord Server", "https://https://discord.gg/QGnSFmcWc4")
+		SetDiscordRichPresenceAction(0, "Discord Server", "https://discord.gg/dAxTgAkkSn")
 		--SetDiscordRichPresenceAction(1, "Speel mee", "fivem://connect/play.fortisroleplay.nl")
 
 		Citizen.Wait(60000)

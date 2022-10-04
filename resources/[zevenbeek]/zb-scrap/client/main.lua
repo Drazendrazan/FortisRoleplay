@@ -150,7 +150,7 @@ Citizen.CreateThread(function()
 							end
 							if locatie ~= nil then
 								if GetDistanceBetweenCoords(pos, locatie.x, locatie.y, locatie.z, true) < 15 then
-									DrawMarker(2, locatie.x, locatie.y, locatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.4, 0.2, 28, 202, 155, 155, false, false, false, true, false, false, false)
+									DrawMarker(2, locatie.x, locatie.y, locatie.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.4, 0.2, 125, 195, 37, 155, false, false, false, true, false, false, false)
 									if not IsPedInAnyVehicle(PlayerPedId()) then
 										if GetDistanceBetweenCoords(pos, locatie.x, locatie.y, locatie.z, true) < 1.5 then
 											if lassen then
@@ -219,7 +219,7 @@ Citizen.CreateThread(function()
 			end
 			if marker then
 				if GetDistanceBetweenCoords(pos, Config.Locaties[materiaal].coords.x, Config.Locaties[materiaal].coords.y, Config.Locaties[materiaal].coords.z, true) < 20 then
-					DrawMarker(2, Config.Locaties[materiaal].coords.x, Config.Locaties[materiaal].coords.y, Config.Locaties[materiaal].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.4, 0.2, 28, 202, 155, 155, false, false, false, true, false, false, false)
+					DrawMarker(2, Config.Locaties[materiaal].coords.x, Config.Locaties[materiaal].coords.y, Config.Locaties[materiaal].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.4, 0.2, 125, 195, 37, 155, false, false, false, true, false, false, false)
 					if GetDistanceBetweenCoords(pos, Config.Locaties[materiaal].coords.x, Config.Locaties[materiaal].coords.y, Config.Locaties[materiaal].coords.z, true) < 2 then
 						QBCore.Functions.DrawText3D(Config.Locaties[materiaal].coords.x, Config.Locaties[materiaal].coords.y, Config.Locaties[materiaal].coords.z + 0.5, "~g~E~w~ - Verzamelen")
 					end

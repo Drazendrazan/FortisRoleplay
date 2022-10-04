@@ -205,7 +205,7 @@ Citizen.CreateThread(function()
                 end
 
                 if not inBoat then
-                    DrawMarker(2, v.coords.take.x, v.coords.take.y, v.coords.take.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.5, -0.30, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                    DrawMarker(2, v.coords.take.x, v.coords.take.y, v.coords.take.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.5, -0.30, 125, 195, 37, 155, false, false, false, true, false, false, false)
                     if TakeDistance < 2 then
                         DrawText3D(v.coords.take.x, v.coords.take.y, v.coords.take.z, '~g~E~w~ - Haven')
                         if IsControlJustPressed(0, Keys["E"]) then

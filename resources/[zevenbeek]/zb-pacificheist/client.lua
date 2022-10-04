@@ -114,7 +114,7 @@ Citizen.CreateThread(function()
         if startDist <= 2.0 then
             sleep = 1
             -- ShowHelpNotification(Strings['e_start'])
-            DrawMarker(2, -2309.79, 249.51, 189.61,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, -2309.79, 249.51, 189.61,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             QBCore.Functions.DrawText3D(-2309.79, 249.51, 189.61 + 0.2, "~g~[E]~w~ Start pacific heist")
             if IsControlJustPressed(0, 38) then
                 StartHeist()

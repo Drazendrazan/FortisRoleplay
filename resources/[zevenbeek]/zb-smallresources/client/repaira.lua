@@ -98,7 +98,7 @@ Citizen.CreateThread(function()
         for k, locatie in pairs(Garages["locaties"]) do
             if GetDistanceBetweenCoords(pos, locatie.x, locatie.y, locatie.z, true) < 10 and IsPedInAnyVehicle(ped) then
                 letsleep = false
-                DrawMarker(25, locatie.x, locatie.y, locatie.z + 0.05, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 0.5001, 28, 202, 155, 100, 0, 0, 0, 0)
+                DrawMarker(25, locatie.x, locatie.y, locatie.z + 0.05, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 0.5001, 125, 195, 37, 100, 0, 0, 0, 0)
                 if GetDistanceBetweenCoords(pos, locatie.x, locatie.y, locatie.z, true) < 4 then
                     QBCore.Functions.DrawText3D(locatie.x, locatie.y, locatie.z + 1.0, "~g~E~w~ - Repareer voertuig [€325]")
                     if IsControlJustPressed(0, 38) then
@@ -152,7 +152,7 @@ Citizen.CreateThread(function()
             letsleep = false
             if not inbanden then
                 if GetDistanceBetweenCoords(positie, Garages["driftBanden"][1].x, Garages["driftBanden"][1].y, Garages["driftBanden"][1].z) <5 then
-                    DrawMarker(2, Garages["driftBanden"][1].x, Garages["driftBanden"][1].y, Garages["driftBanden"][1].z + 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.4, 0.4, 28, 202, 155, 155)
+                    DrawMarker(2, Garages["driftBanden"][1].x, Garages["driftBanden"][1].y, Garages["driftBanden"][1].z + 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.4, 0.4, 125, 195, 37, 155)
                     if GetDistanceBetweenCoords(positie, Garages["driftBanden"][1].x, Garages["driftBanden"][1].y, Garages["driftBanden"][1].z) <1.5 then
                         QBCore.Functions.DrawText3D(Garages["driftBanden"][1].x, Garages["driftBanden"][1].y, Garages["driftBanden"][1].z + 0.7, "~g~E~w~ - Drift banden monteren/verwijderen [€2000]")
                         if IsControlJustPressed(0, 38) then

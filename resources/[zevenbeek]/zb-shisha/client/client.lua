@@ -64,7 +64,7 @@ Citizen.CreateThread(function()
         for k, v in pairs(Config.loungeLocaties) do
             if GetDistanceBetweenCoords(pedPos, Config.loungeLocaties[k].x, Config.loungeLocaties[k].y, Config.loungeLocaties[k].z) < 10 and not bezig then
                 letsleep = false
-                DrawMarker(2, Config.loungeLocaties[k].x, Config.loungeLocaties[k].y, Config.loungeLocaties[k].z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, Config.loungeLocaties[k].x, Config.loungeLocaties[k].y, Config.loungeLocaties[k].z + 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, Config.loungeLocaties[k].x, Config.loungeLocaties[k].y, Config.loungeLocaties[k].z) < .6 then
                     QBCore.Functions.DrawText3D(Config.loungeLocaties[k].x, Config.loungeLocaties[k].y, Config.loungeLocaties[k].z + 0.8, "~g~[E]~w~ Zitten")
                     if IsControlJustPressed(0, 38) then

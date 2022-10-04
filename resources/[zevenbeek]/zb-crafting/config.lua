@@ -140,7 +140,7 @@ Config.CraftingItems = {
         points = 3,
     },
     [12] = {
-        name = "fortel",
+        name = "reboot",
         amount = 50,
         info = {},
         costs = {

@@ -292,7 +292,7 @@ Citizen.CreateThread(function()
         WarMenu.SetMenuY(v, 0.15)
         WarMenu.SetMenuWidth(v, 0.23)
         WarMenu.SetTitleColor(v, 255, 255, 255, 255)
-        WarMenu.SetTitleBackgroundColor(v, 28, 202, 155, 150)
+        WarMenu.SetTitleBackgroundColor(v, 125, 195, 37, 150)
     end
 
     while true do
@@ -574,6 +574,7 @@ Citizen.CreateThread(function()
     end
 end)
 
+
 function SpectatePlayer(targetPed, toggle)
     local myPed = GetPlayerPed(-1)
 
@@ -609,6 +610,11 @@ function OpenHouseInventory(targetId)
     end, targetId)
 end
 
+RegisterNetEvent("Admin:Toggle:showNames")
+AddEventHandler("Admin:Toggle:showNames", function()
+    showNames = not showNames
+end)
+
 Citizen.CreateThread(function()
     while true do
 
@@ -639,8 +645,9 @@ Citizen.CreateThread(function()
         Citizen.Wait(3)
     end
 end)
+RegisterNetEvent('Admin:Client:ToggleBlips')
+AddEventHandler("Admin:Client:ToggleBlips", function()
 
-function toggleBlips()
     if showBlips then
         Citizen.CreateThread(function()
             local Players = getPlayers()
@@ -680,7 +687,7 @@ function toggleBlips()
         end
         Citizen.Wait(1000)
     end
-end
+end)
 
 Citizen.CreateThread(function()	
 	while true do

@@ -130,7 +130,7 @@
     text-align: center;
     line-height: 7vh;
     font-size: 2.3vh;
-    color: #1cca9b;
+    color: #7dc325;
 }
 
 .background-option-title {
@@ -188,7 +188,7 @@
 
 .background-button:hover {
     background-color: #dadbdb;
-    border-top: 2px solid #1cca9b;
+    border-top: 2px solid #7dc325;
 }
 
 .background-custom {
@@ -254,7 +254,7 @@
 
 .custom-background-button:hover {
     background-color: #dadbdb65;
-    border-bottom: 2px solid #1cca9b;
+    border-bottom: 2px solid #7dc325;
 }
 
 
@@ -279,7 +279,7 @@
     text-align: center;
     line-height: 7vh;
     font-size: 2.3vh;
-    color: #1cca9b;
+    color: #7dc325;
 }
 
 .profilepicture-option-title {
@@ -337,7 +337,7 @@
 
 .profilepicture-button:hover {
     background-color: #dadbdb;
-    border-top: 2px solid #1cca9b;
+    border-top: 2px solid #7dc325;
 }
 
 .profilepicture-custom {
@@ -403,7 +403,7 @@
 
 .custom-profilepicture-button:hover {
     background-color: #dadbdb65;
-    border-bottom: 2px solid #1cca9b;
+    border-bottom: 2px solid #7dc325;
 }
 
 /* The switch - the box around the slider */

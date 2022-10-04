@@ -78,7 +78,7 @@ Citizen.CreateThread(function()
             local pedPos = GetEntityCoords(GetPlayerPed(-1))
             if GetDistanceBetweenCoords(pedPos, Config.winkel.x, Config.winkel.y, Config.winkel.z, false) <6 then
                 letsleep = false
-                DrawMarker(2, Config.winkel.x, Config.winkel.y, Config.winkel.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, Config.winkel.x, Config.winkel.y, Config.winkel.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pedPos, Config.winkel.x, Config.winkel.y, Config.winkel.z, false) <3 then
                     if not IsPedInAnyVehicle(GetPlayerPed(-1), false) then
                         if not bezig then
@@ -274,7 +274,7 @@ AddEventHandler("zb-sleutelmaker:client:startWerk2", function(gekozenUitleg, gek
                 if not lockpicked then
                     if GetDistanceBetweenCoords(pedPos, voordeur.x, voordeur.y, voordeur.z, false) <2 then
                         letsleep = false
-                        DrawMarker(2, voordeur.x, voordeur.y, voordeur.z + 1.00, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                        DrawMarker(2, voordeur.x, voordeur.y, voordeur.z + 1.00, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                         QBCore.Functions.DrawText3D(voordeur.x, voordeur.y, voordeur.z + 1.20, "~g~[E]~w~ Begin het werk!")
                         QBCore.Functions.DrawText3D(voordeur.x, voordeur.y, voordeur.z + 1.00, "~g~[G]~w~ Geef het op")
 
@@ -325,7 +325,7 @@ AddEventHandler("zb-sleutelmaker:client:startWerk2", function(gekozenUitleg, gek
                 if not vervangen and text then
                     if GetDistanceBetweenCoords(pedPos, voordeur.x, voordeur.y, voordeur.z, false) <2 and kaas then
                         letsleep = false
-                        DrawMarker(2, voordeur.x, voordeur.y, voordeur.z + 1.00, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                        DrawMarker(2, voordeur.x, voordeur.y, voordeur.z + 1.00, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                         QBCore.Functions.DrawText3D(voordeur.x, voordeur.y, voordeur.z + 1.20, "~g~[E]~w~ Begin te vervangen!")
                         QBCore.Functions.DrawText3D(voordeur.x, voordeur.y, voordeur.z + 1.00, "~g~[G]~w~ Geef het vervangen op")
 

@@ -637,7 +637,7 @@ Citizen.CreateThread(function()
             local takeDist = GetDistanceBetweenCoords(pos, Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z)
             if takeDist <= 15 then
                 inGarageRange = true
-                DrawMarker(2, Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                DrawMarker(2, Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                 if takeDist <= 1.5 then
                     if not IsPedInAnyVehicle(ped) then
                         DrawText3Ds(Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
@@ -668,7 +668,7 @@ Citizen.CreateThread(function()
 
             if putDist <= 25 and IsPedInAnyVehicle(ped) then
                 inGarageRange = true
-                DrawMarker(2, Garages[k].putVehicle.x, Garages[k].putVehicle.y, Garages[k].putVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 255, false, false, false, true, false, false, false)
+                DrawMarker(2, Garages[k].putVehicle.x, Garages[k].putVehicle.y, Garages[k].putVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 255, false, false, false, true, false, false, false)
                 if putDist <= 1.5 then
                     DrawText3Ds(Garages[k].putVehicle.x, Garages[k].putVehicle.y, Garages[k].putVehicle.z + 0.5, '~g~E~w~ - Parkeren')
                     if IsControlJustPressed(0, 38) then
@@ -744,7 +744,7 @@ Citizen.CreateThread(function()
                 local takeDist = GetDistanceBetweenCoords(pos, HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z, true)
                 if takeDist <= 15 then
                     inGarageRange = true
-                    DrawMarker(2, HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                    DrawMarker(2, HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                     if takeDist < 2.0 then
                         if not IsPedInAnyVehicle(ped) then
                             DrawText3Ds(HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
@@ -853,7 +853,7 @@ Citizen.CreateThread(function()
             local takeDist = GetDistanceBetweenCoords(pos, Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z)
             if takeDist <= 15 then
                 inGarageRange = true
-                DrawMarker(2, Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                DrawMarker(2, Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                 if takeDist <= 1.5 then
                     if not IsPedInAnyVehicle(ped) then
                         DrawText3Ds(Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
@@ -910,7 +910,7 @@ Citizen.CreateThread(function()
 
         if GetDistanceBetweenCoords(pos, Haven.x, Haven.y, Haven.z, true) < 5 then
             letsleep = false
-            DrawMarker(2, Haven.x, Haven.y, Haven.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+            DrawMarker(2, Haven.x, Haven.y, Haven.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
             if GetDistanceBetweenCoords(pos, Haven.x, Haven.y, Haven.z, true) < 2 then
                 DrawText3Ds(Haven.x, Haven.y, Haven.z + 0.5, "~g~[E]~w~ Voertuig verschepen (€1.000)")
                 if IsControlJustPressed(0, 38) then

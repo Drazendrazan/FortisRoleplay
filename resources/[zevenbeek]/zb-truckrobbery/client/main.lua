@@ -114,9 +114,9 @@ Citizen.CreateThread(function()
 				end
 				DrawText3D(dealerCoords.x, dealerCoords.y, dealerCoords.z + 1 , "~g~[E]~w~ Waardetransport onderscheppen! $10.000")
 				if IsControlJustPressed(0, 38) then
-					QBCore.Functions.TriggerCallback("zb-truckrobbery:server:checkvoorfortel", function(resultaat)
+					QBCore.Functions.TriggerCallback("zb-truckrobbery:server:checkvoorreboot", function(resultaat)
 						if resultaat then
-							QBCore.Functions.Progressbar("repair_part", "Fortel connecten..", math.random(8000, 12000), false, true, {
+							QBCore.Functions.Progressbar("repair_part", "reboot connecten..", math.random(8000, 12000), false, true, {
 								disableMovement = true,
 								disableCarMovement = true,
 								disableMouse = false,
@@ -129,7 +129,7 @@ Citizen.CreateThread(function()
 								QBCore.Functions.Notify("Connectie geweigerd..", "error")
 							end)
 						else
-							QBCore.Functions.Notify("Je hebt geen fortel...", "error")
+							QBCore.Functions.Notify("Je hebt geen reboot...", "error")
 						end
 					end)
 				end

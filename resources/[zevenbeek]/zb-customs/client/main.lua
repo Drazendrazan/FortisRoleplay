@@ -379,7 +379,7 @@ Citizen.CreateThread(function()
                             if seat == ped then
                                 if not IsVehicleBlacklisted(GetEntityModel(GetVehiclePedIsIn(ped))) then
                                     -- Draws Purpel Marker
-                                    DrawMarker(2, loc["coords"].x, loc["coords"].y, loc["coords"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.2, 1.0, 1.0, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                                    DrawMarker(2, loc["coords"].x, loc["coords"].y, loc["coords"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.2, 1.0, 1.0, 125, 195, 37, 155, false, false, false, true, false, false, false)
 
                                     if distance < 3 then
                                         DrawText3Ds(loc["coords"].x, loc["coords"].y, loc["coords"].z, '~g~[ENTER]~w~ - Tunen')

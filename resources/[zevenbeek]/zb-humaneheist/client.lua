@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
 
         if elevatorDist <= 5.0 then
             sleep = 1
-            -- DrawMarker(2, Config['HumaneLabs']['elevator']['enter'], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            -- DrawMarker(2, Config['HumaneLabs']['elevator']['enter'], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if elevatorDist <= 2.0 then
                 -- ShowHelpNotification(Strings['elevator'])
                 if IsControlJustPressed(0, 38) then
@@ -73,13 +73,13 @@ Citizen.CreateThread(function()
             sleep = 1
             if not HumaneLabsHeist['finish'] then
                 QBCore.Functions.DrawText3D(-1188.82, -2139.77, 13.38 + 0.20, "~g~E~w~ - Start Humane Heist")
-                DrawMarker(2, -1188.82, -2139.77, 13.38, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, -1188.82, -2139.77, 13.38, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 if IsControlJustPressed(0, 38) then
                     StartHumaneLabs()
                 end
             else
                 QBCore.Functions.DrawText3D(-1188.82, -2139.77, 13.38 + 0.20, "~g~E~w~ - Finish Humane Heist")
-                DrawMarker(2, -1188.82, -2139.77, 13.385, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+                DrawMarker(2, -1188.82, -2139.77, 13.385, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
                 -- ShowHelpNotification(Strings['finish_heist'])
                 if IsControlJustPressed(0, 38) then
                     TriggerServerEvent('humanelabsheist:server:heistRewards')
@@ -96,7 +96,7 @@ Citizen.CreateThread(function()
 
         if koopDist < 2 then
             sleep = 1
-            DrawMarker(2, 511.60, -3118.09, 25.57, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 28, 202, 155, 155, false, false, false, true, false, false, false)
+            DrawMarker(2, 511.60, -3118.09, 25.57, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 125, 195, 37, 155, false, false, false, true, false, false, false)
             if not verhaal1 then
                 QBCore.Functions.DrawText3D(511.60, -3118.09, 25.57 + 0.20, "~g~E~w~ - Koop heist spullen in")
                 if IsControlJustPressed(0, 38) then

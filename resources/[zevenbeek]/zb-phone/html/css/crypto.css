@@ -245,7 +245,7 @@
     left: 4.7vh;
     font-family: 'Samsung Sans Regular';
     font-size: 1.4vh;
-    color: #1CCA9B;
+    color: #7dc325;
 }
 
 .cryptotab-transactions-block-happening {
@@ -403,7 +403,7 @@
 }
 
 .crypto-action-page-buy-crypto-input-money:valid {
-    border-bottom: 2px solid #1CCA9B;
+    border-bottom: 2px solid #7dc325;
 }
 
 .crypto-action-page-buy-crypto-input-money-icon  {
@@ -441,7 +441,7 @@
 }
 
 .crypto-action-page-buy-crypto-input-coins:valid {
-    border-bottom: 2px solid #1CCA9B;
+    border-bottom: 2px solid #7dc325;
 }
 
 .crypto-action-page-buy-crypto-input-coins-icon  {
@@ -482,7 +482,7 @@
 }
 
 .crypto-action-page-sell-crypto-input-money:valid {
-    border-bottom: 2px solid #1CCA9B;
+    border-bottom: 2px solid #7dc325;
 }
 
 .crypto-action-page-sell-crypto-input-money-icon  {
@@ -520,7 +520,7 @@
 }
 
 .crypto-action-page-sell-crypto-input-coins:valid {
-    border-bottom: 2px solid #1CCA9B;
+    border-bottom: 2px solid #7dc325;
 }
 
 .crypto-action-page-sell-crypto-input-coins-icon  {
@@ -584,7 +584,7 @@
 }
 
 .crypto-action-page-transfer-crypto-input-walletid:valid {
-    border-bottom: 2px solid #1CCA9B;
+    border-bottom: 2px solid #7dc325;
 }
 
 .crypto-action-page-transfer-crypto-input-money-icon  {
@@ -624,7 +624,7 @@
 }
 
 .crypto-action-page-transfer-crypto-input-coins:valid {
-    border-bottom: 2px solid #1CCA9B;
+    border-bottom: 2px solid #7dc325;
 }
 
 .crypto-action-page-transfer-crypto-input-coins-icon  {

@@ -20,7 +20,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #1CCA9B;
+    background: #7dc325;
     transition: .25s ease-in-out;
 }
 
@@ -88,7 +88,7 @@ body {
     width: 100%;
     height: 50px;
     border-top: 8px solid var(--white);
-    background-color: #1CCA9B;
+    background-color: #7dc325;
     color: var(--white);
     font-family: "Roboto", sans-serif;
     font-size: 1.2rem;
@@ -99,7 +99,7 @@ body {
 }
 
 .cardealer-main-infobox-knoppen button:hover {
-    border-top: 8px solid #1CCA9B;
+    border-top: 8px solid #7dc325;
     background-color: var(--white);
     color: var(--black);
 }
@@ -214,14 +214,14 @@ body {
 .loader,
 .loader:before,
 .loader:after {
-  background: #1CCA9B;
+  background: #7dc325;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
   height: 4em;
 }
 .loader {
-  color: #1CCA9B;
+  color: #7dc325;
   text-indent: -9999em;
   margin: 88px auto;
   position: relative;
