@@ -57,7 +57,7 @@ h1,h2,h3,h4 {
   margin-right: 10px;
 }
 .green {
-  color: #1CCA9B;
+  color: #7dc325;
   font-weight: 700;
   margin-right: 6px;
 }
@@ -193,7 +193,7 @@ input[type=submit], .submit {
   height: 70px;
   text-align: center;
   width: 100%;
-  background: #1CCA9B;
+  background: #7dc325;
   border-radius: 4px;
   color: #ffffff;
   font-size: 1.5em;

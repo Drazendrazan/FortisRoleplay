@@ -42,8 +42,8 @@ sets Discord "https://discord.zevenbeekreboot.nl/"
 #sets Github "https://github.com/AnykeysTTV/FortisRoleplay"
 sets Credits "fortis Roleplay"
 
-sv_hostname "[NL/BE]Live 14 okt ^2 Zevenbeek rebooted Roleplay ^7 💶 Unieke jobs & bijbanen ^2 💻 Bitcoin minen ^7🏝️ Cayo perico ^2 💊 Custom onderwereld ^7 ⚙️ Wekelijkse updates ^2 🔰 Actieve Staff & hechte community!"
-sets sv_projectName "ive 14 okt^2[NL/BE] ^2Zevenbeek rebooted"
+sv_hostname "[NL/BE] ^2 Zevenbeek rebooted Roleplay ^7 💶 Unieke jobs & bijbanen ^2 💻 Bitcoin minen ^7🏝️ Cayo perico ^2 💊 Custom onderwereld ^7 ⚙️ Wekelijkse updates ^2 🔰 Actieve Staff & hechte community!"
+sets sv_projectName "^2[NL/BE] ^2Zevenbeek rebooted"
 sets sv_projectDesc "Waar de spelers op één staan! — Bitcoin minen, Cayo Perico, Unieke scripts, gezellige community & actief development"
 load_server_icon logo.png
 

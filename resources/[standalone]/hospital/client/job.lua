@@ -147,7 +147,7 @@ Citizen.CreateThread(function()
         
                 for k, v in pairs(Config.Locations["vehicle"]) do
                     if (GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true) < 8.5) then
-                        DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                        DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                         if (GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true) < 1.5) then
                             if IsPedInAnyVehicle(GetPlayerPed(-1), false) then
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Opbergen")
@@ -170,7 +170,7 @@ Citizen.CreateThread(function()
                 for k, v in pairs(Config.Locations["helicopter"]) do
                     if (GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true) < 7.5) then
                         if onDuty then
-                            DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 28, 202, 155, 222, false, false, false, true, false, false, false)
+                            DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 125, 195, 37, 222, false, false, false, true, false, false, false)
                             if (GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true) < 1.5) then
                                 if IsPedInAnyVehicle(GetPlayerPed(-1), false) then
                                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Opbergen")

@@ -195,7 +195,7 @@ Citizen.CreateThread(function()
           atBank = true
           inRange = true
           if not banks[bankkey].Closed then
-            DrawMarker(2, banks[bankkey].x, banks[bankkey].y, banks[bankkey].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 255, 0, 0, 0, 1, 0, 0, 0)
+            DrawMarker(2, banks[bankkey].x, banks[bankkey].y, banks[bankkey].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 255, 0, 0, 0, 1, 0, 0, 0)
             DrawText3Ds(banks[bankkey].x, banks[bankkey].y, banks[bankkey].z + 0.3, '~g~E~w~ - Pas insteken')
             if IsControlJustPressed(1, Keys["E"])  then
                 if (not IsInVehicle()) then
@@ -210,7 +210,7 @@ Citizen.CreateThread(function()
             end
           else
             DrawText3Ds(banks[bankkey].x, banks[bankkey].y, banks[bankkey].z + 0.3, 'Deze bank is momenteel gesloten.')
-            DrawMarker(2, banks[bankkey].x, banks[bankkey].y, banks[bankkey].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 28, 202, 155, 255, 0, 0, 0, 1, 0, 0)
+            DrawMarker(2, banks[bankkey].x, banks[bankkey].y, banks[bankkey].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.1, 125, 195, 37, 255, 0, 0, 0, 1, 0, 0)
           end
         elseif nearatm then
           atBank = true
