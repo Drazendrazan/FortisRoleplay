@@ -5,7 +5,7 @@ cache/
 \[normaal\]/
 hulpdiensten/
 wegenwacht/
-server/
+fxserver/
 *.bat
 
 *.json
