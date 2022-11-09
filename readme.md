@@ -17,6 +17,19 @@ Installing Meos (Simple)
 6. Upload de meos files naar een external host zorg er voor dat deze host rewrite_rule en ssl enabled heeft.
 7. Vervang de domein met die van jou in de policejob html file.
 
+
+<h1>Database connection</h1>
+1 in resources\[cores]\ghmattimysql\ maak bestand config.json en plak volgende:
+2 verander de informatie naar het juiste
+{
+    "user": "root",
+    "password": "",
+    "host": "localhost",
+    "port": 3306,
+    "database": "fortis"
+}
+
+
 Assets:
 [ASSETS](https://mega.nz/file/hHEhSLBb#NtgQPYl-k6fU6wi9qALzDnOmHZ0rxD6R_nofg1kfYco)
 [DISCORD](https://discord.gg/ZaQ6N23zby)

@@ -7,5 +7,5 @@ hulpdiensten/
 wegenwacht/
 fxserver/
 *.bat
-
+*.lock
 *.json
