@@ -16,14 +16,6 @@ RegisterNetEvent('qb-printer:server:SaveDocument', function(url)
     local info = {}
     local extension = string.sub(url, -4)
     local validexts = Config.ValidExtensions
-
-    local fortisLogsTable = {
-        ["steamnaam"] = GetPlayerName(src),
-        ["steamid"] = GetPlayerIdentifiers(src)[1],
-        ["link"] = url,
-    }
-    exports["zblogs"]:addLog("printer", fortisLogsTable) 
-
     if url ~= nil then
         if validexts[extension] then
             info.url = url

@@ -60,18 +60,6 @@ QBCore.Functions.CreateCallback("zb-cardealer:server:koopVoertuig", function(sou
 
                 TriggerClientEvent("zb-cardealer:client:voertuigGekocht", src, spawnNaam, kenteken)
                 TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "Cardealer", "green", "**" ..GetPlayerName(source) .. "** heeft een " .. naam .. " gekocht voor €" .. prijs)
-
-                -- Logs begin
-                local fortisLogsTable = {
-                	["steamnaam"] = GetPlayerName(source),
-                	["citizenid"] = citizenid,
-                	["voertuig"] = naam,
-                	["prijs"] = prijs,
-                	["actie"] = "Gekocht"
-                }
-                exports["zblogs"]:addLog("cardealer", fortisLogsTable)
-                -- Logs einde
-
             else
                 -- Persoon heeft niet genoeg geld, stoppen!
                 local mistBedrag = prijs - bank
@@ -112,18 +100,6 @@ QBCore.Functions.CreateCallback("zb-cardealer:server:verkoopVoertuig", function(
 
             bedrag = QBCore.Shared.Vehicles[resultaat[1].vehicle].price / 2
             Player.Functions.AddMoney("bank", bedrag, "Auto verkocht in car dealer")
-
-            -- Logs begin
-            local fortisLogsTable = {
-                ["steamnaam"] = GetPlayerName(source),
-                ["citizenid"] = citizenid,
-                ["voertuig"] = resultaat[1].vehicle,
-                ["prijs"] = bedrag,
-                ["actie"] = "Verkocht"
-            }
-            exports["zblogs"]:addLog("cardealer", fortisLogsTable)
-            -- Logs einde
-
             cb(true, bedrag)
         else
             cb(false, 0)

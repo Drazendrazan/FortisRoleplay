@@ -8,15 +8,6 @@ AddEventHandler('playerDropped', function(reason)
     local src = source
     TriggerEvent("qb-log:server:CreateLog", "joinleave", "Verbinding Verbroken", "red", "".. GetPlayerName(src) .. " ("..GetPlayerIdentifiers(src)[1]..") is de server verlaten\n**Reden:** " ..reason)
     TriggerEvent("qb-log:server:sendLog", GetPlayerIdentifiers(src)[1], "joined", {})
-	-- Logs begin
-	local fortisLogsTable = {
-		["steamnaam"] = GetPlayerName(src),
-		["steamid"] = GetPlayerIdentifiers(src)[1],
-		["actie"] = "Verbinding verbroken",
-		["reason"] = reason
-	}
-	exports["zblogs"]:addLog("connections", fortisLogsTable)
-	-- Logs einde
     if reason ~= "Reconnecting" and src > 60000 then return false end
     if(src==nil or (QBCore.Players[src] == nil)) then return false end
     QBCore.Players[src].Functions.Save()
@@ -77,15 +68,6 @@ AddEventHandler('playerConnecting', function(playerName, setKickReason, deferral
         return false
 	end
 	if src ~= nil and name ~= nil and GetPlayerIdentifiers(src)[1] ~= nil then
-		-- Logs begin
-		local fortisLogsTable = {
-			["steamnaam"] = name,
-			["steamid"] = GetPlayerIdentifiers(src)[1],
-			["actie"] = "Wachtrij toegetreden",
-			["reason"] = ""
-		}
-		exports["zblogs"]:addLog("connections", fortisLogsTable)
-		-- Logs einde
 
 		TriggerEvent("qb-log:server:CreateLog", "joinleave", "Wachtrij", "orange", "**"..name .. "**(" ..GetPlayerIdentifiers(src)[1].. ") is de wachtrij toegetreden.")
 		TriggerEvent("qb-log:server:sendLog", GetPlayerIdentifiers(src)[1], "left", {})

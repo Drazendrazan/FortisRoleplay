@@ -190,20 +190,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 		if self.PlayerData.money[moneytype] ~= nil then
 			self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype]+amount
 			self.Functions.UpdatePlayerData()
-
-			-- Logs begin
-			local fortisLogsTable = {
-				["steamnaam"] = GetPlayerName(self.PlayerData.source),
-				["citizenid"] = self.PlayerData.citizenid,
-				["bedrag"] = amount,
-				["type_geld"] = moneytype,
-				["totaal"] = self.PlayerData.money[moneytype],
-				["actie"] = "Toegevoegd",
-				["reden"] = reason
-			}
-			exports["zblogs"]:addLog("money", fortisLogsTable)
-			-- Logs einde
-
 			TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "moneyadded", {amount=amount, moneytype=moneytype, newbalance=self.PlayerData.money[moneytype], reason=reason})
 			if amount > 100000 then
 				TriggerEvent("qb-log:server:CreateLog", "playermoney", "Balans Toegevoegd", "lightgreen", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\n€"..amount .. " ("..moneytype..") toegevoegd\nNieuwe "..moneytype.." waarde: "..self.PlayerData.money[moneytype] .. "\n\nReden: " .. reason, true)
@@ -229,20 +215,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 			end
 			self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] - amount
 			self.Functions.UpdatePlayerData()
-
-			-- Logs begin
-			local fortisLogsTable = {
-				["steamnaam"] = GetPlayerName(self.PlayerData.source),
-				["citizenid"] = self.PlayerData.citizenid,
-				["bedrag"] = amount,
-				["type_geld"] = moneytype,
-				["totaal"] = self.PlayerData.money[moneytype],
-				["actie"] = "Verwijderd",
-				["reden"] = reason
-			}
-			exports["zblogs"]:addLog("money", fortisLogsTable)
-			-- Logs einde
-
 			TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "moneyremoved", {amount=amount, moneytype=moneytype, newbalance=self.PlayerData.money[moneytype], reason=reason})
 			if amount > 100000 then
 				TriggerEvent("qb-log:server:CreateLog", "playermoney", "Balans Verwijderd", "red", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\n€"..amount .. " ("..moneytype..") verwijderd\nNieuwe "..moneytype.." waarde: "..self.PlayerData.money[moneytype] .. "\nReden: " .. reason, true)
@@ -264,20 +236,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 		if self.PlayerData.money[moneytype] ~= nil then
 			self.PlayerData.money[moneytype] = amount
 			self.Functions.UpdatePlayerData()
-
-			-- Logs begin
-			local fortisLogsTable = {
-				["steamnaam"] = GetPlayerName(self.PlayerData.source),
-				["citizenid"] = self.PlayerData.citizenid,
-				["bedrag"] = amount,
-				["type_geld"] = moneytype,
-				["totaal"] = self.PlayerData.money[moneytype],
-				["actie"] = "Money set",
-				["reden"] = "Money set"
-			}
-			exports["zblogs"]:addLog("money", fortisLogsTable)
-			-- Logs einde
-
 			TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "moneyset", {amount=amount, moneytype=moneytype, newbalance=self.PlayerData.money[moneytype], reason=reason})
 			TriggerEvent("qb-log:server:CreateLog", "playermoney", "MoneySet", "green", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")** €"..amount .. " ("..moneytype..") gezet, nieuwe "..moneytype.." waarde: "..self.PlayerData.money[moneytype])
 			return true
@@ -303,20 +261,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 			if (slot ~= nil and self.PlayerData.items[slot] ~= nil) and (self.PlayerData.items[slot].name:lower() == item:lower()) and (itemInfo["type"] == "item" and not itemInfo["unique"]) then
 				self.PlayerData.items[slot].amount = self.PlayerData.items[slot].amount + amount
 				self.Functions.UpdatePlayerData()
-
-				-- Logs begin
-				local fortisLogsTable = {
-					["steamnaam"] = GetPlayerName(self.PlayerData.source),
-					["citizenid"] = self.PlayerData.citizenid,
-					["item_naam"] = self.PlayerData.items[slot].name,
-					["actie"] = "Item toegevoegd",
-					["slot"] = slot,
-					["aantal"] = amount,
-					["totaal"] = self.PlayerData.items[slot].amount
-				}
-				exports["zblogs"]:addLog("inventory", fortisLogsTable)
-				-- Logs einde
-
 				TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemadded", {name=self.PlayerData.items[slot].name, amount=amount, slot=slot, newamount=self.PlayerData.items[slot].amount, reason="unkown"})
 				TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Toegevoegd", "green", "**"..GetPlayerName(self.PlayerData.source) .. " (citizenid: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nKreeg item: " .. self.PlayerData.items[slot].name .. "\nSlot:" ..slot.."\nAantal: " .. amount .."\nTotaal: ".. self.PlayerData.items[slot].amount)
 				--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " toegevoegd!", "success")
@@ -324,20 +268,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 			elseif (not itemInfo["unique"] and slot or slot ~= nil and self.PlayerData.items[slot] == nil) then
 				self.PlayerData.items[slot] = {name = itemInfo["name"], amount = amount, info = info ~= nil and info or "", label = itemInfo["label"], description = itemInfo["description"] ~= nil and itemInfo["description"] or "", weight = itemInfo["weight"], type = itemInfo["type"], unique = itemInfo["unique"], useable = itemInfo["useable"], image = itemInfo["image"], shouldClose = itemInfo["shouldClose"], slot = slot, combinable = itemInfo["combinable"]}
 				self.Functions.UpdatePlayerData()
-
-				-- Logs begin
-				local fortisLogsTable = {
-					["steamnaam"] = GetPlayerName(self.PlayerData.source),
-					["citizenid"] = self.PlayerData.citizenid,
-					["item_naam"] = self.PlayerData.items[slot].name,
-					["actie"] = "Item toegevoegd",
-					["slot"] = slot,
-					["aantal"] = amount,
-					["totaal"] = self.PlayerData.items[slot].amount
-				}
-				exports["zblogs"]:addLog("inventory", fortisLogsTable)
-				-- Logs einde
-
 				TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemadded", {name=self.PlayerData.items[slot].name, amount=amount, slot=slot, newamount=self.PlayerData.items[slot].amount, reason="unkown"})
 				TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Toegevoegd", "green", "**"..GetPlayerName(self.PlayerData.source) .. " (citizenid: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nKreeg item: " .. self.PlayerData.items[slot].name .. "\nSlot:" ..slot.."\nAantal: " .. amount .."\nTotaal: ".. self.PlayerData.items[slot].amount)
 				--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " toegevoegd!", "success")
@@ -347,20 +277,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 					if self.PlayerData.items[i] == nil then
 						self.PlayerData.items[i] = {name = itemInfo["name"], amount = amount, info = info ~= nil and info or "", label = itemInfo["label"], description = itemInfo["description"] ~= nil and itemInfo["description"] or "", weight = itemInfo["weight"], type = itemInfo["type"], unique = itemInfo["unique"], useable = itemInfo["useable"], image = itemInfo["image"], shouldClose = itemInfo["shouldClose"], slot = i, combinable = itemInfo["combinable"]}
 						self.Functions.UpdatePlayerData()
-
-						-- Logs begin
-						local fortisLogsTable = {
-							["steamnaam"] = GetPlayerName(self.PlayerData.source),
-							["citizenid"] = self.PlayerData.citizenid,
-							["item_naam"] = self.PlayerData.items[i].name,
-							["actie"] = "Item toegevoegd",
-							["slot"] = i,
-							["aantal"] = amount,
-							["totaal"] = self.PlayerData.items[i].amount
-						}
-						exports["zblogs"]:addLog("inventory", fortisLogsTable)
-						-- Logs einde
-
 						TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemadded", {name=self.PlayerData.items[i].name, amount=amount, slot=i, newamount=self.PlayerData.items[i].amount, reason="unkown"})
 						TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Toegevoegd", "green", "**"..GetPlayerName(self.PlayerData.source) .. " (citizenid: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nKreeg item: " .. self.PlayerData.items[i].name .. "\nSlot: " ..i.."\nAantal: " .. amount .."\nTotaal: ".. self.PlayerData.items[i].amount)
 						--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " toegevoegd!", "success")
@@ -380,20 +296,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 			if self.PlayerData.items[slot].amount > amount then
 				self.PlayerData.items[slot].amount = self.PlayerData.items[slot].amount - amount
 				self.Functions.UpdatePlayerData()
-
-				-- Logs begin
-				local fortisLogsTable = {
-					["steamnaam"] = GetPlayerName(self.PlayerData.source),
-					["citizenid"] = self.PlayerData.citizenid,
-					["item_naam"] = self.PlayerData.items[slot].name,
-					["actie"] = "Item verwijderd",
-					["slot"] = slot,
-					["aantal"] = amount,
-					["totaal"] = self.PlayerData.items[slot].amount
-				}
-				exports["zblogs"]:addLog("inventory", fortisLogsTable)
-				-- Logs einde
-
 				TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemremoved", {name=self.PlayerData.items[slot].name, amount=amount, slot=slot, newamount=self.PlayerData.items[slot].amount, reason="unkown"})
 				TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Verwijderd", "red", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nVerwijderde item: " .. self.PlayerData.items[slot].name .. "\nSlot:" ..slot.."\nVerwijderde aantal: " .. amount .."\nNieuw totaal aantal: ".. self.PlayerData.items[slot].amount)
 				--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " verwijderd!", "error")
@@ -401,20 +303,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 			else
 				self.PlayerData.items[slot] = nil
 				self.Functions.UpdatePlayerData()
-
-				-- Logs begin
-				local fortisLogsTable = {
-					["steamnaam"] = GetPlayerName(self.PlayerData.source),
-					["citizenid"] = self.PlayerData.citizenid,
-					["item_naam"] = item,
-					["actie"] = "Item verwijderd",
-					["slot"] = slot,
-					["aantal"] = amount,
-					["totaal"] = "0"
-				}
-				exports["zblogs"]:addLog("inventory", fortisLogsTable)
-				-- Logs einde
-
 				TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemremoved", {name=item, amount=amount, slot=slot, newamount=0, reason="unkown"})
 				TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Verwijderd", "red", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nVerwijderde item: " .. item .. "\nSlot:" ..slot.."\nVerwijderde aantal: " .. amount .."Item verwijderd")
 				--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " verwijderd!", "error")
@@ -428,20 +316,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 					if self.PlayerData.items[slot].amount > amountToRemove then
 						self.PlayerData.items[slot].amount = self.PlayerData.items[slot].amount - amountToRemove
 						self.Functions.UpdatePlayerData()
-
-						-- Logs begin
-						local fortisLogsTable = {
-							["steamnaam"] = GetPlayerName(self.PlayerData.source),
-							["citizenid"] = self.PlayerData.citizenid,
-							["item_naam"] = self.PlayerData.items[slot].name,
-							["actie"] = "Item verwijderd",
-							["slot"] = slot,
-							["aantal"] = amount,
-							["totaal"] = self.PlayerData.items[slot].amount
-						}
-						exports["zblogs"]:addLog("inventory", fortisLogsTable)
-						-- Logs einde
-
 						TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemremoved", {name=self.PlayerData.items[slot].name, amount=amount, slot=slot, newamount=self.PlayerData.items[slot].amount, reason="unkown"})
 						TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Verwijderd", "red", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nVerwijderde item: " .. self.PlayerData.items[slot].name .. "\nSlot: "..slot.."\nVerwijderd aantal: " .. amount .."\nNieuw totaal aantal: ".. self.PlayerData.items[slot].amount)
 						--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " verwijderd!", "error")
@@ -449,20 +323,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 					elseif self.PlayerData.items[slot].amount == amountToRemove then
 						self.PlayerData.items[slot] = nil
 						self.Functions.UpdatePlayerData()
-
-						-- Logs begin
-						local fortisLogsTable = {
-							["steamnaam"] = GetPlayerName(self.PlayerData.source),
-							["citizenid"] = self.PlayerData.citizenid,
-							["item_naam"] = item,
-							["actie"] = "Item verwijderd",
-							["slot"] = slot,
-							["aantal"] = amount,
-							["totaal"] = 0
-						}
-						exports["zblogs"]:addLog("inventory", fortisLogsTable)
-						-- Logs einde
-
 						TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "itemremoved", {name=item, amount=amount, slot=slot, newamount=0, reason="unkown"})
 						TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Item Verwijderd", "red", "**"..GetPlayerName(self.PlayerData.source) .. " (BSN: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")**\nVerwijderde item: " .. item .. "\nSlot: "..slot.."\nVerwijderd aantal: " .. amount)
 						--TriggerClientEvent('QBCore:Notify', self.PlayerData.source, itemInfo["label"].. " verwijderd!", "error")
@@ -482,20 +342,6 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 	self.Functions.ClearInventory = function()
 		self.PlayerData.items = {}
 		self.Functions.UpdatePlayerData()
-
-		-- Logs begin
-		local fortisLogsTable = {
-			["steamnaam"] = GetPlayerName(self.PlayerData.source),
-			["citizenid"] = self.PlayerData.citizenid,
-			["item_naam"] = "Hele inventory",
-			["actie"] = "Inventory gecleard",
-			["slot"] = "0",
-			["aantal"] = "0",
-			["totaal"] = "0"
-		}
-		exports["zblogs"]:addLog("inventory", fortisLogsTable)
-		-- Logs einde
-
 		TriggerEvent("qb-log:server:sendLog", self.PlayerData.citizenid, "clearinventory", {})
 		TriggerEvent("qb-log:server:CreateLog", "playerinventory", "Inventory Geleegd", "red", "**"..GetPlayerName(self.PlayerData.source) .. " (citizenid: "..self.PlayerData.citizenid.." | id: "..self.PlayerData.source..")** inventory cleared")
 	end
@@ -553,16 +399,6 @@ end
 
 QBCore.Player.DeleteCharacter = function(source, citizenid)
 	QBCore.Functions.ExecuteSql(true, "DELETE FROM `players` WHERE `citizenid` = '"..citizenid.."'")
-
-	-- Logs begin
-	local fortisLogsTable = {
-		["steamnaam"] = GetPlayerName(self.PlayerData.source),
-		["citizenid"] = citizenid,
-		["actie"] = "Verwijderd"
-	}
-	exports["zblogs"]:addLog("character", fortisLogsTable)
-	-- Logs einde
-
 	TriggerEvent("qb-log:server:sendLog", citizenid, "characterdeleted", {})
 	TriggerEvent("qb-log:server:CreateLog", "joinleave", "Karakter Verwijderd", "red", "**".. GetPlayerName(source) .. "** ("..GetPlayerIdentifiers(source)[1]..") verwijderde **"..citizenid.."**..")
 end
