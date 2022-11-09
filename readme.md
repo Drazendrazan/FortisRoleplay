@@ -1,4 +1,4 @@
-***ZEVENBEEK REBOOTED*** 
+***ZEVENBEEK REBOOTED*** <br>
 Dit is een opensource framework gemaakt op de fortis framework en bevat unieke opties zoals : Drugs telefoon en banen.
 
 
@@ -6,7 +6,7 @@ Credits :
 Anykeys,
 FortisRoleplay
 
-voorbeeld server : cfx.re/join/58e557
+voorbeeld server : https://cfx.re/join/58e557
 
 Installing Meos (Simple) 
 1. Maak een database genaamd meos aan op je game server (vps ect)
@@ -18,6 +18,5 @@ Installing Meos (Simple)
 7. Vervang de domein met die van jou in de policejob html file.
 
 Assets:
-https://mega.nz/file/hHEhSLBb#NtgQPYl-k6fU6wi9qALzDnOmHZ0rxD6R_nofg1kfYco
-
-DISCORD : [cfx.re/join/58e557](https://discord.gg/ZaQ6N23zby)
+[ASSETS](https://mega.nz/file/hHEhSLBb#NtgQPYl-k6fU6wi9qALzDnOmHZ0rxD6R_nofg1kfYco)
+[DISCORD](https://discord.gg/ZaQ6N23zby)
